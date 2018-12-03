@@ -24,9 +24,6 @@ private:
 
 	float4 ambient_color = float4::zero;
 
-public:
-	float alpha_test = 0.0f;
-
 };
 
 #endif // __COMPONENT_MATERIAL_H__
