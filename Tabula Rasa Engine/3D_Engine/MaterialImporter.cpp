@@ -189,6 +189,8 @@ UID MaterialImporter::LoadImageFromPath(const char * path, UID uid_to_force)
 	}
 }
 
+
+
 void MaterialImporter::DeleteTextureBuffer(ResourceTexture * tex)
 {
 	ilDeleteImages(1, &tex->gpu_id);
