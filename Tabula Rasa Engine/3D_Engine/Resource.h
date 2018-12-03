@@ -15,9 +15,7 @@ public:
 
 		MESH,
 		TEXTURE,
-		SCENE,
-		BONE,
-		ANIMATION
+		SCENE
 	};
 
 public:

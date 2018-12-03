@@ -303,6 +303,9 @@
     <ClCompile Include="ImGuizmo\ImGuizmo.cpp">
       <Filter>Utilities\3rd Party\ImGuizmo</Filter>
     </ClCompile>
+    <ClCompile Include="MeshImporter.cpp">
+      <Filter>Core\Modules\Importers</Filter>
+    </ClCompile>
     <ClCompile Include="PanelResources.cpp">
       <Filter>Core\Modules\Panels</Filter>
     </ClCompile>
@@ -332,12 +335,6 @@
     </ClCompile>
     <ClCompile Include="pcg\pcg_basic.c">
       <Filter>Utilities\3rd Party\PCG</Filter>
-    </ClCompile>
-    <ClCompile Include="ResourceBone.cpp">
-      <Filter>Core\Modules\Resources</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneImporter.cpp">
-      <Filter>Core\Modules\Importers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -815,6 +812,9 @@
     <ClInclude Include="Importer.h">
       <Filter>Core\Modules\Importers</Filter>
     </ClInclude>
+    <ClInclude Include="MeshImporter.h">
+      <Filter>Core\Modules\Importers</Filter>
+    </ClInclude>
     <ClInclude Include="PanelResources.h">
       <Filter>Core\Modules\Panels</Filter>
     </ClInclude>
@@ -847,12 +847,6 @@
     </ClInclude>
     <ClInclude Include="pcg\pcg_basic.h">
       <Filter>Utilities\3rd Party\PCG</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceBone.h">
-      <Filter>Core\Modules\Resources</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneImporter.h">
-      <Filter>Core\Modules\Importers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

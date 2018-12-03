@@ -15,11 +15,11 @@ class aiMaterial;
 class aiMesh;
 class ResourceMesh;
 
-class SceneImporter : public Importer
+class MeshImporter : public Importer
 {
 public:
-	SceneImporter();
-	~SceneImporter();
+	MeshImporter();
+	~MeshImporter();
 
 
 public:

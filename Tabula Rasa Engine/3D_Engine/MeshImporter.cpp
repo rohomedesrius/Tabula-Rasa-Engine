@@ -1,4 +1,4 @@
-#include "SceneImporter.h"
+#include "MeshImporter.h"
 
 #include "trDefs.h"
 #include "trLog.h"
@@ -36,7 +36,7 @@ void StreamCallback(const char* msg, char* user_msg) {
 	TR_LOG("trFileLoader: %s", msg);
 }
 
-SceneImporter::SceneImporter()
+MeshImporter::MeshImporter()
 {
 	TR_LOG("MeshImporter: Loading Mesh Importer");
 	bool ret = true;
@@ -48,13 +48,13 @@ SceneImporter::SceneImporter()
 	stream = aiGetPredefinedLogStream(aiDefaultLogStream_DEBUGGER, nullptr);
 }
 
-SceneImporter::~SceneImporter()
+MeshImporter::~MeshImporter()
 {
 	// Clean all log streams
 	aiDetachAllLogStreams();
 }
 
-bool SceneImporter::Import(const char * path, std::string & output_file)
+bool MeshImporter::Import(const char * path, std::string & output_file)
 {
 	std::string real_path = A_MODELS_DIR;
 	real_path.append("/");
@@ -100,7 +100,7 @@ bool SceneImporter::Import(const char * path, std::string & output_file)
 	return false;
 }
 
-void SceneImporter::ImportNodesRecursively(const aiNode * node, const aiScene * scene, char* file_path, GameObject * parent_go)
+void MeshImporter::ImportNodesRecursively(const aiNode * node, const aiScene * scene, char* file_path, GameObject * parent_go)
 {
 	bool good_mesh = true;
 
@@ -119,7 +119,8 @@ void SceneImporter::ImportNodesRecursively(const aiNode * node, const aiScene * 
 
 	if (parent_go == App->main_scene->GetRoot()) {
 		imported_root_go = new_go;
-	} 
+	}
+		
 
 	if (node->mNumMeshes > 0) //if this node have a mesh
 	{
@@ -251,7 +252,7 @@ void SceneImporter::ImportNodesRecursively(const aiNode * node, const aiScene * 
 		ImportNodesRecursively(node->mChildren[i], scene, file_path, (good_mesh)?new_go:parent_go);
 }
 
-ComponentMaterial * SceneImporter::LoadTexture(aiMaterial* material, GameObject* go, ResourceMesh* mesh)
+ComponentMaterial * MeshImporter::LoadTexture(aiMaterial* material, GameObject* go, ResourceMesh* mesh)
 {
 	// Getting the texture path
 	aiString tmp_path;
@@ -298,7 +299,7 @@ ComponentMaterial * SceneImporter::LoadTexture(aiMaterial* material, GameObject*
 }
 
 
-bool SceneImporter::SaveMeshFile(const char* file_name, ResourceMesh* mesh_data, std::string& output_file)
+bool MeshImporter::SaveMeshFile(const char* file_name, ResourceMesh* mesh_data, std::string& output_file)
 {
 	uint size_indices = sizeof(uint) * mesh_data->index_size;
 	uint size_vertices = sizeof(float) * (mesh_data->vertex_size);
@@ -344,7 +345,7 @@ bool SceneImporter::SaveMeshFile(const char* file_name, ResourceMesh* mesh_data,
 	return true;
 }
 
-bool SceneImporter::LoadMeshFile(const char* file_name, const char * file_path)
+bool MeshImporter::LoadMeshFile(const char* file_name, const char * file_path)
 {
 	// Open file requested file
 	char* buffer = nullptr;
@@ -405,7 +406,7 @@ bool SceneImporter::LoadMeshFile(const char* file_name, const char * file_path)
 	return true;
 }
 
-UID SceneImporter::GenerateResourceFromFile(const char * file_path, UID uid_to_force)
+UID MeshImporter::GenerateResourceFromFile(const char * file_path, UID uid_to_force)
 {
 	ResourceMesh* resource = (ResourceMesh*)App->resources->CreateNewResource(Resource::Type::MESH, uid_to_force); // our mesh
 	if (resource == nullptr) { // resource already created!
