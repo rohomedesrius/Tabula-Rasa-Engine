@@ -1,9 +1,8 @@
-﻿# Tabula Rasa Engine
-A 3d game engine developed with OpenGL in c ++. This project has been done by two students of CITM - UPC (Terrasa, Spain) for the subject Game Engines, 
+﻿# Tabula Rasa Engine (Forked)
+A 3d game engine developed with OpenGL in c ++. This project has been done by two students of CITM - UPC (Terrasa, Spain) for the subject Game Engines. This is a forked version of the engine, right below you can find the link to the original engine: 
 
 * [Github repository](https://github.com/Wilhelman/Tabula-Rasa-Engine)
 * [Website] NOT YET
-* [Wiki] NOT YET
 
 ## Installation instructions
 
@@ -51,8 +50,16 @@ _Click again on Window->(any option) to close that window_
 Example for comparison:
 ![image](https://user-images.githubusercontent.com/25589509/46920311-ccccb780-cfec-11e8-9afa-fcbf64616042.png)
 
+## New Team members
+_Homedes Rius, Roger's responsability and Github account_
+* Code
+* [Github account](https://github.com/rohomedesrius)
 
-## Team members
+_Navarro Sato, Samuel's responsability and Github account_
+* Code
+* [Github account](https://github.com/GottaCodeHarder)
+
+## Original Team members
 
 _García Subirana, Guillermo's responsability and Github account_
 * Code
