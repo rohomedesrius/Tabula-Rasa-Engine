@@ -336,6 +336,9 @@
     <ClCompile Include="pcg\pcg_basic.c">
       <Filter>Utilities\3rd Party\PCG</Filter>
     </ClCompile>
+    <ClCompile Include="trAudio.cpp">
+      <Filter>Core\Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="trWindow.h">
@@ -847,6 +850,9 @@
     </ClInclude>
     <ClInclude Include="pcg\pcg_basic.h">
       <Filter>Utilities\3rd Party\PCG</Filter>
+    </ClInclude>
+    <ClInclude Include="trAudio.h">
+      <Filter>Core\Modules</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
