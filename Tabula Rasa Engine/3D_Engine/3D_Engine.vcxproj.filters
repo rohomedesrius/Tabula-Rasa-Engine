@@ -70,6 +70,9 @@
     <Filter Include="Core\Modules\Panels">
       <UniqueIdentifier>{94ec3c63-599e-4865-a18e-719dca9cc99f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utilities\3rd Party\Wwise">
+      <UniqueIdentifier>{f8258daf-d271-4b2c-adf4-e87e2dd37fe9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="trWindow.cpp">
