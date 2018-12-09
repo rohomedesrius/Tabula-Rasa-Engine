@@ -220,8 +220,9 @@ public:
 		{
 			fileAttributes = fileInfo.dwFileAttributes;
 		}
-#else
-		fileAttributes = GetFileAttributes( in_pszBasePath );
+// TMP FIX
+//#else
+//		fileAttributes = GetFileAttributes( in_pszBasePath );
 #endif
 		if (fileAttributes == INVALID_FILE_ATTRIBUTES)
 			return AK_Fail;  //something is wrong with your path!
