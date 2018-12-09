@@ -3,7 +3,8 @@
 
 #include "trModule.h"
 #include "trLog.h"
-#include "AK/SoundEngine/Common/AkSoundEngine.h"
+
+//#include <AK\SoundEngine\Common\AkTypes.h>
 
 class trAudio : public trModule
 {

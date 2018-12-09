@@ -11,6 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AK\samples\Common\AkDefaultLowLevelIODispatcher.cpp" />
+    <ClCompile Include="AK\samples\Common\AkFileLocationBase.cpp" />
+    <ClCompile Include="AK\samples\Common\AkFilePackage.cpp" />
+    <ClCompile Include="AK\samples\Common\AkFilePackageLUT.cpp" />
+    <ClCompile Include="AK\samples\Common\AkMultipleFileLocation.cpp" />
+    <ClCompile Include="AK\samples\Win32\AkDefaultIOHookBlocking.cpp" />
+    <ClCompile Include="AK\samples\Win32\AkDefaultIOHookDeferred.cpp" />
+    <ClCompile Include="AK\samples\Win32\stdafx.cpp" />
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="ComponentCamera.cpp" />
@@ -102,6 +110,19 @@
     <ClCompile Include="trWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AK\include\AK\SoundEngine\Common\AkTypes.h" />
+    <ClInclude Include="AK\samples\Common\AkDefaultLowLevelIODispatcher.h" />
+    <ClInclude Include="AK\samples\Common\AkFileLocationBase.h" />
+    <ClInclude Include="AK\samples\Common\AkFilePackage.h" />
+    <ClInclude Include="AK\samples\Common\AkFilePackageLowLevelIO.h" />
+    <ClInclude Include="AK\samples\Common\AkFilePackageLUT.h" />
+    <ClInclude Include="AK\samples\Common\AkMultipleFileLocation.h" />
+    <ClInclude Include="AK\samples\Win32\AkDefaultIOHookBlocking.h" />
+    <ClInclude Include="AK\samples\Win32\AkDefaultIOHookDeferred.h" />
+    <ClInclude Include="AK\samples\Win32\AkFileHelpers.h" />
+    <ClInclude Include="AK\samples\Win32\AkFilePackageLowLevelIOBlocking.h" />
+    <ClInclude Include="AK\samples\Win32\AkFilePackageLowLevelIODeferred.h" />
+    <ClInclude Include="AK\samples\Win32\stdafx.h" />
     <ClInclude Include="Assimp\include\ai_assert.h" />
     <ClInclude Include="Assimp\include\anim.h" />
     <ClInclude Include="Assimp\include\camera.h" />
@@ -275,6 +296,7 @@
     <ClInclude Include="trWindow.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AK\samples\Common\AkFilePackageLowLevelIO.inl" />
     <None Include="Assimp\include\color4.inl" />
     <None Include="Assimp\include\material.inl" />
     <None Include="Assimp\include\matrix3x3.inl" />
@@ -322,8 +344,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Program Files %28x86%29\Audiokinetic\Wwise 2018.1.4.6807\SDK\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(ProjectDir)AK\include\;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>

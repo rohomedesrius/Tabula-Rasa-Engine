@@ -342,6 +342,30 @@
     <ClCompile Include="trAudio.cpp">
       <Filter>Core\Modules</Filter>
     </ClCompile>
+    <ClCompile Include="AK\samples\Common\AkDefaultLowLevelIODispatcher.cpp">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClCompile>
+    <ClCompile Include="AK\samples\Common\AkFileLocationBase.cpp">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClCompile>
+    <ClCompile Include="AK\samples\Common\AkFilePackage.cpp">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClCompile>
+    <ClCompile Include="AK\samples\Common\AkFilePackageLUT.cpp">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClCompile>
+    <ClCompile Include="AK\samples\Common\AkMultipleFileLocation.cpp">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClCompile>
+    <ClCompile Include="AK\samples\Win32\AkDefaultIOHookBlocking.cpp">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClCompile>
+    <ClCompile Include="AK\samples\Win32\AkDefaultIOHookDeferred.cpp">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClCompile>
+    <ClCompile Include="AK\samples\Win32\stdafx.cpp">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="trWindow.h">
@@ -857,6 +881,45 @@
     <ClInclude Include="trAudio.h">
       <Filter>Core\Modules</Filter>
     </ClInclude>
+    <ClInclude Include="AK\samples\Common\AkDefaultLowLevelIODispatcher.h">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="AK\samples\Common\AkFileLocationBase.h">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="AK\samples\Common\AkFilePackage.h">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="AK\samples\Common\AkFilePackageLowLevelIO.h">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="AK\samples\Common\AkFilePackageLUT.h">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="AK\samples\Common\AkMultipleFileLocation.h">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="AK\samples\Win32\AkDefaultIOHookBlocking.h">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="AK\samples\Win32\AkDefaultIOHookDeferred.h">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="AK\samples\Win32\AkFileHelpers.h">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="AK\samples\Win32\AkFilePackageLowLevelIOBlocking.h">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="AK\samples\Win32\AkFilePackageLowLevelIODeferred.h">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="AK\samples\Win32\stdafx.h">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="AK\include\AK\SoundEngine\Common\AkTypes.h">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assimp\include\color4.inl">
@@ -903,6 +966,9 @@
     </None>
     <None Include="MathGeoLib\Math\Matrix.inl">
       <Filter>Utilities\3rd Party\MathGeoLib</Filter>
+    </None>
+    <None Include="AK\samples\Common\AkFilePackageLowLevelIO.inl">
+      <Filter>Utilities\3rd Party\Wwise</Filter>
     </None>
   </ItemGroup>
 </Project>
