@@ -26,6 +26,7 @@
     <ClCompile Include="ComponentMesh.cpp" />
     <ClCompile Include="ComponentTransform.cpp" />
     <ClCompile Include="DebugDraw.cpp" />
+    <ClCompile Include="FirulWwise.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="ImGuizmo\ImGuizmo.cpp" />
     <ClCompile Include="ImGuizmo\ImSequencer.cpp" />
@@ -172,6 +173,7 @@
     <ClInclude Include="DevIL\include\ilu_region.h" />
     <ClInclude Include="DevIL\include\il_wrap.h" />
     <ClInclude Include="Event.h" />
+    <ClInclude Include="FirulWwise.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="glew-2.1.0\include\GL\eglew.h" />
     <ClInclude Include="glew-2.1.0\include\GL\glew.h" />
@@ -294,6 +296,7 @@
     <ClInclude Include="trTimeManager.h" />
     <ClInclude Include="trTimer.h" />
     <ClInclude Include="trWindow.h" />
+    <ClInclude Include="WwiseInclude.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AK\samples\Common\AkFilePackageLowLevelIO.inl" />

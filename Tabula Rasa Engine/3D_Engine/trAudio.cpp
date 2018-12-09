@@ -1,4 +1,5 @@
 #include "trAudio.h"
+#include "FirulWwise.h"
 
 trAudio::trAudio()
 {
@@ -10,6 +11,10 @@ trAudio::~trAudio()
 
 bool trAudio::Start()
 {
+	TR_LOG("trAudio: Init with FirulWwise");
+
+	FirulWwise::InitFWw();
+
 	return true;
 }
 
@@ -25,6 +30,10 @@ bool trAudio::Update(float dt)
 
 bool trAudio::CleanUp()
 {
+	TR_LOG("trAudio: CleanUp");
+
+	FirulWwise::CleanUpFWw();
+
 	return true;
 }
 
