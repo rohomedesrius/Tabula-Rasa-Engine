@@ -3,51 +3,9 @@
 
 CAkFilePackageLowLevelIOBlocking g_lowLevelIO;
 
-// Wwise related zone
-// Custom alloc/free functions. These are declared as "extern" in AkMemoryMgr.h
-namespace AK
-{
-
-#ifdef WIN32
-
-	void * AllocHook(size_t in_size)
-	{
-		return malloc(in_size);
-	}
-
-	void FreeHook(void * in_ptr)
-	{
-		free(in_ptr);
-	}
-
-	// Note: VirtualAllocHook() may be used by I/O pools of the default implementation
-	// of the Stream Manager, to allow "true" unbuffered I/O (using FILE_FLAG_NO_BUFFERING
-	// This is NOT mandatory; you may implement it with a simple malloc().
-	void * VirtualAllocHook(
-		void * in_pMemAddress,
-		size_t in_size,
-		DWORD in_dwAllocationType,
-		DWORD in_dwProtect
-	)
-	{
-		return VirtualAlloc(in_pMemAddress, in_size, in_dwAllocationType, in_dwProtect);
-	}
-
-	void VirtualFreeHook(
-		void * in_pMemAddress,
-		size_t in_size,
-		DWORD in_dwFreeType
-	)
-	{
-		VirtualFree(in_pMemAddress, in_size, in_dwFreeType);
-	}
-#endif
-
-}
-
 ///////////////////////////////////////////
 //										 //
-//			F I R U L W W I S E			 //
+//			F I R U L W w I S E			 //
 //										 //
 ///////////////////////////////////////////
 
@@ -55,9 +13,7 @@ bool FirulWwise::InitFWw()
 {
 	bool ret = true;
 
-	// Create and initialize an instance of the default memory manager. Note
-	// that you can override the default memory manager with your own. Refer
-	// to the SDK documentation for more information.
+	// Initialize Wwise Memory Manager
 
 	AkMemSettings memSettings;
 	memSettings.uMaxNumPools = 20;
@@ -68,39 +24,31 @@ bool FirulWwise::InitFWw()
 		return false;
 	}
 
-	// Create and initialize an instance of the default streaming manager. Note
-	// that you can override the default streaming manager with your own.
+	// Initialize Wwise Streaming Manager
 
 	AkStreamMgrSettings stmSettings;
 	AK::StreamMgr::GetDefaultSettings(stmSettings);
 
-	// Customize the Stream Manager settings here. <<========
+	// Customize the Stream Manager settings here.
 
 	if (!AK::StreamMgr::Create(stmSettings))
 	{
 		assert(!"Could not create the Streaming Manager");
 		return false;
-	}
-
-	// Create a streaming device with blocking low-level I/O handshaking.
-	// Note that you can override the default low-level I/O module with your own. Refer
-	// to the SDK documentation for more information.      
+	}   
 	
 	AkDeviceSettings deviceSettings;
 	AK::StreamMgr::GetDefaultDeviceSettings(deviceSettings);
 
 	// Customize the streaming device settings here.
 
-	// CAkFilePackageLowLevelIOBlocking::Init() creates a streaming device
-	// in the Stream Manager, and registers itself as the File Location Resolver.
 	if (g_lowLevelIO.Init(deviceSettings) != AK_Success)
 	{
 		assert(!"Could not create the streaming device and Low-Level I/O system");
 		return false;
 	}
 
-	// Initialize the sound engine
-	// Using default initialization parameters
+	// Initialize Wwise Sound Engine
 
 	AkInitSettings initSettings;
 	AkPlatformInitSettings platformInitSettings;
@@ -113,8 +61,7 @@ bool FirulWwise::InitFWw()
 		return false;
 	}
 
-	// Initialize the music engine
-	// Using default initialization parameters
+	// Initialize Wwise Music Engine
 
 	AkMusicSettings musicInit;
 	AK::MusicEngine::GetDefaultInitSettings(musicInit);
@@ -124,6 +71,8 @@ bool FirulWwise::InitFWw()
 		assert(!"Could not initialize the Music Engine.");
 		return false;
 	}
+
+	// Initialize Wwise Comunications
 
 #ifndef AK_OPTIMIZED
 	
@@ -161,4 +110,25 @@ void FirulWwise::CleanUpFWw()
 
 	AK::MemoryMgr::Term();		// Terminate the Memory Manager
 
+}
+
+// Wwise Related ================================================================================================
+void * AK::AllocHook(size_t in_size)
+{
+	return malloc(in_size);
+}
+
+void AK::FreeHook(void * in_ptr)
+{
+	free(in_ptr);
+}
+
+void * AK::VirtualAllocHook(void * in_pMemAddress, size_t in_size, DWORD in_dwAllocationType, DWORD in_dwProtect)
+{
+	return VirtualAlloc(in_pMemAddress, in_size, in_dwAllocationType, in_dwProtect);
+}
+
+void AK::VirtualFreeHook(void * in_pMemAddress, size_t in_size, DWORD in_dwFreeType)
+{
+	VirtualFree(in_pMemAddress, in_size, in_dwFreeType);
 }

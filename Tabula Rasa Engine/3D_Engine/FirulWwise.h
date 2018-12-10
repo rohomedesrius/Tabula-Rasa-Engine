@@ -33,8 +33,24 @@
 
 #pragma comment( lib, "AK/libraries/DirectSound/dinput8.lib" )
 #pragma comment( lib, "AK/libraries/DirectSound/dsound.lib" ) 
-#pragma comment( lib, "AK/libraries/DirectSound/dxguid.lib" )  
+#pragma comment( lib, "AK/libraries/DirectSound/dxguid.lib" )
 
+// Wwise
+namespace AK
+{
+
+#ifdef WIN32
+
+	void * AllocHook(size_t in_size);
+	void FreeHook(void * in_ptr);
+
+	void * VirtualAllocHook(void * in_pMemAddress, size_t in_size, DWORD in_dwAllocationType, DWORD in_dwProtect);
+	void VirtualFreeHook(void * in_pMemAddress,	size_t in_size,	DWORD in_dwFreeType);
+
+#endif
+}
+
+// FirulWwise
 namespace FirulWwise
 {
 
@@ -43,4 +59,4 @@ namespace FirulWwise
 
 }
 
-#endif //__FIRULWWISE_H__
+#endif
