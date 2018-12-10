@@ -890,9 +890,6 @@
     <ClInclude Include="trAudio.h">
       <Filter>Core\Modules</Filter>
     </ClInclude>
-    <ClInclude Include="WwiseInclude.h">
-      <Filter>Utilities\3rd Party\Wwise\FirulWwise</Filter>
-    </ClInclude>
     <ClInclude Include="FirulWwise.h">
       <Filter>Utilities\3rd Party\Wwise\FirulWwise</Filter>
     </ClInclude>

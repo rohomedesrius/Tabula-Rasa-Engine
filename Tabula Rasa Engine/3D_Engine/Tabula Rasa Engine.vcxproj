@@ -296,7 +296,6 @@
     <ClInclude Include="trTimeManager.h" />
     <ClInclude Include="trTimer.h" />
     <ClInclude Include="trWindow.h" />
-    <ClInclude Include="WwiseInclude.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AK\samples\Common\AkFilePackageLowLevelIO.inl" />
