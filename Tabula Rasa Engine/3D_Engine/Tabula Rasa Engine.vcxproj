@@ -348,7 +348,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Program Files %28x86%29\Audiokinetic\Wwise 2018.1.4.6807\SDK\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)/AK/include;C:\Program Files %28x86%29\Audiokinetic\Wwise 2018.1.4.6807\SDK\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>$(ProjectDir)AK\include\;$(IncludePath)</IncludePath>
