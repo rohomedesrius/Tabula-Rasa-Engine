@@ -113,6 +113,9 @@ void FirulWwise::CleanUpFWw()
 }
 
 // Wwise Related ================================================================================================
+
+#ifdef WIN32
+
 void * AK::AllocHook(size_t in_size)
 {
 	return malloc(in_size);
@@ -132,3 +135,5 @@ void AK::VirtualFreeHook(void * in_pMemAddress, size_t in_size, DWORD in_dwFreeT
 {
 	VirtualFree(in_pMemAddress, in_size, in_dwFreeType);
 }
+
+#endif
