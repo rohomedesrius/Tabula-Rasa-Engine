@@ -150,3 +150,13 @@ AKEmitter::~AKEmitter()
 {
 	AK::SoundEngine::UnregisterGameObj(e_id);
 }
+
+void AKEmitter::PlayEvent()
+{
+
+}
+
+void AKEmitter::StopEvent()
+{
+
+}
