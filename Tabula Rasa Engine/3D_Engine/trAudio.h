@@ -16,6 +16,7 @@ public:
 	bool Start();
 	bool PreUpdate(float dt);
 	bool Update(float dt);
+	bool PostUpdate(float dt);
 	bool CleanUp();
 
 private:
