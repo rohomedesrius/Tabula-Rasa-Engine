@@ -378,6 +378,9 @@
     <ClCompile Include="ComponentAudio.cpp">
       <Filter>Core\GameObject\Component</Filter>
     </ClCompile>
+    <ClCompile Include="PanelAudio.cpp">
+      <Filter>Core\Modules\Panels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="trWindow.h">
@@ -937,6 +940,9 @@
     </ClInclude>
     <ClInclude Include="ComponentAudio.h">
       <Filter>Core\GameObject\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="PanelAudio.h">
+      <Filter>Core\Modules\Panels</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
