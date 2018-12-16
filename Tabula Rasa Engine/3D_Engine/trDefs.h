@@ -89,6 +89,7 @@ inline const char* const PATH(const char* folder, const char* file)
 #define A_SCENES_DIR "Assets/Scenes"
 #define A_MODELS_DIR "Assets/Models"
 #define A_TEXTURES_DIR "Assets/Textures"
+#define A_SOUNDBANKS_DIR "Assets/SoundBanks"
 #define SETTINGS_DIR "Settings"
 #define LIBRARY_DIR "Library"
 #define L_MESHES_DIR "/Library/Meshes"
@@ -124,5 +125,7 @@ inline const char* const PATH(const char* folder, const char* file)
 #define R_LIGHTING true
 #define R_COLOR_MATERIAL true
 #define R_TEXTURE_2D true
+/// Sound
+#define SOUNDBANK_INIT L"Init.bnk"
 
 #endif

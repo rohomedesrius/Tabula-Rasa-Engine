@@ -31,6 +31,7 @@ bool trFileLoader::Start()
 	App->file_system->MakeNewDir(A_MODELS_DIR);
 	App->file_system->MakeNewDir(A_SCENES_DIR);
 	App->file_system->MakeNewDir(A_TEXTURES_DIR);
+	App->file_system->MakeNewDir(A_SOUNDBANKS_DIR);
 
 	App->file_system->MakeNewDir(SETTINGS_DIR);
 
