@@ -3,6 +3,9 @@
 #include "GameObject.h"
 #include "trMainScene.h"
 #include "trApp.h"
+#include "trAudio.h"
+
+#include "FirulWwise.h"
 
 PanelAudio::PanelAudio() : Panel("Audio", SDL_SCANCODE_5)
 {
@@ -37,7 +40,22 @@ void PanelAudio::Draw()
 
 	if (ImGui::CollapsingHeader("Volume"))
 	{
-		ImGui::Combo("Main Listener", &go_current, go_names, i);
+		
+	}
+
+	//SoundBanks =======================================================
+
+	const char* banks_names[] = { "Main", "Music" };
+	static int bank_current = 0;
+
+	if (ImGui::CollapsingHeader("SoundBanks"))
+	{
+		ImGui::Combo("", &bank_current, banks_names, IM_ARRAYSIZE(banks_names));
+		
+		if (ImGui::Button("Load SoundBanks"))
+		{
+			FirulWManager::LoadBank("Main");
+		}
 	}
 
 	ImGui::End();

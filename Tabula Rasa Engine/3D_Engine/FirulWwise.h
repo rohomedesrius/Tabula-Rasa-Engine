@@ -56,7 +56,7 @@ namespace AK
 namespace FirulWwise
 {
 	//WWise stuff
-	bool InitFWw();
+	bool InitFWw(const wchar_t* banks_directory);
 	void CleanUpFWw();
 	void ProcessAudio();
 }
@@ -87,4 +87,11 @@ public:
 private:
 	const char* name = nullptr;
 };
+
+// MANAGER ===========================================================================================================
+
+namespace FirulWManager
+{
+	bool LoadBank(const char* bank_path);
+}
 #endif

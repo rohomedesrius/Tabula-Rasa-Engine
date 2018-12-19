@@ -19,6 +19,9 @@ public:
 	bool PostUpdate(float dt);
 	bool CleanUp();
 
+public:
+	wchar_t* banks_directory = nullptr;
+
 private:
 
 	bool InitWwise();

@@ -1,4 +1,6 @@
 #include "FirulWwise.h"
+#include "trDefs.h"
+
 #include <assert.h>
 
 CAkFilePackageLowLevelIOBlocking g_lowLevelIO;
@@ -9,7 +11,7 @@ CAkFilePackageLowLevelIOBlocking g_lowLevelIO;
 //										 //
 ///////////////////////////////////////////
 
-bool FirulWwise::InitFWw()
+bool FirulWwise::InitFWw(const wchar_t* banks_directory)
 {
 	bool ret = true;
 
@@ -87,6 +89,13 @@ bool FirulWwise::InitFWw()
 	}
 	*/
 #endif // AK_OPTIMIZED
+
+	//Load Banks ----------------------------------------------
+	g_lowLevelIO.SetBasePath(banks_directory);
+	AK::StreamMgr::SetCurrentLanguage(AKTEXT("English(US)"));
+
+	//Load Init Soundbank (default)------
+	FirulWManager::LoadBank("Init.bnk");
 
 	return ret;
 }
@@ -173,4 +182,17 @@ AKEvent::AKEvent()
 
 AKEvent::~AKEvent()
 {
+}
+
+// MANAGER ======================================================================================================
+
+bool FirulWManager::LoadBank(const char* bank_path)
+{
+	AkBankID bank_id;
+	AKRESULT success = AK::SoundEngine::LoadBank(bank_path, AK_DEFAULT_POOL_ID, bank_id);
+	
+	if (!success)
+		return false;
+
+	return true;
 }
