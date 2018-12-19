@@ -24,9 +24,11 @@ void PanelAudio::Draw()
 	static int go_current = 0;
 	int i = 0;
 
-	if (root != nullptr) {
+	if (root != nullptr)
+	{
 		std::list<GameObject*>::const_iterator it = root->childs.begin();
-		while (it != root->childs.end()) {
+		while (it != root->childs.end())
+		{
 			go_names[i] = (*it)->GetName();
 			it++;
 			i++;

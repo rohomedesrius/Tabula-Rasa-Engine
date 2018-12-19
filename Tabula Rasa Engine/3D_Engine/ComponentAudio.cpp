@@ -9,6 +9,12 @@ ComponentAudio::~ComponentAudio()
 {
 }
 
+bool ComponentAudio::Update(float dt)
+{
+
+	return true;
+}
+
 bool ComponentAudio::Save(JSON_Object* component_obj)const
 {
 	return true;
