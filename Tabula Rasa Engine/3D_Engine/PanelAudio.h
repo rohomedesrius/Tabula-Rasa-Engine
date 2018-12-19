@@ -5,8 +5,6 @@
 #include "ImGui/imgui.h"
 #include "trDefs.h"
 
-#include <list>
-
 #include "trTimer.h"
 
 class PanelAudio : public Panel
@@ -18,6 +16,9 @@ public:
 	void Draw() override;
 
 private:
-	const char* go_names[];
+	const char* go_names[100];
+	int current_emitter = 0;
+	int current_listener = 0;
+	int bank_current = 0;
 };
 #endif
