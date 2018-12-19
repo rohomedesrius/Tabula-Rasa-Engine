@@ -112,6 +112,11 @@ void FirulWwise::CleanUpFWw()
 
 }
 
+void FirulWwise::ProcessAudio()
+{
+	AK::SoundEngine::RenderAudio();
+}
+
 // Wwise Related ================================================================================================
 
 #ifdef WIN32

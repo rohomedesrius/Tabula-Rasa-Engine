@@ -30,7 +30,8 @@ bool trAudio::Update(float dt)
 
 bool trAudio::PostUpdate(float dt)
 {
-	//FirulWwise::RenderAudio();
+	//FirulWwise::RenderFirul();
+	return true;
 }
 bool trAudio::CleanUp()
 {
