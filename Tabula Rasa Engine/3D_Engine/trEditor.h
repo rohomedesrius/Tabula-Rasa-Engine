@@ -15,7 +15,6 @@ class PanelInspector;
 class PanelHierarchy;
 class PanelResources;
 class PanelControl;
-class PanelAudio;
 
 class Mesh;
 class Texture;
@@ -58,7 +57,6 @@ public:
 	PanelHierarchy* hierarchy = nullptr;
 	PanelResources* resources = nullptr;
 	PanelControl* control = nullptr;
-	PanelAudio* audio = nullptr;
 
 	ImGuizmo::MODE guizmo_mode = ImGuizmo::MODE::WORLD;
 

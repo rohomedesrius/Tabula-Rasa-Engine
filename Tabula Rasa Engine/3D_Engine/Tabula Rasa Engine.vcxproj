@@ -72,7 +72,6 @@
     <ClCompile Include="MathGeoLib\Math\TransformOps.cpp" />
     <ClCompile Include="MathGeoLib\Time\Clock.cpp" />
     <ClCompile Include="MeshImporter.cpp" />
-    <ClCompile Include="PanelAudio.cpp" />
     <ClCompile Include="PanelControl.cpp" />
     <ClCompile Include="PanelHierarchy.cpp" />
     <ClCompile Include="mmgr\mmgr.cpp" />
@@ -258,7 +257,6 @@
     <ClInclude Include="MathGeoLib\Math\TransformOps.h" />
     <ClInclude Include="MathGeoLib\Time\Clock.h" />
     <ClInclude Include="MeshImporter.h" />
-    <ClInclude Include="PanelAudio.h" />
     <ClInclude Include="PanelControl.h" />
     <ClInclude Include="pcg\pcg_basic.h" />
     <ClInclude Include="trAudio.h" />

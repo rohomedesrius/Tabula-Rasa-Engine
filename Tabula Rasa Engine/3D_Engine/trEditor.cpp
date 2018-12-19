@@ -14,7 +14,6 @@
 #include "PanelHierarchy.h"
 #include "PanelResources.h"
 #include "PanelControl.h"
-#include "PanelAudio.h"
 
 #include "GameObject.h"
 
@@ -120,8 +119,6 @@ bool trEditor::Start()
 	hierarchy = new PanelHierarchy();
 	resources = new PanelResources();
 	control = new PanelControl();
-	audio = new PanelAudio();
-
 	panels.push_back(about);
 	panels.push_back(config);
 	panels.push_back(console);
@@ -129,7 +126,6 @@ bool trEditor::Start()
 	panels.push_back(hierarchy);
 	panels.push_back(resources);
 	panels.push_back(control);
-	panels.push_back(audio);
 
 	return true;
 }
@@ -196,9 +192,6 @@ bool trEditor::Update(float dt)
 
 			if (ImGui::MenuItem("Assets", "4"))
 				resources->TurnActive();
-
-			if (ImGui::MenuItem("Audio", "5"))
-				audio->TurnActive();
 
 			if (ImGui::MenuItem("Inspector", "I"))
 				inspector->TurnActive();
