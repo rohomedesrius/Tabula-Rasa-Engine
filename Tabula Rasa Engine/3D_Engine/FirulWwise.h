@@ -53,20 +53,10 @@ namespace AK
 // FirulWwise
 namespace FirulWwise
 {
-	//WWise stuff
+
 	bool InitFWw();
 	void CleanUpFWw();
+
 }
 
-//Emitter class
-class AKEmitter {
-public:
-	AKEmitter(const char* _name, unsigned int _id);
-	~AKEmitter();
-
-private:
-	AkGameObjectID e_id;
-	const char* e_name = nullptr;
-	AkVector e_pos;
-};
 #endif
