@@ -58,7 +58,7 @@ namespace FirulWwise
 	//WWise stuff
 	bool InitFWw();
 	void CleanUpFWw();
-	void ProcessAudio();
+	void RenderAudio() { AK::SoundEngine::RenderAudio(); }
 }
 
 //EMITTER ===========================================================================================================
