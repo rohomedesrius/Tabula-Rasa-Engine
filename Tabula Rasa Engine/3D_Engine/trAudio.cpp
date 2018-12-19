@@ -53,3 +53,27 @@ bool trAudio::InitWwise()
 {
 	return true;
 }
+
+bool trAudio::LoadSoundBank(const char* bank_path)
+{
+	if (bank_path != nullptr)
+	{
+		std::list<const char*>::const_iterator it = loaded_banks.cbegin();
+
+		while (it != loaded_banks.cend())
+		{
+			if ((it._Ptr->_Myval) == bank_path)
+			{
+				TR_LOG("");
+				TR_LOG("FirulWwise: SoundBank already Loaded");
+				return false;
+			}
+			it++;
+		}
+
+		FirulWManager::LoadSoundBank(bank_path);
+
+		loaded_banks.push_back(bank_path);
+	}
+	
+}

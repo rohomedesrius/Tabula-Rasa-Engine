@@ -37,7 +37,12 @@ void PanelAudio::Draw()
 
 	if (ImGui::CollapsingHeader("Listeners"))
 	{
-		ImGui::Combo("Main Listener", &go_current, go_names, i);
+		ImGui::Combo("Set Listener", &go_current, go_names, i);
+	}
+
+	if (ImGui::CollapsingHeader("Emitters"))
+	{
+		ImGui::Combo("Set Emitter", &go_current, go_names, i);
 	}
 
 	if (ImGui::CollapsingHeader("Volume"))
@@ -46,8 +51,7 @@ void PanelAudio::Draw()
 	}
 
 	//SoundBanks =======================================================
-
-	const char* banks_names[] = { "Main", "Music" };
+	const char* banks_names[] = { "Main.bnk", "Music.bnk" };
 	static int bank_current = 0;
 
 	if (ImGui::CollapsingHeader("SoundBanks"))
@@ -56,8 +60,22 @@ void PanelAudio::Draw()
 		
 		if (ImGui::Button("Load SoundBanks"))
 		{
-			FirulWManager::LoadBank("Main");
+			App->audio->LoadSoundBank(banks_names[bank_current]);
 		}
+	}
+
+	if (ImGui::CollapsingHeader("Test"))
+	{
+		if (ImGui::Button("Event 1"))
+		{
+			//AKEmitter::PlayEvent();
+		}
+
+		if (ImGui::Button("Event 2"))
+		{
+			//AKEmitter::PlayEvent();
+		}
+
 	}
 
 	ImGui::End();

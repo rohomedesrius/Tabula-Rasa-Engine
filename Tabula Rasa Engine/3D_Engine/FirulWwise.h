@@ -77,21 +77,9 @@ private:
 	AkVector e_pos;
 };
 
-// EVENTS ===========================================================================================================
-class AKEvent
-{
-public:
-	AKEvent();
-	~AKEvent();
-
-private:
-	const char* name = nullptr;
-};
-
 // MANAGER ===========================================================================================================
-
 namespace FirulWManager
 {
-	bool LoadBank(const char* bank_path);
+	bool LoadSoundBank(const char* bank_path);
 }
 #endif

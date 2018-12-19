@@ -76,6 +76,7 @@ int main(int argc, char* args[])
 			TR_LOG("START PHASE ===============================");
 			if (App->Start() == true)
 			{
+				TR_LOG("");
 				state = LOOP;
 				TR_LOG("UPDATE PHASE ===============================");
 			}

@@ -23,8 +23,6 @@ public:
 	bool Load(const JSON_Object* component_obj);
 
 private:
-
-	AKEvent* event_queue[];
 };
 
 #endif // __COMPONENT_AUDIO_H__

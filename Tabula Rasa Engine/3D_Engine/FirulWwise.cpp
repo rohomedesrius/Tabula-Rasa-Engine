@@ -1,5 +1,6 @@
 #include "FirulWwise.h"
 #include "trDefs.h"
+#include "trLog.h"
 
 #include <assert.h>
 
@@ -95,7 +96,7 @@ bool FirulWwise::InitFWw(const wchar_t* banks_directory)
 	AK::StreamMgr::SetCurrentLanguage(AKTEXT("English(US)"));
 
 	//Load Init Soundbank (default)------
-	FirulWManager::LoadBank("Init.bnk");
+	FirulWManager::LoadSoundBank("Init.bnk");
 
 	return ret;
 }
@@ -174,25 +175,22 @@ void AKEmitter::StopEvent()
 
 }
 
-// EVENTS =======================================================================================================
-
-AKEvent::AKEvent()
-{
-}
-
-AKEvent::~AKEvent()
-{
-}
-
 // MANAGER ======================================================================================================
 
-bool FirulWManager::LoadBank(const char* bank_path)
+bool FirulWManager::LoadSoundBank(const char* bank_path)
 {
+	TR_LOG("");
+
 	AkBankID bank_id;
 	AKRESULT success = AK::SoundEngine::LoadBank(bank_path, AK_DEFAULT_POOL_ID, bank_id);
 	
-	if (!success)
+	if (success == AK_Fail)
+	{
+		TR_LOG("FirulWwise: Couldn't load %s SoundBank", bank_path);
 		return false;
+	}
+
+	TR_LOG("FirulWwise: %s SoundBank Loaded", bank_path);
 
 	return true;
 }
