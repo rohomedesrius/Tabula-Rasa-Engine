@@ -138,7 +138,8 @@ void AK::VirtualFreeHook(void * in_pMemAddress, size_t in_size, DWORD in_dwFreeT
 
 #endif
 
-// EMITTER =======================================================================================================
+// Emitter =======================================================================================================
+
 AKEmitter::AKEmitter(const char* _name, unsigned int _id): e_name(_name), e_id(_id)
 {
 	e_pos.Zero();
@@ -158,14 +159,4 @@ void AKEmitter::PlayEvent()
 void AKEmitter::StopEvent()
 {
 
-}
-
-// EVENTS =======================================================================================================
-
-AKEvent::AKEvent()
-{
-}
-
-AKEvent::~AKEvent()
-{
 }
