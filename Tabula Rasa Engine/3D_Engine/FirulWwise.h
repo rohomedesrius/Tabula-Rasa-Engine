@@ -50,7 +50,7 @@ namespace AK
 #endif
 }
 
-// EVENTS ===========================================================================================================
+
 
 // FirulWwise
 namespace FirulWwise
@@ -61,12 +61,12 @@ namespace FirulWwise
 	void RenderAudio() { AK::SoundEngine::RenderAudio(); }
 }
 
-//Emitter class
+//EMITTER ===========================================================================================================
 class AKEmitter {
 public:
 	AKEmitter(const char* _name, unsigned int _id);
 	~AKEmitter();
-
+	 
 	//Events 
 	void PlayEvent();
 	void StopEvent();
@@ -75,5 +75,16 @@ private:
 	AkGameObjectID e_id;
 	const char* e_name = nullptr;
 	AkVector e_pos;
+};
+
+// EVENTS ===========================================================================================================
+class AKEvent
+{
+public:
+	AKEvent();
+	~AKEvent();
+
+private:
+	const char* name = nullptr;
 };
 #endif
