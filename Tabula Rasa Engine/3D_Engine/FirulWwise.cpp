@@ -137,3 +137,16 @@ void AK::VirtualFreeHook(void * in_pMemAddress, size_t in_size, DWORD in_dwFreeT
 }
 
 #endif
+
+// Emitter =======================================================================================================
+
+AKEmitter::AKEmitter(const char* _name, unsigned int _id): e_name(_name), e_id(_id)
+{
+	e_pos.Zero();
+	AK::SoundEngine::RegisterGameObj(e_id, e_name);
+}
+
+AKEmitter::~AKEmitter()
+{
+	AK::SoundEngine::UnregisterGameObj(e_id);
+}
