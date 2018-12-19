@@ -8,13 +8,3 @@ ComponentAudio::ComponentAudio(GameObject* embedded_game_object) :
 ComponentAudio::~ComponentAudio()
 {
 }
-
-bool ComponentAudio::Save(JSON_Object* component_obj)const
-{
-	return true;
-}
-
-bool ComponentAudio::Load(const JSON_Object* component_obj)
-{
-	return true;
-}
