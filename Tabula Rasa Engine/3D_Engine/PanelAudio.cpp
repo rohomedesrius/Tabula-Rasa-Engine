@@ -11,7 +11,6 @@ PanelAudio::PanelAudio() : Panel("Audio", SDL_SCANCODE_5)
 
 PanelAudio::~PanelAudio()
 {
-
 }
 
 void PanelAudio::Draw()
@@ -19,23 +18,26 @@ void PanelAudio::Draw()
 	ImGui::Begin("Audio", &active, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoFocusOnAppearing);
 
 	GameObject* root = App->main_scene->GetRoot();
+	static int go_current = 0;
+	int i = 0;
 
 	if (root != nullptr) {
 		std::list<GameObject*>::const_iterator it = root->childs.begin();
 		while (it != root->childs.end()) {
-			go_names.push_back((*it)->GetName());
+			go_names[i] = (*it)->GetName();
 			it++;
+			i++;
 		}
 	}
 
 	if (ImGui::CollapsingHeader("Listeners"))
 	{
-		//ImGui::ListBox("Main Listener", 0, go_names.c_str());
+		ImGui::Combo("Main Listener", &go_current, go_names, i);
 	}
 
 	if (ImGui::CollapsingHeader("Volume"))
 	{
-
+		ImGui::Combo("Main Listener", &go_current, go_names, i);
 	}
 
 	ImGui::End();

@@ -18,6 +18,6 @@ public:
 	void Draw() override;
 
 private:
-	std::list<const char*> go_names;
+	const char* go_names[];
 };
 #endif
