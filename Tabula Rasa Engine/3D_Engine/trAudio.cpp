@@ -28,6 +28,10 @@ bool trAudio::Update(float dt)
 	return true;
 }
 
+bool trAudio::PostUpdate(float dt)
+{
+	//FirulWwise::RenderAudio();
+}
 bool trAudio::CleanUp()
 {
 	TR_LOG("trAudio: CleanUp");
