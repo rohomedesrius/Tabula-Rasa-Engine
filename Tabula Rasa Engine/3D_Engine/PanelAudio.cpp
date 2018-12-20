@@ -72,6 +72,11 @@ void PanelAudio::Draw()
 		{
 			App->audio->LoadSoundBank(banks_names[bank_current]);
 		}
+
+		if (ImGui::Button("Load"))
+		{
+			App->audio->UnloadSoundBank(banks_names[bank_current]);
+		}
 	}
 	
 	if (ImGui::CollapsingHeader("Test"))

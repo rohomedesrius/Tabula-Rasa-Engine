@@ -8,6 +8,8 @@
 
 //#include <AK\SoundEngine\Common\AkTypes.h>
 
+class AKEmitter;
+
 class trAudio : public trModule
 {
 public:
@@ -22,12 +24,14 @@ public:
 	bool CleanUp();
 
 	bool LoadSoundBank(const char* bank_path);
+	bool UnloadSoundBank(const char* bank_path);
 
 private:
 	bool InitWwise();
 
 public:
 	wchar_t* banks_directory = nullptr;
+	AKEmitter* main_emitter;
 
 private:
 	std::list<const char*> loaded_banks;

@@ -167,7 +167,10 @@ AKEmitter::~AKEmitter()
 
 void AKEmitter::PlayEvent()
 {
-
+	AkGameObjectID game_obj = 3;
+	AK::SoundEngine::RegisterGameObj(game_obj);
+	
+	AkPlayingID playing_id = AK::SoundEngine::PostEvent(L"Play_Sound_01", game_obj);
 }
 
 void AKEmitter::StopEvent()
@@ -177,7 +180,7 @@ void AKEmitter::StopEvent()
 
 // MANAGER ======================================================================================================
 
-bool FirulWManager::LoadSoundBank(const char* bank_path)
+AkBankID FirulWManager::LoadSoundBank(const char* bank_path)
 {
 	TR_LOG("");
 
@@ -191,6 +194,19 @@ bool FirulWManager::LoadSoundBank(const char* bank_path)
 	}
 
 	TR_LOG("FirulWwise: %s SoundBank Loaded", bank_path);
+
+	return bank_id;
+}
+
+bool FirulWManager::UnloadSoundBank(AkBankID bank_id)
+{
+	//AKRESULT success = AK::SoundEngine::UnloadBank( AK_DEFAULT_POOL_ID, bank_id);
+	//
+	//if (success == AK_Fail)
+	//{
+	//	TR_LOG("FirulWwise: Couldn't unload %s SoundBank", bank_path);
+	//	return false;
+	//}
 
 	return true;
 }

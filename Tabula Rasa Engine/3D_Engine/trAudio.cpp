@@ -75,5 +75,26 @@ bool trAudio::LoadSoundBank(const char* bank_path)
 
 		loaded_banks.push_back(bank_path);
 	}
-	
+	return true;
+}
+
+bool trAudio::UnloadSoundBank(const char* bank_path)
+{
+	if (bank_path != nullptr)
+	{
+		std::list<const char*>::const_iterator it = loaded_banks.cbegin();
+
+		while (it != loaded_banks.cend())
+		{
+			if ((it._Ptr->_Myval) == bank_path)
+			{
+				TR_LOG("");
+				loaded_banks.erase(it);
+			//	FirulWManager::UnloadSoundBank(bank_path);
+				TR_LOG("FirulWwise: %s SoundBank Unloaded", bank_path);
+				return false;
+			}
+			it++;
+		}
+	}
 }

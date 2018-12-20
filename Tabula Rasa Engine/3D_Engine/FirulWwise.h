@@ -80,6 +80,7 @@ private:
 // MANAGER ===========================================================================================================
 namespace FirulWManager
 {
-	bool LoadSoundBank(const char* bank_path);
+	AkBankID LoadSoundBank(const char* bank_path);
+	bool UnloadSoundBank(AkBankID bank_id);
 }
 #endif
