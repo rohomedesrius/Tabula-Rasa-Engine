@@ -1,6 +1,7 @@
 #include "trAudio.h"
 #include "FirulWwise.h"
 #include "trDefs.h"
+#include "GameObject.h"
 
 trAudio::trAudio()
 {
@@ -90,11 +91,39 @@ bool trAudio::UnloadSoundBank(const char* bank_path)
 			{
 				TR_LOG("");
 				loaded_banks.erase(it);
-			//	FirulWManager::UnloadSoundBank(bank_path);
+				FirulWManager::UnloadSoundBank(bank_path);
 				TR_LOG("FirulWwise: %s SoundBank Unloaded", bank_path);
 				return false;
 			}
 			it++;
 		}
 	}
+	TR_LOG("");
+	TR_LOG("FirulWwise: %s SoundBank not found", bank_path);
+}
+
+AKEmitter* trAudio::CreateEmitter(const char* name, GameObject* go)
+{
+	AKEmitter* emitter;
+
+	AkVector pos;
+	pos.Zero();
+	pos.X = go->GetTransform()->GetTranslation().x;
+	pos.Y = go->GetTransform()->GetTranslation().y;
+	pos.Z = go->GetTransform()->GetTranslation().z;
+
+	if (firul_emitters.empty())
+	{
+		emitter = FirulWManager::CreateEmitter(name, pos, 0);
+	}
+	else
+	{
+		unsigned int id = firul_emitters.back()->GetID();
+
+		emitter = FirulWManager::CreateEmitter(name, pos, id + 1);
+	}
+
+	firul_emitters.push_back(emitter);
+
+	return emitter;
 }

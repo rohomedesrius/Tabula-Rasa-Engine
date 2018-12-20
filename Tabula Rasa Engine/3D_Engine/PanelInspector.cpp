@@ -15,6 +15,7 @@
 #include "ComponentMaterial.h"
 #include "ComponentTransform.h"
 #include "ComponentCamera.h"
+#include "ComponentAudio.h"
 
 #include "ResourceMesh.h"
 #include "ResourceTexture.h"
@@ -195,6 +196,12 @@ void PanelInspector::Draw()
 				ImGui::Separator();
 				break;
 			}
+			case Component::component_type::COMPONENT_AUDIO:
+				if (ImGui::CollapsingHeader("AUDIO COMPONENT", ImGuiTreeNodeFlags_DefaultOpen)) {
+					ImGui::Text("TEST MADAFAKA");
+				}
+				ImGui::Separator();
+				break;
 			case Component::component_type::COMPONENT_UNKNOWN:
 				TR_LOG("Rly?");
 				break;

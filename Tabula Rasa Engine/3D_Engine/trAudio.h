@@ -9,6 +9,7 @@
 //#include <AK\SoundEngine\Common\AkTypes.h>
 
 class AKEmitter;
+class GameObject;
 
 class trAudio : public trModule
 {
@@ -26,15 +27,17 @@ public:
 	bool LoadSoundBank(const char* bank_path);
 	bool UnloadSoundBank(const char* bank_path);
 
+	AKEmitter* CreateEmitter(const char* name, GameObject* go);
+
 private:
 	bool InitWwise();
 
 public:
 	wchar_t* banks_directory = nullptr;
-	AKEmitter* main_emitter;
 
 private:
 	std::list<const char*> loaded_banks;
+	std::list<AKEmitter*> firul_emitters;
 };
 
 #endif //__AUDIO_H__

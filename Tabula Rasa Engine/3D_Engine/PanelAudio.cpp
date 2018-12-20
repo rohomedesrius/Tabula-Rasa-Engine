@@ -36,24 +36,23 @@ void PanelAudio::Draw()
 		}
 	}
 	
-	if (ImGui::CollapsingHeader("Listeners"))
-	{
-		ImGui::Combo("Set Listener", &current_listener, go_names, i);
-	
-		if (ImGui::Button("Set"))
-		{
-			//App->audio->LoadSoundBank(banks_names[bank_current]);
-		}
-	}
-	
 	if (ImGui::CollapsingHeader("Emitters"))
 	{
-		ImGui::Combo("Set Emitter", &current_emitter, go_names, i);
+		ImGui::Combo("Scene Gameobjects", &current_emitter, go_names, i);
 	
-		if (ImGui::Button("Set"))
+		if (ImGui::Button("Set as Emitter"))
 		{
 			//App->audio->LoadSoundBank(banks_names[bank_current]);
 		}
+
+		ImGui::SameLine();
+
+		if (ImGui::Button("Set as Listener"))
+		{
+			//App->audio->LoadSoundBank(banks_names[bank_current]);
+		}
+
+		//ImGui::ListBox();
 	}
 	
 	if (ImGui::CollapsingHeader("Volume"))
@@ -73,7 +72,9 @@ void PanelAudio::Draw()
 			App->audio->LoadSoundBank(banks_names[bank_current]);
 		}
 
-		if (ImGui::Button("Load"))
+		ImGui::SameLine();
+
+		if (ImGui::Button("Unload"))
 		{
 			App->audio->UnloadSoundBank(banks_names[bank_current]);
 		}

@@ -154,9 +154,8 @@ void AK::VirtualFreeHook(void * in_pMemAddress, size_t in_size, DWORD in_dwFreeT
 #endif
 
 // EMITTER =======================================================================================================
-AKEmitter::AKEmitter(const char* _name, unsigned int _id): e_name(_name), e_id(_id)
+AKEmitter::AKEmitter(const char* _name, AkVector pos, unsigned int _id): e_name(_name), e_pos(pos), e_id(_id)
 {
-	e_pos.Zero();
 	AK::SoundEngine::RegisterGameObj(e_id, e_name);
 }
 
@@ -180,7 +179,7 @@ void AKEmitter::StopEvent()
 
 // MANAGER ======================================================================================================
 
-AkBankID FirulWManager::LoadSoundBank(const char* bank_path)
+bool FirulWManager::LoadSoundBank(const char* bank_path)
 {
 	TR_LOG("");
 
@@ -194,19 +193,30 @@ AkBankID FirulWManager::LoadSoundBank(const char* bank_path)
 	}
 
 	TR_LOG("FirulWwise: %s SoundBank Loaded", bank_path);
-
-	return bank_id;
 }
 
-bool FirulWManager::UnloadSoundBank(AkBankID bank_id)
+bool FirulWManager::UnloadSoundBank(const char* bank_name)
 {
-	//AKRESULT success = AK::SoundEngine::UnloadBank( AK_DEFAULT_POOL_ID, bank_id);
-	//
-	//if (success == AK_Fail)
-	//{
-	//	TR_LOG("FirulWwise: Couldn't unload %s SoundBank", bank_path);
-	//	return false;
-	//}
+	AKRESULT success = AK::SoundEngine::UnloadBank( bank_name, NULL);
+	
+	if (success == AK_Fail)
+	{
+		TR_LOG("FirulWwise: Couldn't unload %s SoundBank", bank_name);
+		return false;
+	}
 
 	return true;
+}
+
+AKEmitter* FirulWManager::CreateEmitter(const char* name, AkVector pos, unsigned int id)
+{
+	AKEmitter* emitter = new AKEmitter(name, pos, id);
+
+	if (id == 0)
+	{
+		AkGameObjectID listener_id = id;
+		AK::SoundEngine::SetDefaultListeners(&listener_id, 1);
+	}
+
+	return emitter;
 }

@@ -64,12 +64,15 @@ namespace FirulWwise
 //EMITTER ===========================================================================================================
 class AKEmitter {
 public:
-	AKEmitter(const char* _name, unsigned int _id);
+	AKEmitter(const char* _name, AkVector pos, unsigned int _id);
 	~AKEmitter();
 	 
 	//Events 
 	void PlayEvent();
 	void StopEvent();
+
+	//Getter
+	AkGameObjectID GetID() { return e_id; }
 
 private:
 	AkGameObjectID e_id;
@@ -80,7 +83,9 @@ private:
 // MANAGER ===========================================================================================================
 namespace FirulWManager
 {
-	AkBankID LoadSoundBank(const char* bank_path);
-	bool UnloadSoundBank(AkBankID bank_id);
+	bool LoadSoundBank(const char* bank_path);
+	bool UnloadSoundBank(const char* bank_name);
+
+	AKEmitter* CreateEmitter(const char* name, AkVector pos, unsigned int id);
 }
 #endif
