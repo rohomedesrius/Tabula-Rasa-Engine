@@ -50,7 +50,6 @@ void PanelAudio::Draw()
 			ComponentAudio* temp_comp = AddComponentAudio(current_emitter);
 
 			temp_comp->SetEmitter(temp_emit); 
-			temp_comp->SetAudioCompType(MUSIC);
 		}
 
 		ImGui::SameLine();
@@ -64,19 +63,21 @@ void PanelAudio::Draw()
 			ComponentAudio* temp_comp = AddComponentAudio(current_emitter);
 
 			temp_comp->SetEmitter(temp_emit);
-			temp_comp->SetAudioCompType(MUSIC);
 		}
-
-		//ImGui::ListBox();
 	}
 	
 	if (ImGui::CollapsingHeader("Volume"))
 	{
 		
 	}
+
+	if (ImGui::CollapsingHeader("Background music"))
+	{
+
+	}
 	
 	////SoundBanks =======================================================
-	const char* banks_names[] = { "Main.bnk", "Music.bnk", "Test.bnk" };
+	const char* banks_names[] = { "Test.bnk" };
 	
 	if (ImGui::CollapsingHeader("SoundBanks"))
 	{

@@ -55,7 +55,7 @@ private:
 	GameObject* parent = nullptr;
 	ComponentTransform* transform = nullptr; //Always should have one
 	UID uuid = 0u;
-
+	
 public:
 
 	AABB bounding_box;

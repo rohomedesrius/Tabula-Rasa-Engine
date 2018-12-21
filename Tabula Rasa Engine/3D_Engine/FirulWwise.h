@@ -76,11 +76,14 @@ public:
 
 	//Getter
 	AkGameObjectID GetID() { return e_id; }
+	bool IsListener() { return listener; }
+	bool SetListener(bool set) { return listener = set; }
 
 private:
 	AkGameObjectID e_id;
 	const char* e_name = nullptr;
 	AkVector e_pos;
+	bool listener = false;
 };
 
 // MANAGER ===========================================================================================================

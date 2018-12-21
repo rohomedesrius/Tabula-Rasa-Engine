@@ -124,6 +124,8 @@ AKEmitter* trAudio::CreateEmitter(const char* name, GameObject* go, bool is_list
 		emitter = FirulWManager::CreateEmitter(name, pos, id + 1, is_listener);
 	}
 
+	emitter->SetListener(is_listener);
+
 	firul_emitters.push_back(emitter);
 
 	return emitter;

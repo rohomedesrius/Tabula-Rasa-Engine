@@ -236,11 +236,12 @@ AKEmitter* FirulWManager::CreateEmitter(const char* name, AkVector pos, unsigned
 	}
 	else
 	{
-		AkGameObjectID listener_id = id;
-		AkGameObjectID go_emitter_id = emitter->GetID();
+		AkGameObjectID emitter_id = id;
+		AkGameObjectID go_id = emitter->GetID();
 
-		AK::SoundEngine::SetListeners(listener_id, &go_emitter_id, 2);
+		AK::SoundEngine::SetListeners(emitter_id, &go_id, 2);
 	}
 
 	return emitter;
 }
+

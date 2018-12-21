@@ -7,12 +7,6 @@
 #include <string>
 #include <vector>
 
-enum COMP_TYPE
-{
-	MUSIC,
-	LISTENER
-};
-
 class AudioEvent
 {
 public:
@@ -36,7 +30,6 @@ public:
 
 	bool Update(float dt);
 
-	void SetAudioCompType(COMP_TYPE type);
 	void CreateAudioEvent(const char* name);
 	void SetEmitter(AKEmitter* new_emitter);
 
@@ -45,8 +38,6 @@ public:
 	bool Load(const JSON_Object* component_obj);
 
 private:
-
-	COMP_TYPE audio_comp_type = MUSIC;
 
 	AudioEvent* audio_event = nullptr;
 

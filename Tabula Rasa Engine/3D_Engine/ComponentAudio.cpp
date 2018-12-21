@@ -14,18 +14,10 @@ bool ComponentAudio::Update(float dt)
 {
 	if (App->IsRunTime())
 	{
-		if (audio_comp_type == MUSIC)
-		{
-			emitter->PlayEvent("Play");
-		}
+		emitter->PlayEvent("Play");
 	}
 	
 	return true;
-}
-
-void ComponentAudio::SetAudioCompType(COMP_TYPE type)
-{
-	audio_comp_type = type;
 }
 
 void ComponentAudio::CreateAudioEvent(const char * name)
