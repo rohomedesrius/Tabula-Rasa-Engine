@@ -53,6 +53,9 @@ bool trMainScene::Start()
 	grid = new PGrid();
 	grid->axis = true;
 
+	GameObject* helper = new GameObject("Helper", root);
+	helper->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
+	
 	return true;
 }
 
@@ -70,6 +73,7 @@ bool trMainScene::PreUpdate(float dt)
 
 bool trMainScene::Update(float dt)
 {
+	root->Update(dt);
 	return true;
 }
 

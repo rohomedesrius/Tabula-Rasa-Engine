@@ -65,6 +65,13 @@ bool GameObject::PreUpdate(float dt)
 // ---------------------------------------------------------
 bool GameObject::Update(float dt)
 {
+	for (std::list<Component*>::iterator it = components.begin(); it != components.end(); it++)
+		(*it)->Update(dt);
+
+	for (std::list<GameObject*>::iterator son = childs.begin(); son != childs.end(); son++)
+	{
+		(*son)->Update(dt);
+	}
 	return true;
 }
 
