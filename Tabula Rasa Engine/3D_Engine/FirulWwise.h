@@ -69,7 +69,9 @@ public:
 	 
 	//Events 
 	void PlayEvent();
-	void StopEvent();
+	void PlayEvent(unsigned long id);
+	void PauseEvent(const char* name);
+	void StopEvent(const char* name);
 
 	//Getter
 	AkGameObjectID GetID() { return e_id; }

@@ -176,9 +176,21 @@ void AKEmitter::PlayEvent()
 	AkPlayingID playing_id = AK::SoundEngine::PostEvent(L"Play_Sound_01", game_obj);
 }
 
-void AKEmitter::StopEvent()
+void AKEmitter::PlayEvent(unsigned long id)
 {
+	AK::SoundEngine::RegisterGameObj(id);
 
+	AkPlayingID playing_id = AK::SoundEngine::PostEvent(L"Play_Sound_01", id);
+}
+
+void AKEmitter::PauseEvent(const char * name)
+{
+	AK::SoundEngine::ExecuteActionOnEvent(name, AK::SoundEngine::AkActionOnEventType_Pause);
+}
+
+void AKEmitter::StopEvent(const char* name)
+{
+	AK::SoundEngine::ExecuteActionOnEvent(name, AK::SoundEngine::AkActionOnEventType_Stop);
 }
 
 // MANAGER ======================================================================================================
