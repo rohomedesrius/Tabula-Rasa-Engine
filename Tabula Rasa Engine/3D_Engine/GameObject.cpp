@@ -337,4 +337,22 @@ void GameObject::DestroyGameObjectsIfNeeded()
 	}
 }
 
+GameObject* GameObject::FindGOByName(const char * name)
+{
+	std::list<GameObject*>::iterator item = childs.begin();
+
+	while (item != childs.end())
+	{
+		if (item._Ptr->_Myval->GetName() == name)
+		{
+			return item._Ptr->_Myval;
+		}
+
+		(*item)->FindGOByName(name);
+		item++;
+	}
+
+	return nullptr;
+}
+
 // ---------------------------------------------------------

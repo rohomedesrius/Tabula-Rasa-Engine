@@ -102,7 +102,7 @@ bool trAudio::UnloadSoundBank(const char* bank_path)
 	TR_LOG("FirulWwise: %s SoundBank not found", bank_path);
 }
 
-AKEmitter* trAudio::CreateEmitter(const char* name, GameObject* go)
+AKEmitter* trAudio::CreateEmitter(const char* name, GameObject* go, bool is_listener)
 {
 	AKEmitter* emitter;
 
@@ -114,13 +114,13 @@ AKEmitter* trAudio::CreateEmitter(const char* name, GameObject* go)
 
 	if (firul_emitters.empty())
 	{
-		emitter = FirulWManager::CreateEmitter(name, pos, 0);
+		emitter = FirulWManager::CreateEmitter(name, pos, 0, is_listener);
 	}
 	else
 	{
 		unsigned int id = firul_emitters.back()->GetID();
 
-		emitter = FirulWManager::CreateEmitter(name, pos, id + 1);
+		emitter = FirulWManager::CreateEmitter(name, pos, id + 1, is_listener);
 	}
 
 	firul_emitters.push_back(emitter);

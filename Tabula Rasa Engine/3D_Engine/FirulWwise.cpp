@@ -230,14 +230,20 @@ bool FirulWManager::UnloadSoundBank(const char* bank_name)
 	return true;
 }
 
-AKEmitter* FirulWManager::CreateEmitter(const char* name, AkVector pos, unsigned int id)
+AKEmitter* FirulWManager::CreateEmitter(const char* name, AkVector pos, unsigned int id, bool is_listener)
 {
 	AKEmitter* emitter = new AKEmitter(name, pos, id);
 
-	if (id == 0)
+	if (id == 0 && is_listener)
 	{
 		AkGameObjectID listener_id = id;
 		AK::SoundEngine::SetDefaultListeners(&listener_id, 1);
+	}
+	else
+	{
+		AkGameObjectID listener_id = id;
+		
+		//AK::SoundEngine::SetListeners(listener_id, emitter->GetID());
 	}
 
 	return emitter;

@@ -20,5 +20,8 @@ private:
 	int current_emitter = 0;
 	int current_listener = 0;
 	int bank_current = 0;
+
+private:
+	void AddComponentAudio(int current);
 };
 #endif

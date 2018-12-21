@@ -42,14 +42,14 @@ void PanelAudio::Draw()
 	
 		if (ImGui::Button("Set as Emitter"))
 		{
-			//App->audio->LoadSoundBank(banks_names[bank_current]);
+			AddComponentAudio(current_emitter);
 		}
 
 		ImGui::SameLine();
 
 		if (ImGui::Button("Set as Listener"))
 		{
-			//App->audio->LoadSoundBank(banks_names[bank_current]);
+			AddComponentAudio(current_emitter);
 		}
 
 		//ImGui::ListBox();
@@ -95,4 +95,17 @@ void PanelAudio::Draw()
 	}
 
 	ImGui::End();
+}
+
+void PanelAudio::AddComponentAudio(int current)
+{
+	GameObject* root = App->main_scene->GetRoot();
+
+	GameObject* go = root->FindGOByName(go_names[current]);
+
+	if (go != nullptr)
+	{
+		go->CreateComponent(Component::component_type::COMPONENT_AUDIO);
+	}
+		
 }

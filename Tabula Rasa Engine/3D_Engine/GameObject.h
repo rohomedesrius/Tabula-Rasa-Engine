@@ -46,6 +46,8 @@ public:
 
 	void DestroyGameObjectsIfNeeded();
 
+	GameObject* FindGOByName(const char* name);
+
 private:
 
 	bool active = false;
