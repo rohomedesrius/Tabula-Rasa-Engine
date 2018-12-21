@@ -170,19 +170,14 @@ AKEmitter::~AKEmitter()
 	AK::SoundEngine::UnregisterGameObj(e_id);
 }
 
-void AKEmitter::PlayEvent()
+void AKEmitter::PlayEvent(const char* name)
 {
-	AkGameObjectID game_obj = 3;
-	AK::SoundEngine::RegisterGameObj(game_obj);
-	
-	AkPlayingID playing_id = AK::SoundEngine::PostEvent(L"Play_Sound_01", game_obj);
+	AkPlayingID playing_id = AK::SoundEngine::PostEvent(name, e_id);
 }
 
 void AKEmitter::PlayEvent(unsigned long id)
 {
-	AK::SoundEngine::RegisterGameObj(id);
-
-	AkPlayingID playing_id = AK::SoundEngine::PostEvent(L"Play_Sound_01", id);
+	AkPlayingID playing_id = AK::SoundEngine::PostEvent(id, e_id);
 }
 
 void AKEmitter::PauseEvent(const char * name)
@@ -242,8 +237,9 @@ AKEmitter* FirulWManager::CreateEmitter(const char* name, AkVector pos, unsigned
 	else
 	{
 		AkGameObjectID listener_id = id;
-		
-		//AK::SoundEngine::SetListeners(listener_id, emitter->GetID());
+		AkGameObjectID go_emitter_id = emitter->GetID();
+
+		AK::SoundEngine::SetListeners(listener_id, &go_emitter_id, 2);
 	}
 
 	return emitter;

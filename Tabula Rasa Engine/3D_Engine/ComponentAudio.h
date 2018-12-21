@@ -5,6 +5,7 @@
 #include "Component.h"
 
 #include <string>
+#include <vector>
 
 enum COMP_TYPE
 {
@@ -17,12 +18,12 @@ class AudioEvent
 public:
 
 	std::string name = "";
-	bool is_playing = false;
+	bool rendering = false;
 
-	std::string state_group = "";
-	std::string state_a = "";
-	std::string state_b = "";
-	std::string* current_state = nullptr;
+	//std::string state_group = "";
+	//std::string state_a = "";
+	//std::string state_b = "";
+	//std::string* current_state = nullptr;
 
 	float transition = 0.0f;
 };
@@ -37,6 +38,7 @@ public:
 
 	void SetAudioCompType(COMP_TYPE type);
 	void CreateAudioEvent(const char* name);
+	void SetEmitter(AKEmitter* new_emitter);
 
 	//Scene Management
 	bool Save(JSON_Object* component_obj)const;
@@ -47,6 +49,10 @@ private:
 	COMP_TYPE audio_comp_type = MUSIC;
 
 	AudioEvent* audio_event = nullptr;
+
+	std::vector<AudioEvent*> posted_events;
+
+	AKEmitter* emitter = nullptr;
 };
 
 #endif // __COMPONENT_AUDIO_H__

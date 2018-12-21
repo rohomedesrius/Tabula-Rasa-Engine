@@ -4,6 +4,7 @@
 #include "trMainScene.h"
 #include "trApp.h"
 #include "trAudio.h"
+#include "ComponentAudio.h"
 
 #include "FirulWwise.h"
 
@@ -42,14 +43,28 @@ void PanelAudio::Draw()
 	
 		if (ImGui::Button("Set as Emitter"))
 		{
-			AddComponentAudio(current_emitter);
+			GameObject* temp = root->FindGOByName(go_names[current_emitter]);
+
+			AKEmitter* temp_emit = App->audio->CreateEmitter(go_names[current_emitter], temp, false);
+
+			ComponentAudio* temp_comp = AddComponentAudio(current_emitter);
+
+			temp_comp->SetEmitter(temp_emit); 
+			temp_comp->SetAudioCompType(MUSIC);
 		}
 
 		ImGui::SameLine();
 
 		if (ImGui::Button("Set as Listener"))
 		{
-			AddComponentAudio(current_emitter);
+			GameObject* temp = root->FindGOByName(go_names[current_emitter]);
+
+			AKEmitter* temp_emit = App->audio->CreateEmitter(go_names[current_emitter], temp, true);
+
+			ComponentAudio* temp_comp = AddComponentAudio(current_emitter);
+
+			temp_comp->SetEmitter(temp_emit);
+			temp_comp->SetAudioCompType(MUSIC);
 		}
 
 		//ImGui::ListBox();
@@ -61,7 +76,7 @@ void PanelAudio::Draw()
 	}
 	
 	////SoundBanks =======================================================
-	const char* banks_names[] = { "Main.bnk", "Music.bnk" };
+	const char* banks_names[] = { "Main.bnk", "Music.bnk", "Test.bnk" };
 	
 	if (ImGui::CollapsingHeader("SoundBanks"))
 	{
@@ -79,25 +94,11 @@ void PanelAudio::Draw()
 			App->audio->UnloadSoundBank(banks_names[bank_current]);
 		}
 	}
-	
-	if (ImGui::CollapsingHeader("Test"))
-	{
-		if (ImGui::Button("Event 1"))
-		{
-			//AKEmitter::PlayEvent();
-		}
-	
-		if (ImGui::Button("Event 2"))
-		{
-			//AKEmitter::PlayEvent();
-		}
-	
-	}
 
 	ImGui::End();
 }
 
-void PanelAudio::AddComponentAudio(int current)
+ComponentAudio* PanelAudio::AddComponentAudio(int current)
 {
 	GameObject* root = App->main_scene->GetRoot();
 
@@ -105,7 +106,10 @@ void PanelAudio::AddComponentAudio(int current)
 
 	if (go != nullptr)
 	{
-		go->CreateComponent(Component::component_type::COMPONENT_AUDIO);
+		ComponentAudio* comp = (ComponentAudio*)go->CreateComponent(Component::component_type::COMPONENT_AUDIO);
+
+		return comp;
 	}
-		
+
+	return nullptr;
 }

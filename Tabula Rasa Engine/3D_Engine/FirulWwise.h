@@ -68,7 +68,7 @@ public:
 	~AKEmitter();
 	 
 	//Events 
-	void PlayEvent();
+	void PlayEvent(const char* name);
 	void PlayEvent(unsigned long id);
 	void PauseEvent(const char* name);
 	void ResumeEvent(const char* name);

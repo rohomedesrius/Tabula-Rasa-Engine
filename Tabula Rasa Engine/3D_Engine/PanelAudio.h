@@ -7,6 +7,8 @@
 
 #include "trTimer.h"
 
+class ComponentAudio;
+
 class PanelAudio : public Panel
 {
 public:
@@ -22,6 +24,6 @@ private:
 	int bank_current = 0;
 
 private:
-	void AddComponentAudio(int current);
+	ComponentAudio* AddComponentAudio(int current);
 };
 #endif
