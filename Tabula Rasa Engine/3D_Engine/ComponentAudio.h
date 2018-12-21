@@ -23,6 +23,9 @@ public:
 	bool Load(const JSON_Object* component_obj);
 
 private:
+
+	COMP_TYPE audio_comp_type = MUSIC;
+
 };
 
 #endif // __COMPONENT_AUDIO_H__

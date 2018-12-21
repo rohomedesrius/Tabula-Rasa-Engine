@@ -71,6 +71,7 @@ public:
 	void PlayEvent();
 	void PlayEvent(unsigned long id);
 	void PauseEvent(const char* name);
+	void ResumeEvent(const char* name);
 	void StopEvent(const char* name);
 
 	//Getter

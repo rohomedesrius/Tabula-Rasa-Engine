@@ -103,6 +103,8 @@ bool FirulWwise::InitFWw(const wchar_t* banks_directory)
 
 void FirulWwise::CleanUpFWw()
 {
+	// Unregister GameObjects
+	AK::SoundEngine::UnregisterAllGameObj();
 
 #ifndef AK_OPTIMIZED
 
@@ -156,8 +158,8 @@ void AK::VirtualFreeHook(void * in_pMemAddress, size_t in_size, DWORD in_dwFreeT
 // EMITTER =======================================================================================================
 AKEmitter::AKEmitter(const char* _name, AkVector pos, unsigned int _id): e_name(_name), e_pos(pos), e_id(_id)
 {
-	AKRESULT result = AK::SoundEngine::RegisterGameObj(e_id, e_name);
-	if (result != AK_Success)
+	AKRESULT success = AK::SoundEngine::RegisterGameObj(e_id, e_name);
+	if (success != AK_Success)
 	{
 		assert(!"FirulWwise - Error registering GameObject!");
 	}
@@ -187,6 +189,12 @@ void AKEmitter::PauseEvent(const char * name)
 {
 	AK::SoundEngine::ExecuteActionOnEvent(name, AK::SoundEngine::AkActionOnEventType_Pause);
 }
+
+void AKEmitter::ResumeEvent(const char * name)
+{
+	AK::SoundEngine::ExecuteActionOnEvent(name, AK::SoundEngine::AkActionOnEventType_Resume);
+}
+
 
 void AKEmitter::StopEvent(const char* name)
 {
