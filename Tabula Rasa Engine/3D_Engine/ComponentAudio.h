@@ -39,8 +39,6 @@ public:
 
 private:
 
-	AudioEvent* audio_event = nullptr;
-
 	std::vector<AudioEvent*> posted_events;
 
 	AKEmitter* emitter = nullptr;

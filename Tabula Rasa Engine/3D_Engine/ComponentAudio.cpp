@@ -14,7 +14,14 @@ bool ComponentAudio::Update(float dt)
 {
 	if (App->IsRunTime())
 	{
-		emitter->PlayEvent("Play");
+		for (std::vector<AudioEvent*>::iterator it = posted_events.begin(); it != posted_events.end(); it++)
+		{
+			if ((*it)->rendering == false)
+			{
+				(*it)->rendering = true;
+				emitter->PlayEvent((*it)->name.c_str());
+			}
+		}
 	}
 	
 	return true;
@@ -25,7 +32,7 @@ void ComponentAudio::CreateAudioEvent(const char * name)
 	AudioEvent* new_event = new AudioEvent();
 	new_event->name = name;
 
-	audio_event = new_event;
+	posted_events.push_back(new_event);
 }
 
 bool ComponentAudio::Save(JSON_Object* component_obj)const

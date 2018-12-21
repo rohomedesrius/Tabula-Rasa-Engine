@@ -49,6 +49,7 @@ void PanelAudio::Draw()
 
 			ComponentAudio* temp_comp = AddComponentAudio(current_emitter);
 
+			temp_comp->CreateAudioEvent("Play"); // Needs Editor
 			temp_comp->SetEmitter(temp_emit); 
 		}
 
