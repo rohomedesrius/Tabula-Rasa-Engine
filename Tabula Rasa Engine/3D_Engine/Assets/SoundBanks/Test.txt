@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1256202815	Play			\Default Work Unit\Play	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	592244768	Rising_NO_MIDI_MIX	C:\Users\roger\Documents\WwiseProjects\Engines\.cache\Windows\SFX\Rising_NO_MIDI_MIX_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Rising_NO_MIDI_MIX		6911936
+
