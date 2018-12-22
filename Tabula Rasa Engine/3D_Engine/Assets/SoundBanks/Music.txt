@@ -1,5 +1,8 @@
 Event	ID	Name			Wwise Object Path	Notes
+	452547817	Stop_All			\Default Work Unit\Stop_All	
 	1256202815	Play			\Default Work Unit\Play	
+	3679762312	Resume_All			\Default Work Unit\Resume_All	
+	3864097025	Pause_All			\Default Work Unit\Pause_All	
 
 State Group	ID	Name			Wwise Object Path	Notes
 	3650723969	Background			\Default Work Unit\Background	

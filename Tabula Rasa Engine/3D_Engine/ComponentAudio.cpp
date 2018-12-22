@@ -68,7 +68,6 @@ bool ComponentAudio::Update(float dt)
 		if (was_playing)
 		{
 			emitter->StopAllEvents();
-			posted_events.clear();
 			was_playing = false;
 		}
 	}
