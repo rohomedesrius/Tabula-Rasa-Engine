@@ -26,11 +26,11 @@
 			<IncludedMemoryFiles>
 				<File Id="287686358" Language="SFX">
 					<ShortName>Pixel.wav</ShortName>
-					<Path>SFX\Pixel_56D34C19.wem</Path>
+					<Path>SFX\Pixel_8956FC97.wem</Path>
 				</File>
 				<File Id="293252674" Language="SFX">
 					<ShortName>Darling.wav</ShortName>
-					<Path>SFX\Darling_56D34C19.wem</Path>
+					<Path>SFX\Darling_8956FC97.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

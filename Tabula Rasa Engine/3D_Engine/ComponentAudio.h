@@ -22,13 +22,12 @@ public:
 	std::string name = "Play";
 	bool rendering = false;
 
-	// TMP hardcoded
 	std::string state_group = "Background";
 	std::string state_a = "SongA";
 	std::string state_b = "SongB";
-	std::string* current_state = &state_a;
+	std::string* current_state = nullptr;
 
-	float transition = 0.0f;
+	float transition = 5.0f;
 };
 
 class ComponentAudio : public Component
@@ -48,7 +47,7 @@ public:
 
 private:
 	
-	DEMONSTRATION_TYPE demo_type = NONE;
+	DEMONSTRATION_TYPE demo_type = MUSIC;
 
 	std::vector<AudioEvent*> posted_events;
 

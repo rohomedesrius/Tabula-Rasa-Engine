@@ -14,6 +14,6 @@ Custom State	ID	Name	State Group	Owner		Notes
 	666958720	SongA	Background	\Actor-Mixer Hierarchy\Default Work Unit\Darling		
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	287686358	Pixel	C:\Users\PcCom\Documents\WwiseProjects\BackgroundMusic\.cache\Windows\SFX\Pixel_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pixel		3759148
-	293252674	Darling	C:\Users\PcCom\Documents\WwiseProjects\BackgroundMusic\.cache\Windows\SFX\Darling_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Darling		5632516
+	287686358	Pixel	C:\Users\PcCom\Documents\WwiseProjects\BackgroundMusic\.cache\Windows\SFX\Pixel_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pixel		3759148
+	293252674	Darling	C:\Users\PcCom\Documents\WwiseProjects\BackgroundMusic\.cache\Windows\SFX\Darling_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\Darling		5632516
 

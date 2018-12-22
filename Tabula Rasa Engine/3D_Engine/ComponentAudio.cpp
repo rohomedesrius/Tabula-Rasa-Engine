@@ -15,13 +15,45 @@ bool ComponentAudio::Update(float dt)
 	if (App->IsRunTime())
 	{
 		was_playing = true;
-
 		for (std::vector<AudioEvent*>::iterator it = posted_events.begin(); it != posted_events.end(); it++)
 		{
-			if ((*it)->rendering == false)
+			if (demo_type == SFX)
 			{
-				(*it)->rendering = true;
-				emitter->PlayEvent((*it)->name.c_str());
+				if ((*it)->rendering == false)
+				{
+					(*it)->rendering = true;
+					emitter->PlayEvent((*it)->name.c_str());
+				}
+			}
+			else if (demo_type == MUSIC)
+			{
+				static trPerfTimer timer;
+
+				if ((*it)->rendering == false)
+				{
+					timer.Start();
+
+					(*it)->current_state = &(*it)->state_b;
+					(*it)->rendering = true;
+
+					emitter->PlayEvent((*it)->name.c_str());
+					emitter->SetState((*it)->state_group.c_str(), (*it)->current_state->c_str());
+				}
+				else
+				{
+					if (timer.ReadMs() / 1000 > (*it)->transition)
+					{
+						if (it._Getpnext == posted_events.end())
+							timer.Start();
+
+						if ((*it)->current_state == &(*it)->state_a)
+							(*it)->current_state = &(*it)->state_b;
+						else if ((*it)->current_state == &(*it)->state_b)
+							(*it)->current_state = &(*it)->state_a;
+
+						emitter->SetState((*it)->state_group.c_str(), (*it)->current_state->c_str());
+					}
+				}
 			}
 		}
 	}
