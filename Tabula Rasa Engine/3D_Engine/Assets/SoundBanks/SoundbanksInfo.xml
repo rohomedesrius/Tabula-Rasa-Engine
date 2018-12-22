@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="132">
 	<RootPaths>
-		<ProjectRoot>C:\Users\roger\Documents\WwiseProjects\Engines\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\roger\Documents\WwiseProjects\Engines\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\roger\Documents\GitHub\Tabula-Rasa-Engine\Tabula Rasa Engine\3D_Engine\Assets\SoundBanks\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\PcCom\Documents\WwiseProjects\BackgroundMusic\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\PcCom\Documents\WwiseProjects\BackgroundMusic\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\PcCom\Documents\GitHub\Tabula-Rasa-Engine\Tabula Rasa Engine\3D_Engine\Assets\SoundBanks\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\roger\Documents\WwiseProjects\Engines\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\PcCom\Documents\WwiseProjects\BackgroundMusic\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -16,17 +16,21 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3157003241" Language="SFX">
-			<ObjectPath>\SoundBanks\Default Work Unit\Test</ObjectPath>
-			<ShortName>Test</ShortName>
-			<Path>Test.bnk</Path>
+		<SoundBank Id="3991942870" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Music</ObjectPath>
+			<ShortName>Music</ShortName>
+			<Path>Music.bnk</Path>
 			<IncludedEvents>
 				<Event Id="1256202815" Name="Play" ObjectPath="\Events\Default Work Unit\Play"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
-				<File Id="592244768" Language="SFX">
-					<ShortName>Rising_NO_MIDI_MIX.wav</ShortName>
-					<Path>SFX\Rising_NO_MIDI_MIX_56D34C19.wem</Path>
+				<File Id="652697621" Language="SFX">
+					<ShortName>Emoticon.wav</ShortName>
+					<Path>SFX\Emoticon_8956FC97.wem</Path>
+				</File>
+				<File Id="922098358" Language="SFX">
+					<ShortName>Happiness.wav</ShortName>
+					<Path>SFX\Happiness_8956FC97.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
