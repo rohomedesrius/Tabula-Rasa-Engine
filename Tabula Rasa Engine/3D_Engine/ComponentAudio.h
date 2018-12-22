@@ -27,7 +27,7 @@ public:
 	std::string state_b = "SongB";
 	std::string* current_state = nullptr;
 
-	float transition = 5.0f;
+	float transition = 10.0f;
 };
 
 class ComponentAudio : public Component

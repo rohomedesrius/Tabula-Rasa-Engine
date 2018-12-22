@@ -15,6 +15,9 @@ bool ComponentAudio::Update(float dt)
 	if (App->IsRunTime())
 	{
 		was_playing = true;
+		static trPerfTimer timer;
+		static bool new_cicle = false;
+
 		for (std::vector<AudioEvent*>::iterator it = posted_events.begin(); it != posted_events.end(); it++)
 		{
 			if (demo_type == SFX)
@@ -27,7 +30,6 @@ bool ComponentAudio::Update(float dt)
 			}
 			else if (demo_type == MUSIC)
 			{
-				static trPerfTimer timer;
 
 				if ((*it)->rendering == false)
 				{
@@ -43,8 +45,7 @@ bool ComponentAudio::Update(float dt)
 				{
 					if (timer.ReadMs() / 1000 > (*it)->transition)
 					{
-						if (it._Getpnext == posted_events.end())
-							timer.Start();
+						new_cicle = true;
 
 						if ((*it)->current_state == &(*it)->state_a)
 							(*it)->current_state = &(*it)->state_b;
@@ -55,6 +56,11 @@ bool ComponentAudio::Update(float dt)
 					}
 				}
 			}
+		}
+		if (demo_type == MUSIC && new_cicle)
+		{
+			timer.Start();
+			new_cicle = false;
 		}
 	}
 	else
