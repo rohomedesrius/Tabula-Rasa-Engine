@@ -24,13 +24,13 @@
 				<Event Id="1256202815" Name="Play" ObjectPath="\Events\Default Work Unit\Play"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
-				<File Id="652697621" Language="SFX">
-					<ShortName>Emoticon.wav</ShortName>
-					<Path>SFX\Emoticon_8956FC97.wem</Path>
+				<File Id="287686358" Language="SFX">
+					<ShortName>Pixel.wav</ShortName>
+					<Path>SFX\Pixel_56D34C19.wem</Path>
 				</File>
-				<File Id="922098358" Language="SFX">
-					<ShortName>Happiness.wav</ShortName>
-					<Path>SFX\Happiness_8956FC97.wem</Path>
+				<File Id="293252674" Language="SFX">
+					<ShortName>Darling.wav</ShortName>
+					<Path>SFX\Darling_56D34C19.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

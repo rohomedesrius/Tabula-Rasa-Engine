@@ -78,7 +78,7 @@ void PanelAudio::Draw()
 	}
 	
 	////SoundBanks =======================================================
-	const char* banks_names[] = { "Test.bnk" };
+	const char* banks_names[] = { "Test.bnk", "Music.bnk" };
 	
 	if (ImGui::CollapsingHeader("SoundBanks"))
 	{

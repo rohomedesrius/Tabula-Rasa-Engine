@@ -10,10 +10,10 @@ State	ID	Name	State Group			Notes
 	778469119	SongA	Background			
 
 Custom State	ID	Name	State Group	Owner		Notes
-	10102805	SongB	Background	\Actor-Mixer Hierarchy\Default Work Unit\Emoticon		
-	1012019827	SongA	Background	\Actor-Mixer Hierarchy\Default Work Unit\Happiness		
+	547341276	SongB	Background	\Actor-Mixer Hierarchy\Default Work Unit\Pixel		
+	666958720	SongA	Background	\Actor-Mixer Hierarchy\Default Work Unit\Darling		
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	652697621	Emoticon	C:\Users\PcCom\Documents\WwiseProjects\BackgroundMusic\.cache\Windows\SFX\Emoticon_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emoticon		5299452
-	922098358	Happiness	C:\Users\PcCom\Documents\WwiseProjects\BackgroundMusic\.cache\Windows\SFX\Happiness_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\Happiness		5292064
+	287686358	Pixel	C:\Users\PcCom\Documents\WwiseProjects\BackgroundMusic\.cache\Windows\SFX\Pixel_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pixel		3759148
+	293252674	Darling	C:\Users\PcCom\Documents\WwiseProjects\BackgroundMusic\.cache\Windows\SFX\Darling_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Darling		5632516
 

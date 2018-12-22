@@ -74,7 +74,7 @@ public:
 	void ResumeEvent(const char* name);
 	void StopEvent(const char* name);
 	void StopAllEvents();
-
+	void SetState(const char* state_group, const char* state);
 	//Getter
 	AkGameObjectID GetID() { return e_id; }
 	bool IsListener() { return listener; }

@@ -201,6 +201,11 @@ void AKEmitter::StopAllEvents()
 	AK::SoundEngine::StopAll();
 }
 
+void AKEmitter::SetState(const char * state_group, const char * state)
+{
+	AK::SoundEngine::SetState(state_group, state);
+}
+
 // MANAGER ======================================================================================================
 bool FirulWManager::LoadSoundBank(const char* bank_path)
 {
