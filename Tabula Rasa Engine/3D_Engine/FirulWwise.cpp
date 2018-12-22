@@ -180,20 +180,20 @@ void AKEmitter::PlayEvent(unsigned long id)
 	AkPlayingID playing_id = AK::SoundEngine::PostEvent(id, e_id);
 }
 
-void AKEmitter::PauseEvent(const char * name)
+void AKEmitter::PauseAllEvent()
 {
-	AK::SoundEngine::ExecuteActionOnEvent(name, AK::SoundEngine::AkActionOnEventType_Pause);
+	AK::SoundEngine::PostEvent("Pause_All", (AkGameObjectID)-1);
 }
 
-void AKEmitter::ResumeEvent(const char * name)
+void AKEmitter::ResumeAllEvent()
 {
-	AK::SoundEngine::ExecuteActionOnEvent(name, AK::SoundEngine::AkActionOnEventType_Resume);
+	AK::SoundEngine::PostEvent("Resume_All", (AkGameObjectID)-1);
 }
 
 
 void AKEmitter::StopEvent(const char* name)
 {
-	AK::SoundEngine::ExecuteActionOnEvent(name, AK::SoundEngine::AkActionOnEventType_Stop);
+	AK::SoundEngine::PostEvent(name, AK::SoundEngine::AkActionOnEventType_Stop);
 }
 
 void AKEmitter::StopAllEvents()

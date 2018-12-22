@@ -49,7 +49,10 @@ void PanelControl::Draw()
 	ImGui::SameLine();
 
 	if (ImGui::Button("PAUSE"))
+	{
 		App->time_manager->PauseGameClock();
+		App->SetPaused(true);
+	}
 
 	ImGui::SameLine();
 

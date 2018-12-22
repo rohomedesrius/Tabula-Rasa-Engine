@@ -67,9 +67,11 @@ public:
 	void SetOrganization(const char* organization);
 	void SetVersion(const char* version);
 	void SetFpsCap(uint max_framerate);
+	void SetPaused(bool set);
 
 	void SwitchRunTime();
 	bool IsRunTime()const;
+	bool IsPaused()const;
 
 	// Load / Save
 	void Save();
@@ -125,6 +127,7 @@ private:
 	bool				want_to_save, want_to_load = false;
 
 	bool				run_time = false;
+	bool				paused = false;
 
 	//fps/ms
 	trTimer				ms_timer;

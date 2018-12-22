@@ -70,8 +70,8 @@ public:
 	//Events 
 	void PlayEvent(const char* name);
 	void PlayEvent(unsigned long id);
-	void PauseEvent(const char* name);
-	void ResumeEvent(const char* name);
+	void PauseAllEvent();
+	void ResumeAllEvent();
 	void StopEvent(const char* name);
 	void StopAllEvents();
 	void SetState(const char* state_group, const char* state);
