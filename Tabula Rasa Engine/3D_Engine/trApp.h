@@ -67,7 +67,7 @@ public:
 	void SetOrganization(const char* organization);
 	void SetVersion(const char* version);
 	void SetFpsCap(uint max_framerate);
-	void SetPaused(bool set);
+	void SetPaused();
 
 	void SwitchRunTime();
 	bool IsRunTime()const;

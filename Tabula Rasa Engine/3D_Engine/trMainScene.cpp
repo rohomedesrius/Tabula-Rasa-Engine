@@ -53,8 +53,12 @@ bool trMainScene::Start()
 	grid = new PGrid();
 	grid->axis = true;
 
-	GameObject* helper = new GameObject("Helper", root);
-	helper->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
+	GameObject* helper1 = new GameObject("Helper1", root);
+	helper1->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
+
+	GameObject* helper2 = new GameObject("Helper2", root);
+	helper2->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
+
 	
 	return true;
 }

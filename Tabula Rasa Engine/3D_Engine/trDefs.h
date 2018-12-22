@@ -2,6 +2,7 @@
 #define __TRDEFS_H__
 
 #include <stdio.h>
+#include "MathGeoLib/MathGeoLib.h"
 
 // Warning disabled ---
 #pragma warning( disable : 4577 ) // Warning that exceptions are disabled
