@@ -67,7 +67,10 @@ bool ComponentAudio::Update(float dt)
 	{
 		if (was_playing)
 		{
-			emitter->StopAllEvents();
+			for (std::vector<AudioEvent*>::iterator it = posted_events.begin(); it != posted_events.end(); it++)
+			{
+				emitter->StopEvent((*it)->name.c_str());
+			}
 			was_playing = false;
 		}
 	}
