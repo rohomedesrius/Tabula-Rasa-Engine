@@ -3,21 +3,30 @@
 
 #include "FirulWwise.h"
 #include "Component.h"
+#include "trPerfTimer.h"
 
 #include <string>
 #include <vector>
+
+enum DEMONSTRATION_TYPE
+{
+	SFX,
+	MUSIC,
+	NONE
+};
 
 class AudioEvent
 {
 public:
 
-	std::string name = "";
+	std::string name = "Play";
 	bool rendering = false;
 
-	//std::string state_group = "";
-	//std::string state_a = "";
-	//std::string state_b = "";
-	//std::string* current_state = nullptr;
+	// TMP hardcoded
+	std::string state_group = "Background";
+	std::string state_a = "SongA";
+	std::string state_b = "SongB";
+	std::string* current_state = &state_a;
 
 	float transition = 0.0f;
 };
@@ -38,6 +47,8 @@ public:
 	bool Load(const JSON_Object* component_obj);
 
 private:
+	
+	DEMONSTRATION_TYPE demo_type = NONE;
 
 	std::vector<AudioEvent*> posted_events;
 
