@@ -196,8 +196,12 @@ void AKEmitter::StopEvent(const char* name)
 	AK::SoundEngine::ExecuteActionOnEvent(name, AK::SoundEngine::AkActionOnEventType_Stop);
 }
 
-// MANAGER ======================================================================================================
+void AKEmitter::StopAllEvents()
+{
+	AK::SoundEngine::StopAll();
+}
 
+// MANAGER ======================================================================================================
 bool FirulWManager::LoadSoundBank(const char* bank_path)
 {
 	AkBankID bank_id;

@@ -73,6 +73,7 @@ public:
 	void PauseEvent(const char* name);
 	void ResumeEvent(const char* name);
 	void StopEvent(const char* name);
+	void StopAllEvents();
 
 	//Getter
 	AkGameObjectID GetID() { return e_id; }

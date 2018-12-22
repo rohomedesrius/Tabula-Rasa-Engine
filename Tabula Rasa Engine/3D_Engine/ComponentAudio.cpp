@@ -14,6 +14,8 @@ bool ComponentAudio::Update(float dt)
 {
 	if (App->IsRunTime())
 	{
+		was_playing = true;
+
 		for (std::vector<AudioEvent*>::iterator it = posted_events.begin(); it != posted_events.end(); it++)
 		{
 			if ((*it)->rendering == false)
@@ -21,6 +23,15 @@ bool ComponentAudio::Update(float dt)
 				(*it)->rendering = true;
 				emitter->PlayEvent((*it)->name.c_str());
 			}
+		}
+	}
+	else
+	{
+		if (was_playing)
+		{
+			emitter->StopAllEvents();
+			posted_events.clear();
+			was_playing = false;
 		}
 	}
 	
