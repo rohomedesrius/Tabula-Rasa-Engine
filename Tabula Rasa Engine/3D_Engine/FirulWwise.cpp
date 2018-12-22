@@ -163,6 +163,8 @@ AKEmitter::AKEmitter(const char* _name, AkVector pos, unsigned int _id): e_name(
 	{
 		assert(!"FirulWwise - Error registering GameObject!");
 	}
+
+	SetPosition(pos.X, pos.Y, pos.Z, 1, 0, 0, 0, 1, 0);
 }
 
 AKEmitter::~AKEmitter()
@@ -182,12 +184,12 @@ void AKEmitter::PlayEvent(unsigned long id)
 
 void AKEmitter::PauseAllEvent()
 {
-	AK::SoundEngine::PostEvent("Pause_All", (AkGameObjectID)-1);
+	AK::SoundEngine::PostEvent("Pause_All", AK_INVALID_GAME_OBJECT);
 }
 
 void AKEmitter::ResumeAllEvent()
 {
-	AK::SoundEngine::PostEvent("Resume_All", (AkGameObjectID)-1);
+	AK::SoundEngine::PostEvent("Resume_All", AK_INVALID_GAME_OBJECT);
 }
 
 
@@ -204,6 +206,48 @@ void AKEmitter::StopAllEvents()
 void AKEmitter::SetState(const char * state_group, const char * state)
 {
 	AK::SoundEngine::SetState(state_group, state);
+}
+
+void AKEmitter::SetPosition(float pos_x, float pos_y, float pos_z, float orient_front_x, float orient_front_y, float orient_front_z, float orient_top_x, float orient_top_y, float orient_top_z)
+{
+	AkVector vec_pos;
+	vec_pos.X = pos_x;
+	vec_pos.Y = pos_y;
+	vec_pos.Z = pos_z;
+
+	AkVector vec_ori_front;
+	vec_ori_front.X = orient_front_x;
+	vec_ori_front.Y = orient_front_y;
+	vec_ori_front.Z = orient_front_z;
+
+	AkVector vec_ori_top;
+	vec_ori_top.X = orient_top_x;
+	vec_ori_top.Y = orient_top_y;
+	vec_ori_top.Z = orient_top_z;
+
+	// length = sqrt((ax * ax) + (ay * ay) + (az * az)) 
+	float length_front = sqrt(pow(vec_ori_front.X, 2) + pow(vec_ori_front.Y, 2) + pow(vec_ori_front.Z, 2));
+	float length_top = sqrt(pow(vec_ori_top.X, 2) + pow(vec_ori_top.Y, 2) + pow(vec_ori_top.Z, 2));
+
+	//Normalize: x = ax/|a|
+	vec_ori_front.X = vec_ori_front.X / length_front;
+	vec_ori_front.Y = vec_ori_front.Y / length_front;
+	vec_ori_front.Z = vec_ori_front.Z / length_front;
+	vec_ori_top.X = vec_ori_top.X / length_top;
+	vec_ori_top.Y = vec_ori_top.Y / length_top;
+	vec_ori_top.Z = vec_ori_top.Z / length_top;
+
+	//Dot producto to check if they are orthogonals
+	if ((vec_ori_top.X*vec_ori_front.X + vec_ori_top.Y*vec_ori_front.Y + vec_ori_top.Z*vec_ori_front.Z) <= 0)
+	{
+		AkSoundPosition new_pos;
+		new_pos.SetPosition(vec_pos);
+		new_pos.SetOrientation(vec_ori_front, vec_ori_top);
+
+		AK::SoundEngine::SetPosition(e_id, new_pos);
+	}
+
+	e_pos = vec_pos;
 }
 
 // MANAGER ======================================================================================================

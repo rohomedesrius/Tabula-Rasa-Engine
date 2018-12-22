@@ -1,4 +1,6 @@
 #include "ComponentAudio.h"
+#include "ComponentTransform.h"
+#include "GameObject.h"
 #include "trApp.h"
 
 ComponentAudio::ComponentAudio(GameObject* embedded_game_object) :
@@ -89,6 +91,8 @@ bool ComponentAudio::Update(float dt)
 			was_playing = false;
 		}
 	}
+
+	ManagePosRot();
 	
 	return true;
 }
@@ -114,4 +118,21 @@ bool ComponentAudio::Load(const JSON_Object* component_obj)
 void ComponentAudio::SetEmitter(AKEmitter* new_emitter)
 {
 	emitter = new_emitter;
+}
+
+void ComponentAudio::ManagePosRot()
+{
+	GameObject* temp_go = GetEmbeddedObject();
+
+	if (temp_go != nullptr)
+	{
+		float3 current_pos = temp_go->GetTransform()->GetTranslation();
+		Quat current_rot = temp_go->GetTransform()->GetRotation();
+
+		float3 top = current_rot.Transform(float3(0, 1, 0));
+		float3 front = current_rot.Transform(float3(0, 0, 1));
+
+		emitter->SetPosition(current_pos.x, current_pos.y, current_pos.z, front.x, front.y, front.z, top.x, top.y, top.z);
+	}
+	
 }

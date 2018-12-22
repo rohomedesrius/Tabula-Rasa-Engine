@@ -45,6 +45,9 @@ public:
 	bool Save(JSON_Object* component_obj)const;
 	bool Load(const JSON_Object* component_obj);
 
+	//Position/Rotation Management
+	void ManagePosRot();
+
 private:
 	
 	DEMONSTRATION_TYPE demo_type = MUSIC;
