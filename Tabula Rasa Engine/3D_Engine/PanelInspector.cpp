@@ -197,11 +197,16 @@ void PanelInspector::Draw()
 				break;
 			}
 			case Component::component_type::COMPONENT_AUDIO:
+			{
+				ComponentAudio* audio_comp = (ComponentAudio*)(*it);
 				if (ImGui::CollapsingHeader("AUDIO COMPONENT", ImGuiTreeNodeFlags_DefaultOpen)) {
-					ImGui::Text("TEST MADAFAKA");
+					//ImGui::Combo("Emitter's events")
+
+
 				}
 				ImGui::Separator();
 				break;
+			}
 			case Component::component_type::COMPONENT_UNKNOWN:
 				TR_LOG("Rly?");
 				break;

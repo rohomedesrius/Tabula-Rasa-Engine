@@ -50,6 +50,8 @@ void PanelAudio::Draw()
 			ComponentAudio* temp_comp = AddComponentAudio(current_emitter);
 
 			temp_comp->CreateAudioEvent("Play"); // Needs Editor
+			temp_comp->CreateAudioEvent("Play_Spatial_Sound");
+
 			temp_comp->SetEmitter(temp_emit); 
 		}
 
@@ -78,7 +80,7 @@ void PanelAudio::Draw()
 	}
 	
 	////SoundBanks =======================================================
-	const char* banks_names[] = { "Music.bnk" };
+	const char* banks_names[] = { "Music.bnk", "Spatial_Sounds.bnk" };
 	
 	if (ImGui::CollapsingHeader("SoundBanks"))
 	{

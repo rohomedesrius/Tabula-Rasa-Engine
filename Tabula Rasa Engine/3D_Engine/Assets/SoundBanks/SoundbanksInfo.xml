@@ -16,6 +16,20 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
+		<SoundBank Id="3287411158" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Spatial_Sounds</ObjectPath>
+			<ShortName>Spatial_Sounds</ShortName>
+			<Path>Spatial_Sounds.bnk</Path>
+			<IncludedEvents>
+				<Event Id="313775518" Name="Play_Spatial_Sound" ObjectPath="\Events\Default Work Unit\Play_Spatial_Sound"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="139137932" Language="SFX">
+					<ShortName>SLS_Helico_PassBy_Overhead.wav</ShortName>
+					<Path>SFX\SLS_Helico_PassBy_Overhead_8956FC97.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
 		<SoundBank Id="3991942870" Language="SFX">
 			<ObjectPath>\SoundBanks\Default Work Unit\Music</ObjectPath>
 			<ShortName>Music</ShortName>

@@ -53,12 +53,12 @@ bool trMainScene::Start()
 	grid = new PGrid();
 	grid->axis = true;
 
-	GameObject* helper1 = new GameObject("Helper1", root);
+	GameObject* helper1 = new GameObject("Emitter", root);
 	helper1->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
 
-	GameObject* helper2 = new GameObject("Helper2", root);
-	helper2->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
-
+	//GameObject* helper2 = new GameObject("Effect_Area", root);
+	//helper2->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
+	//helper2->bounding_box = (AABB(float3(-200, -200, -200), float3(200, 200, 200)));
 	
 	return true;
 }
