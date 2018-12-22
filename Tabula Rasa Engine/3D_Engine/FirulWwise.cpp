@@ -237,17 +237,19 @@ void AKEmitter::SetPosition(float pos_x, float pos_y, float pos_z, float orient_
 	vec_ori_top.Y = vec_ori_top.Y / length_top;
 	vec_ori_top.Z = vec_ori_top.Z / length_top;
 
-	//Dot producto to check if they are orthogonals
+	//Dot product to check if they are orthogonals
 	if ((vec_ori_top.X*vec_ori_front.X + vec_ori_top.Y*vec_ori_front.Y + vec_ori_top.Z*vec_ori_front.Z) <= 0)
 	{
 		AkSoundPosition new_pos;
 		new_pos.SetPosition(vec_pos);
 		new_pos.SetOrientation(vec_ori_front, vec_ori_top);
 
-		AK::SoundEngine::SetPosition(e_id, new_pos);
+		if (this != nullptr)
+		{
+			e_pos = vec_pos;
+			AK::SoundEngine::SetPosition(e_id, new_pos);
+		}
 	}
-
-	e_pos = vec_pos;
 }
 
 // MANAGER ======================================================================================================
@@ -296,5 +298,10 @@ AKEmitter* FirulWManager::CreateEmitter(const char* name, AkVector pos, unsigned
 	}
 
 	return emitter;
+}
+
+void FirulWManager::ChangeVolume(const char* name, float value, AkGameObjectID id)
+{
+	AK::SoundEngine::SetRTPCValue(name, value, id);
 }
 

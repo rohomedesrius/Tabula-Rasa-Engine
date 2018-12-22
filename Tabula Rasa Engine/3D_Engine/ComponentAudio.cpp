@@ -132,7 +132,6 @@ void ComponentAudio::ManagePosRot()
 		float3 top = current_rot.Transform(float3(0, 1, 0));
 		float3 front = current_rot.Transform(float3(0, 0, 1));
 
-		emitter->SetPosition(current_pos.x, current_pos.y, current_pos.z, front.x, front.y, front.z, top.x, top.y, top.z);
+		emitter->SetPosition(-current_pos.x, current_pos.y, current_pos.z, -front.x, front.y, front.z, -top.x, top.y, top.z);
 	}
-	
 }

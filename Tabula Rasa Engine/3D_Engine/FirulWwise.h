@@ -96,5 +96,7 @@ namespace FirulWManager
 	bool UnloadSoundBank(const char* bank_name);
 
 	AKEmitter* CreateEmitter(const char* name, AkVector pos, unsigned int id, bool is_listener);
+
+	void ChangeVolume(const char* name, float value, AkGameObjectID id);
 }
 #endif
