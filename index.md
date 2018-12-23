@@ -2,9 +2,10 @@
 Tabula Rasa is a simple 3D Game Engine developed for educational purposes. Written in C++ and using OpenGL.  
 This is a forked version of the engine, [here](https://github.com/Wilhelman/Tabula-Rasa-Engine) you can find the link to the original engine. Our task was to integrate Wwise and use it in our 3D enviroment. We call this sub-system: FirulWwise.
 This project has been done by Roger Homedes and Samuel Navarro of Polytechnical University of Catalunya (Terrasa, Spain) for the subject Game Engines on September 2018.
-
+  
+---------------------------------------------------------------------------------
 ## The Developers
-
+---------------------------------------------------------------------------------
 **Roger Homedes**: [github.com/rohomedesrius](https://github.com/rohomedesrius)   
 ![](https://66.media.tumblr.com/35eb54fa29cbcb6ef6c12bd866cbb614/tumblr_pk7gn1xheT1vonij4o1_250.jpg)
 
@@ -34,7 +35,9 @@ This project has been done by Roger Homedes and Samuel Navarro of Polytechnical 
   
 * Memory Leak hunter  
 
-## Main Sub-System: *FirulWwise*
+---------------------------------------------------------------------------------
+## Main Sub-System: *FirulWwise* 
+---------------------------------------------------------------------------------
 
 FirulWwise is our library with the main purpose of integrating [Wwise 2018.2.4](https://www.audiokinetic.com/library/edge/?source=Help&id=welcome_to_wwise) in a fast way.  
 If you include FirulWwise into your visual studio project, you'll just need to add the following route: "$(ProjectDir)/AK/include" to your debugging directories inside your project properties.  
@@ -51,7 +54,9 @@ You need to call some functions in order to implement FirulWwise, those are:
 
 FirulWwise comes with the FirulWManager, which will help you to load and unload soundbanks, and create AKEmitters. AKEmitters are essential to build your scenes, they can be casted as Listeners or Emitters.
 
-## Author Demo scene with FirulWwise Walkthrough
+---------------------------------------------------------------------------------
+## TUTORIAL: Author Demo scene with FirulWwise Walkthrough  
+---------------------------------------------------------------------------------
 
 Once you run Tabula Rasa press **5** to open the Audio Panel if it's not open by default.  
 A small window with 3 tabs will pop up. The Soundbanks tab (by default open) allows you to load different Soundbanks, for the demo we will Load both Soundbanks.   
@@ -75,7 +80,6 @@ To create Emitters:
   
 Additionally, you can select **"City_emitter_2"** gameobject and write **"Play_Spatial_Sound_Thunder"** in the Event for an extra gameobject emitting sounds.  
   
----------------------------------------------------------------------------------
   
 Now, press **Play** button in the top of the window, you can toggle between **Pause/Continue** and **Stop**.  
 Warning! Starting and Pausing our Game Engine several times in a short period of time might cause a crash!    
@@ -84,7 +88,9 @@ Warning! Starting and Pausing our Game Engine several times in a short period of
   
 You have been shown most of the capabilities of FirulWwise!  
   
+---------------------------------------------------------------------------------
 ## License  
+---------------------------------------------------------------------------------
 Copyright 2018 Roger Homedes & Samuel Navarro
 
 Licensed under the [MIT License](https://github.com/rohomedesrius/Tabula-Rasa-Engine/blob/master/LICENSE).
