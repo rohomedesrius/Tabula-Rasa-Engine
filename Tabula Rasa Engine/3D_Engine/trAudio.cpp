@@ -44,6 +44,7 @@ bool trAudio::CleanUp()
 {
 	TR_LOG("trAudio: CleanUp");
 
+	delete(banks_directory);
 	RELEASE(banks_directory);
 
 	FirulWwise::CleanUpFWw();
