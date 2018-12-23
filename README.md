@@ -45,6 +45,9 @@ _Click again on Window->(any option) to close that window_
 FirulWwise is our library with the main purpose of integrating Wwise 2018.2.4 in a fast way.
 [Follow the Tutorial Walkthrough to see the Demo in execution](https://rohomedesrius.github.io/Tabula-Rasa-Engine/).
 
+### To have in mind:
+* If u Set an emitter with a wrong event name, it is not going to play the sound and it cant be reset. 
+
 ## New Team members
 _Homedes Rius, Roger's responsability and Github account_
 * Code
