@@ -60,15 +60,20 @@ void PanelControl::Draw()
 			button_label = "CONTINUE";
 
 			App->time_manager->PauseGameClock();
+			App->audio->PauseAudio();
 		}
 		else if (!App->IsPaused() && App->IsRunTime())
 		{
 			button_label = "PAUSE";
 			App->time_manager->ReStartGameClock();
+			App->audio->ResumeAudio();
 		}
 	}
 	if (!App->IsRunTime())
+	{
 		button_label = "PAUSE";
+		App->audio->PauseAudio();
+	}
 
 	ImGui::SameLine();
 
