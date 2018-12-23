@@ -81,7 +81,7 @@ To create Emitters:
 * Select **"Music_emitter"** and set it as **Emitter**, select **MUSIC** in Audio Type, set the Duration of each song before blending (we recommend 8 seconds) and press "Set".  
 * Select **"Car_emitter"** and set is as Emitter, select **SFX** in Audio Type, and press "Set".  
 * Select **"City_emitter_1"** and set it as Emitter, **uncheck** the Demo Spacial Sound Event and manually write **"Play_Spatial_Sound_Animal"** in the Event Name box, then press "Set".  
-![](https://i.gyazo.com/18335f363e83e4aca9dc73bd21b48fb3.mp4)
+![](https://i.imgur.com/wpImGiQ.mp4)
   
 Additionally, you can select **"City_emitter_2"** gameobject and write **"Play_Spatial_Sound_Thunder"** in the Event for an extra gameobject emitting sounds.  
   
