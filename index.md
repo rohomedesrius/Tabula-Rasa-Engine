@@ -8,7 +8,7 @@ This project has been done by Roger Homedes and Samuel Navarro of Polytechnical 
 ---------------------------------------------------------------------------------
   
 ### **Roger Homedes**: [github.com/rohomedesrius](https://github.com/rohomedesrius)   
-![](https://66.media.tumblr.com/35eb54fa29cbcb6ef6c12bd866cbb614/tumblr_pk7gn1xheT1vonij4o1_250.jpg)
+![](https://66.media.tumblr.com/35eb54fa29cbcb6ef6c12bd866cbb614/tumblr_pk7gn1xheT1vonij4o1_250.jpg)  
 
 * Created FirulWwise main structure  
   
@@ -22,7 +22,7 @@ This project has been done by Roger Homedes and Samuel Navarro of Polytechnical 
 
 ### **Samuel Navarro**: [github.com/GottaCodeHarder](https://github.com/GottaCodeHarder)   
 
-![](https://i.imgur.com/Ed8p3WM.png)
+![](https://i.imgur.com/Ed8p3WM.png)  
 
 * Integrated Wwise libraries into Tabula Rasa  
   
@@ -40,7 +40,8 @@ This project has been done by Roger Homedes and Samuel Navarro of Polytechnical 
 ## Main Sub-System: *FirulWwise* 
 ---------------------------------------------------------------------------------
 
-![](https://i.imgur.com/xp5FnXn.png)
+![](https://i.imgur.com/xp5FnXn.png)  
+
 FirulWwise is our library with the main purpose of integrating [Wwise 2018.2.4](https://www.audiokinetic.com/library/edge/?source=Help&id=welcome_to_wwise) in a fast way.  
 If you include FirulWwise into your visual studio project, you'll just need to add the following route: "$(ProjectDir)/AK/include" to your debugging directories inside your project properties.  
 And that's it! You're ready to use Wwise!  
