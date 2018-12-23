@@ -64,6 +64,17 @@ public:
 	GameObject* CreateGameObject(GameObject* parent);
 	GameObject* CreateGameObject(const char* name, GameObject* parent = nullptr);
 
+	//SCENE FOR AUDIO DEMO
+	GameObject* music = nullptr;
+	GameObject* car = nullptr;
+	GameObject* city = nullptr;
+	GameObject* city2 = nullptr;
+
+	void MoveCar();
+	int car_limit = 2;
+
+	void DrawAudioDemoScene();
+
 private:
 
 	PGrid* grid = nullptr;

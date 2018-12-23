@@ -8,6 +8,7 @@
 #include "ComponentCamera.h"
 #include "ComponentMesh.h"
 #include "trEditor.h" //TODO: check this
+#include "trInput.h"
 
 #include "ResourceMesh.h"
 
@@ -53,13 +54,23 @@ bool trMainScene::Start()
 	grid = new PGrid();
 	grid->axis = true;
 
-	GameObject* helper1 = new GameObject("Emitter", root);
-	helper1->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
+	main_camera->GetTransform()->SetPosition(float3(0, 7, -7));
 
-	//GameObject* helper2 = new GameObject("Effect_Area", root);
-	//helper2->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
-	//helper2->bounding_box = (AABB(float3(-200, -200, -200), float3(200, 200, 200)));
-	
+	// DEMO AUDIO SCENE===========================================================
+	music = new GameObject("Music_emitter", root);
+	music->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
+
+	car = new GameObject("Car_emitter", root);
+	car->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
+
+	city = new GameObject("City_emitter_1", root);
+	city->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
+	city->GetTransform()->SetPosition(float3(-2, 0, 3));
+
+	city2 = new GameObject("City_emitter_2", root);
+	city2->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
+	city2->GetTransform()->SetPosition(float3(2, 0, 3));
+
 	return true;
 }
 
@@ -83,6 +94,11 @@ bool trMainScene::Update(float dt)
 
 bool trMainScene::PostUpdate(float dt)
 {
+	if (App->IsRunTime())
+		MoveCar();
+
+	DrawAudioDemoScene();
+
 	return true;
 }
 
@@ -476,4 +492,48 @@ GameObject * trMainScene::CreateGameObject(const char * name,GameObject * parent
 		parent = root;
 
 	return new GameObject(name, parent);
+}
+
+void trMainScene::MoveCar()
+{
+	ComponentTransform* trans = car->GetTransform();
+	
+	if (trans != nullptr)
+	{
+		float3 last_pos = trans->GetTranslation();
+
+		if (last_pos.x < 2 && car_limit == 2)
+		{
+			last_pos += float3(0.02, 0, 0.01);
+		}
+		else
+		{
+			car_limit = -2;
+		}
+
+		if (last_pos.x > -2 && car_limit == -2)
+		{
+			last_pos -= float3(0.02, 0, 0);
+		}
+		else
+		{
+			car_limit = 2;
+		}
+
+		if (last_pos.x < 0 && car_limit == 2)
+		{
+			last_pos += float3(0.02, 0, 0.01);
+		}
+
+		trans->SetPosition(last_pos);
+	}
+}
+
+void trMainScene::DrawAudioDemoScene()
+{
+	DebugDraw(main_camera->bounding_box, Red);
+	DebugDraw(car->bounding_box, Red);
+	DebugDraw(music->bounding_box, Red);
+	DebugDraw(city->bounding_box, Green);
+	DebugDraw(city2->bounding_box, Green);
 }
