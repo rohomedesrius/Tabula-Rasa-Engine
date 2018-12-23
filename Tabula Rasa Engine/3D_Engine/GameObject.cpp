@@ -42,8 +42,7 @@ GameObject::GameObject(const char * name, GameObject * parent)
 	else
 		CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
 
-	bounding_box = AABB(float3(-1.f, -1.f, -1.f), float3(1.f, 1.f, 1.f));
-
+	bounding_box = AABB(float3(-0.3, -0.3, -0.3), float3(0.3, 0.3, 0.3));
 }
 // ---------------------------------------------------------
 GameObject::~GameObject()
@@ -130,6 +129,24 @@ bool GameObject::Load(JSON_Object * go_obj, std::map<GameObject*, UID>& uuid_rel
 	name = json_value_get_string(go_value);
 	if (name.compare("Main Camera") == 0) {
 		App->main_scene->main_camera = this;
+	}
+	//DEMO AUDIO SCENE
+	if (name.compare("Car_emitter") == 0)
+	{
+		App->main_scene->car = this;
+		App->main_scene->car_limit = 2;
+	}
+	if (name.compare("Music_emitter") == 0)
+	{
+		App->main_scene->music = this;
+	}
+	if (name.compare("City_emitter_1") == 0)
+	{
+		App->main_scene->city = this;
+	}
+	if (name.compare("City_emitter_2") == 0)
+	{
+		App->main_scene->city2 = this;
 	}
 
 	// Get Components Array
@@ -309,7 +326,7 @@ void GameObject::RecalculateBoundingBox()
 	}
 	else { // GO without mesh
 		bounding_box.SetNegativeInfinity();
-		bounding_box = AABB(float3(-1.f, -1.f, -1.f), float3(1.f, 1.f, 1.f));
+		bounding_box = AABB(float3(-0.3f, -0.3f, -0.3f), float3(0.3f, 0.3f, 0.3f));
 		OBB obb(bounding_box);
 		obb.Transform(transform->GetMatrix());
 		bounding_box = obb.MinimalEnclosingAABB();

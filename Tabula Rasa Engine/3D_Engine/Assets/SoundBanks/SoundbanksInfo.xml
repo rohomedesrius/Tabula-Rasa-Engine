@@ -21,12 +21,22 @@
 			<ShortName>Spatial_Sounds</ShortName>
 			<Path>Spatial_Sounds.bnk</Path>
 			<IncludedEvents>
-				<Event Id="313775518" Name="Play_Spatial_Sound" ObjectPath="\Events\Default Work Unit\Play_Spatial_Sound"/>
+				<Event Id="2503126601" Name="Play_Spatial_Sound_Animal" ObjectPath="\Events\Default Work Unit\Play_Spatial_Sound_Animal"/>
+				<Event Id="3581309277" Name="Play_Spatial_Sound_Car" ObjectPath="\Events\Default Work Unit\Play_Spatial_Sound_Car"/>
+				<Event Id="4199873781" Name="Play_Spatial_Sound_Thunder" ObjectPath="\Events\Default Work Unit\Play_Spatial_Sound_Thunder"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
-				<File Id="139137932" Language="SFX">
-					<ShortName>SLS_Helico_PassBy_Overhead.wav</ShortName>
-					<Path>SFX\SLS_Helico_PassBy_Overhead_8956FC97.wem</Path>
+				<File Id="503208857" Language="SFX">
+					<ShortName>Porsche_Outside_On-Load_2000_01.wav</ShortName>
+					<Path>SFX\Porsche_Outside_On-Load_2000_01_8956FC97.wem</Path>
+				</File>
+				<File Id="552906653" Language="SFX">
+					<ShortName>OneShot_AnimalsCat_10.wav</ShortName>
+					<Path>SFX\OneShot_AnimalsCat_10_56D34C19.wem</Path>
+				</File>
+				<File Id="904950591" Language="SFX">
+					<ShortName>OneShot_ThunderBkgrnd_01.wav</ShortName>
+					<Path>SFX\OneShot_ThunderBkgrnd_01_56D34C19.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

@@ -21,6 +21,6 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	1006694123	Music_Volume			\Default Work Unit\Music_Volume	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	287686358	Pixel	C:\Users\User\Desktop\BackgroundMusic\.cache\Windows\SFX\Pixel_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pixel		3759148
-	293252674	Darling	C:\Users\User\Desktop\BackgroundMusic\.cache\Windows\SFX\Darling_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\Darling		5632516
+	287686358	Pixel	C:\Users\roger\Documents\WwiseProjects\BackgroundMusic\.cache\Windows\SFX\Pixel_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pixel		3759148
+	293252674	Darling	C:\Users\roger\Documents\WwiseProjects\BackgroundMusic\.cache\Windows\SFX\Darling_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\Darling		5632516
 

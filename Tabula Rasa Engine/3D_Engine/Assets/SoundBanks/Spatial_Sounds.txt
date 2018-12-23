@@ -1,10 +1,14 @@
 Event	ID	Name			Wwise Object Path	Notes
-	313775518	Play_Spatial_Sound			\Default Work Unit\Play_Spatial_Sound	
+	2503126601	Play_Spatial_Sound_Animal			\Default Work Unit\Play_Spatial_Sound_Animal	
+	3581309277	Play_Spatial_Sound_Car			\Default Work Unit\Play_Spatial_Sound_Car	
+	4199873781	Play_Spatial_Sound_Thunder			\Default Work Unit\Play_Spatial_Sound_Thunder	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	51322976	Game_Volume			\Default Work Unit\Game_Volume	
 	668799960	Spatial_Volume			\Default Work Unit\Spatial_Volume	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	139137932	SLS_Helico_PassBy_Overhead	C:\Users\roger\Documents\WwiseProjects\BackgroundMusic\.cache\Windows\SFX\SLS_Helico_PassBy_Overhead_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\SLS_Helico_PassBy_Overhead		1810496
+	503208857	Porsche_Outside_On-Load_2000_01	C:\Users\roger\Documents\WwiseProjects\BackgroundMusic\.cache\Windows\SFX\Porsche_Outside_On-Load_2000_01_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\Porsche_Outside_On-Load_2000_01		579476
+	552906653	OneShot_AnimalsCat_10	C:\Users\roger\Documents\WwiseProjects\BackgroundMusic\.cache\Windows\SFX\OneShot_AnimalsCat_10_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\OneShot_AnimalsCat_10		164618
+	904950591	OneShot_ThunderBkgrnd_01	C:\Users\roger\Documents\WwiseProjects\BackgroundMusic\.cache\Windows\SFX\OneShot_ThunderBkgrnd_01_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\OneShot_ThunderBkgrnd_01		244404
 
