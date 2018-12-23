@@ -12,6 +12,8 @@ ComponentAudio::ComponentAudio(GameObject* embedded_game_object) :
 
 ComponentAudio::~ComponentAudio()
 {
+	if (audio_event != nullptr)
+		delete(audio_event);
 }
 
 bool ComponentAudio::Update(float dt)
