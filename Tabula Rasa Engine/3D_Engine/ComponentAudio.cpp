@@ -14,6 +14,7 @@ ComponentAudio::~ComponentAudio()
 {
 	if (audio_event != nullptr)
 		delete(audio_event);
+	App->audio->DeleteEmitter(emitter);
 }
 
 bool ComponentAudio::Update(float dt)

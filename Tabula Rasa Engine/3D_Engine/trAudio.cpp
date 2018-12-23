@@ -163,3 +163,9 @@ AKEmitter* trAudio::CreateEmitter(const char* name, GameObject* go, bool is_list
 
 	return emitter;
 }
+
+void trAudio::DeleteEmitter(AKEmitter * emitter)
+{
+	firul_emitters.remove(emitter);
+	delete emitter;
+}

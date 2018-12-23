@@ -32,6 +32,7 @@ public:
 	bool UnloadSoundBank(const char* bank_path);
 
 	AKEmitter* CreateEmitter(const char* name, GameObject* go, bool is_listener, int type);
+	void DeleteEmitter(AKEmitter* emitter);
 
 private:
 	bool InitWwise();

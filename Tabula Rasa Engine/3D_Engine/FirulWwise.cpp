@@ -182,8 +182,6 @@ AKEmitter::AKEmitter(const char* _name, AkVector pos, unsigned int _id, int type
 
 AKEmitter::~AKEmitter()
 {
-	delete(this);
-	AK::SoundEngine::UnregisterGameObj(e_id);
 }
 
 void AKEmitter::PlayEvent(const char* name)
