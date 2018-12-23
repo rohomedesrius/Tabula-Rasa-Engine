@@ -21,6 +21,8 @@ bool trAudio::Start()
 	
 	FirulWwise::InitFWw(banks_directory);
 
+	delete[] banks_directory;
+
 	return true;
 }
 
@@ -46,6 +48,8 @@ bool trAudio::CleanUp()
 
 	delete(banks_directory);
 	RELEASE(banks_directory);
+
+	firul_emitters.clear();
 
 	FirulWwise::CleanUpFWw();
 
