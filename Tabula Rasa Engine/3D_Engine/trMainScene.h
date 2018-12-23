@@ -71,6 +71,7 @@ public:
 	GameObject* city2 = nullptr;
 
 	void MoveCar();
+	void SetCameraReady();
 	int car_limit = 2;
 
 	void DrawAudioDemoScene();

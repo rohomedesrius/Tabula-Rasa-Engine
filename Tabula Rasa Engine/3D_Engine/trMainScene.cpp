@@ -54,14 +54,16 @@ bool trMainScene::Start()
 	grid = new PGrid();
 	grid->axis = true;
 
-	main_camera->GetTransform()->SetPosition(float3(0, 7, -7));
+	main_camera->GetTransform()->SetPosition(float3(0, 10, -10));
 
 	// DEMO AUDIO SCENE===========================================================
 	music = new GameObject("Music_emitter", root);
 	music->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
+	music->GetTransform()->SetPosition(float3(0, 0, -2));
 
 	car = new GameObject("Car_emitter", root);
 	car->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
+	car->GetTransform()->SetPosition(float3(0, 0, 1));
 
 	city = new GameObject("City_emitter_1", root);
 	city->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
@@ -70,6 +72,8 @@ bool trMainScene::Start()
 	city2 = new GameObject("City_emitter_2", root);
 	city2->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
 	city2->GetTransform()->SetPosition(float3(2, 0, 3));
+
+	SetCameraReady();
 
 	return true;
 }
@@ -95,7 +99,10 @@ bool trMainScene::Update(float dt)
 bool trMainScene::PostUpdate(float dt)
 {
 	if (App->IsRunTime())
+	{
 		MoveCar();
+	}
+		
 
 	DrawAudioDemoScene();
 
@@ -504,7 +511,7 @@ void trMainScene::MoveCar()
 
 		if (last_pos.x < 2 && car_limit == 2)
 		{
-			last_pos += float3(0.02, 0, 0.01);
+			last_pos += float3(0.08, 0, 0.01);
 		}
 		else
 		{
@@ -513,27 +520,33 @@ void trMainScene::MoveCar()
 
 		if (last_pos.x > -2 && car_limit == -2)
 		{
-			last_pos -= float3(0.02, 0, 0);
+			last_pos += float3(-0.08, 0, 0.01);
 		}
 		else
 		{
 			car_limit = 2;
 		}
 
-		if (last_pos.x < 0 && car_limit == 2)
-		{
-			last_pos += float3(0.02, 0, 0.01);
-		}
-
 		trans->SetPosition(last_pos);
 	}
 }
 
+void trMainScene::SetCameraReady()
+{
+	ComponentTransform* trans = main_camera->GetTransform();
+	Quat q;
+	Quat rotation;
+
+	rotation = q.RotateAxisAngle(float3(1, 0, 0), 0.95);
+
+	trans->SetRotation(rotation);
+}
+
 void trMainScene::DrawAudioDemoScene()
 {
-	DebugDraw(main_camera->bounding_box, Red);
+	//DebugDraw(main_camera->bounding_box, Red);
 	DebugDraw(car->bounding_box, Red);
-	DebugDraw(music->bounding_box, Red);
+	DebugDraw(music->bounding_box, Blue);
 	DebugDraw(city->bounding_box, Green);
 	DebugDraw(city2->bounding_box, Green);
 }
