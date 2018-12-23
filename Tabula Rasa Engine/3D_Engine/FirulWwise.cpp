@@ -286,11 +286,13 @@ AKEmitter* FirulWManager::CreateEmitter(const char* name, AkVector pos, unsigned
 
 	if (id == 0 && is_listener)
 	{
+		// LISTENER
 		AkGameObjectID listener_id = id;
 		AK::SoundEngine::SetDefaultListeners(&listener_id, 1);
 	}
 	else
-	{
+	{ 
+		// EMITTER
 		AkGameObjectID emitter_id = id;
 		AkGameObjectID go_id = emitter->GetID();
 

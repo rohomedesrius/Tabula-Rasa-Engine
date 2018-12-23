@@ -23,6 +23,10 @@ private:
 	int current_listener = 0;
 	int bank_current = 0;
 
+	bool emitter = true;
+	bool listener = false;
+	int type_current = 0;
+
 private:
 	ComponentAudio* AddComponentAudio(int current);
 };
