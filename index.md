@@ -22,7 +22,7 @@ This project has been done by Roger Homedes and Samuel Navarro of Polytechnical 
 
 ### **Samuel Navarro**: [github.com/GottaCodeHarder](https://github.com/GottaCodeHarder)   
 
-![](https://66.media.tumblr.com/9386a8fd875197d3a5f9655375f24d22/tumblr_pk5tjrlvUt1vonij4o1_400.png)
+![](https://i.imgur.com/Ed8p3WM.png)
 
 * Integrated Wwise libraries into Tabula Rasa  
   
