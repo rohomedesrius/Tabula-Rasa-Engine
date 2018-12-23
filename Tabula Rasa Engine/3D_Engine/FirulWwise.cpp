@@ -252,6 +252,12 @@ void AKEmitter::SetPosition(float pos_x, float pos_y, float pos_z, float orient_
 	}
 }
 
+void AKEmitter::ChangeVolume(const char* game_parameter, int volume)
+{
+	AkRtpcValue vol_value = volume;
+	AK::SoundEngine::ResetRTPCValue(game_parameter, vol_value, e_id);
+}
+
 // MANAGER ======================================================================================================
 bool FirulWManager::LoadSoundBank(const char* bank_path)
 {

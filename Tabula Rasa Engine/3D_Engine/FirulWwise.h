@@ -83,6 +83,8 @@ public:
 
 	void SetPosition(float pos_x, float pos_y, float pos_z, float orient_front_x, float orient_front_y, float orient_front_z, float orient_top_x, float orient_top_y, float orient_top_z);
 
+	void ChangeVolume(const char* game_parameter, int volume);
+
 private:
 	AkGameObjectID e_id;
 	const char* e_name = nullptr;
