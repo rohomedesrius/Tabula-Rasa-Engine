@@ -9,7 +9,7 @@
 #include <string>
 #include <vector>
 
-enum DEMONSTRATION_TYPE
+enum AUDIO_TYPE
 {
 	SFX = 0,
 	MUSIC,
@@ -39,6 +39,7 @@ public:
 
 	bool Update(float dt);
 
+	//Audio Management
 	void CreateAudioEvent(const char* name, const float dura = 0.0f, const char * group = "", const char * a = "", const char * b = "");
 	void CreateEmitter(bool is_listener, int type);
 	void SetEmitter(AKEmitter* new_emitter);
@@ -49,6 +50,9 @@ public:
 
 	//Position/Rotation Management
 	void ManagePosRot();
+
+	//Inspector UI
+	void OnInspector();
 
 private:
 

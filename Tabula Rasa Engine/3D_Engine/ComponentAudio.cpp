@@ -159,3 +159,27 @@ void ComponentAudio::ManagePosRot()
 		emitter->SetPosition(current_pos.x, current_pos.y, current_pos.z, front.x, front.y, front.z, top.x, top.y, top.z);
 	}
 }
+
+void ComponentAudio::OnInspector()
+{
+	if (emitter != nullptr)
+	{
+		std::string str;
+		switch (emitter->GetType())
+		{
+		case 0:
+			str = "EMITTER [SFX]"; break;
+		case 1:
+			str = "EMITTER [MUSIC]"; break;
+		case 2:
+			str = "LISTENER"; break;
+		}
+
+		ImGui::Text("Type: %s", str);
+
+		if (emitter->GetType() == MUSIC)
+		{
+			ImGui::SliderFloat("Duration##dur", &audio_event->transition, 4.0f, 15.0f, "%.fs");
+		}
+	}
+}

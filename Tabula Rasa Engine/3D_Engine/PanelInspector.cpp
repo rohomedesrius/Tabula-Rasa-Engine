@@ -200,9 +200,7 @@ void PanelInspector::Draw()
 			{
 				ComponentAudio* audio_comp = (ComponentAudio*)(*it);
 				if (ImGui::CollapsingHeader("AUDIO COMPONENT", ImGuiTreeNodeFlags_DefaultOpen)) {
-					//ImGui::Combo("Emitter's events")
-
-
+					audio_comp->OnInspector();
 				}
 				ImGui::Separator();
 				break;

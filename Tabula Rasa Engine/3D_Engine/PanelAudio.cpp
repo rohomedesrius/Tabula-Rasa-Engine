@@ -115,7 +115,7 @@ void PanelAudio::Draw()
 
 						ImGui::Separator();
 						ImGui::Text("Event Configuration");
-						ImGui::SliderFloat("Duration", &transition, 3.0, 10.0, "%.f");
+						ImGui::SliderFloat("Duration", &transition, 3.0, 15.0, "%.f");
 						ImGui::Spacing();
 						ImGui::InputText("State group", state_group, 40);
 						ImGui::InputText("State 1", state_a, 40);
