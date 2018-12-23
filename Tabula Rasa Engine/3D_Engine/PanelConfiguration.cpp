@@ -90,7 +90,7 @@ void PanelConfiguration::ShowApplication()
 
 		int fps_cap = App->GetFpsCap();
 		if (ImGui::SliderInt("Max FPS", &fps_cap, 0, 120))
-			App->SetFpsCap(fps_cap);
+			App->SetFpsCap(60);
 
 		ImGui::Text("Current FPS cap:");
 		ImGui::SameLine();

@@ -165,7 +165,7 @@ void ComponentAudio::OnInspector()
 {
 	if (emitter != nullptr)
 	{
-		std::string str;
+		const char* str;
 		switch (emitter->GetType())
 		{
 		case 0:

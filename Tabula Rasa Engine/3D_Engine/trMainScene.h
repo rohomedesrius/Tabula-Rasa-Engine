@@ -74,7 +74,10 @@ public:
 	void SetCameraReady();
 	int car_limit = 2;
 
+	AABB tunnel_area;
+
 	void DrawAudioDemoScene();
+	void CheckIntersectionReverb(AABB area_box, GameObject* intersector);
 
 private:
 

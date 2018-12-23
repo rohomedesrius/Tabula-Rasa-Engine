@@ -39,6 +39,9 @@ public:
 
 	bool Update(float dt);
 
+	//Getter
+	AKEmitter* GetEmitter() { return emitter; }
+
 	//Audio Management
 	void CreateAudioEvent(const char* name, const float dura = 0.0f, const char * group = "", const char * a = "", const char * b = "");
 	void CreateEmitter(bool is_listener, int type);

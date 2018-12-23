@@ -169,3 +169,8 @@ void trAudio::DeleteEmitter(AKEmitter * emitter)
 	firul_emitters.remove(emitter);
 	delete emitter;
 }
+
+void trAudio::ApplyAuxBus(AKEmitter* emitter, bool current_applied)
+{
+	emitter->ApplyAuxBus("env_tunnel", 0.5, emitter->GetID());
+}

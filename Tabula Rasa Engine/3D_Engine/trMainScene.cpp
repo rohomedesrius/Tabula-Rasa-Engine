@@ -7,8 +7,10 @@
 #include "PGrid.h"
 #include "ComponentCamera.h"
 #include "ComponentMesh.h"
+#include "ComponentAudio.h"
 #include "trEditor.h" //TODO: check this
 #include "trInput.h"
+#include "trAudio.h"
 
 #include "ResourceMesh.h"
 
@@ -63,7 +65,7 @@ bool trMainScene::Start()
 
 	car = new GameObject("Car_emitter", root);
 	car->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
-	car->GetTransform()->SetPosition(float3(0, 0, 1));
+	car->GetTransform()->SetPosition(float3(0, 0, 0));
 
 	city = new GameObject("City_emitter_1", root);
 	city->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
@@ -72,6 +74,8 @@ bool trMainScene::Start()
 	city2 = new GameObject("City_emitter_2", root);
 	city2->CreateComponent(Component::component_type::COMPONENT_TRANSFORM);
 	city2->GetTransform()->SetPosition(float3(2, 0, 3));
+
+	tunnel_area = AABB(float3(-0.7, -0.3, 3), float3(0.7, 0.3, 15));
 
 	SetCameraReady();
 
@@ -101,8 +105,8 @@ bool trMainScene::PostUpdate(float dt)
 	if (App->IsRunTime())
 	{
 		MoveCar();
+		CheckIntersectionReverb(tunnel_area, car);
 	}
-		
 
 	DrawAudioDemoScene();
 
@@ -542,11 +546,23 @@ void trMainScene::SetCameraReady()
 	trans->SetRotation(rotation);
 }
 
+void trMainScene::CheckIntersectionReverb(AABB area_box, GameObject* intersector)
+{
+	if (area_box.Intersects(intersector->bounding_box))
+	{
+		ComponentAudio* audio = (ComponentAudio*)intersector->FindComponentByType(Component::component_type::COMPONENT_AUDIO);
+		AKEmitter* temp = audio->GetEmitter();
+		App->audio->ApplyAuxBus(temp, true);
+	}
+}
+
 void trMainScene::DrawAudioDemoScene()
 {
-	//DebugDraw(main_camera->bounding_box, Red);
+
 	DebugDraw(car->bounding_box, Red);
 	DebugDraw(music->bounding_box, Blue);
 	DebugDraw(city->bounding_box, Green);
 	DebugDraw(city2->bounding_box, Green);
+
+	DebugDraw(tunnel_area, Yellow);
 }

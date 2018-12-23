@@ -89,6 +89,8 @@ public:
 	float GetVolume() const;
 	void ChangeVolume(const char* game_parameter, int volume);
 
+	void ApplyAuxBus(const char* aux_bus_name, AkReal32 value, AkGameObjectID id);
+
 private:
 	AkGameObjectID e_id;
 	const char* e_name = nullptr;

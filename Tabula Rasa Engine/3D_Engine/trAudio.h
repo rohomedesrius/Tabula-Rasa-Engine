@@ -34,6 +34,8 @@ public:
 	AKEmitter* CreateEmitter(const char* name, GameObject* go, bool is_listener, int type);
 	void DeleteEmitter(AKEmitter* emitter);
 
+	void ApplyAuxBus(AKEmitter* emitter, bool current_applied);
+
 private:
 	bool InitWwise();
 

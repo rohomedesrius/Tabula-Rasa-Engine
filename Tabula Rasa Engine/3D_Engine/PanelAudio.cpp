@@ -10,7 +10,7 @@
 
 PanelAudio::PanelAudio() : Panel("Audio", SDL_SCANCODE_5)
 {
-	active = false;
+	active = true;
 
 }
 

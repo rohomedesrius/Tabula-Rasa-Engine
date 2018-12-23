@@ -261,6 +261,15 @@ void AKEmitter::ChangeVolume(const char* game_parameter, int volume)
 	AK::SoundEngine::SetRTPCValue(game_parameter, vol_value, e_id);
 }
 
+void AKEmitter::ApplyAuxBus(const char* aux_bux_name, AkReal32 value, AkGameObjectID id)
+{
+	AkAuxSendValue env;
+	env.listenerID = id;
+	env.auxBusID = AK::SoundEngine::GetIDFromString(aux_bux_name);
+	env.fControlValue = value;
+
+	AK::SoundEngine::SetGameObjectAuxSendValues(e_id, &env, 1);
+}
 // MANAGER ======================================================================================================
 bool FirulWManager::LoadSoundBank(const char* bank_path)
 {
