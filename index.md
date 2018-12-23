@@ -40,6 +40,7 @@ This project has been done by Roger Homedes and Samuel Navarro of Polytechnical 
 ## Main Sub-System: *FirulWwise* 
 ---------------------------------------------------------------------------------
 
+![](https://i.gyazo.com/11593b2d740cd71c26dca096dbd9030a.png)
 FirulWwise is our library with the main purpose of integrating [Wwise 2018.2.4](https://www.audiokinetic.com/library/edge/?source=Help&id=welcome_to_wwise) in a fast way.  
 If you include FirulWwise into your visual studio project, you'll just need to add the following route: "$(ProjectDir)/AK/include" to your debugging directories inside your project properties.  
 And that's it! You're ready to use Wwise!  
@@ -70,6 +71,8 @@ Follow this steps for a complete Demo scene:
   
 First, on the Sounbanks tab:  
 * Load **Music.bnk** and **Spatial_Sounds.bnk**.  
+
+![](https://i.gyazo.com/26908ff5ca5b07fa403ed5f9bcc3d2a5.mp4)  
   
 Then, on the Create Emitters tab, to create Listeners:  
 * Select **Main Camera** and set it as **Listener**. Then press the "Set" button.  
@@ -78,6 +81,7 @@ To create Emitters:
 * Select **"Music_emitter"** and set it as **Emitter**, select **MUSIC** in Audio Type, set the Duration of each song before blending (we recommend 8 seconds) and press "Set".  
 * Select **"Car_emitter"** and set is as Emitter, select **SFX** in Audio Type, and press "Set".  
 * Select **"City_emitter_1"** and set it as Emitter, **uncheck** the Demo Spacial Sound Event and manually write **"Play_Spatial_Sound_Animal"** in the Event Name box, then press "Set".  
+![](https://i.gyazo.com/18335f363e83e4aca9dc73bd21b48fb3.mp4)
   
 Additionally, you can select **"City_emitter_2"** gameobject and write **"Play_Spatial_Sound_Thunder"** in the Event for an extra gameobject emitting sounds.  
   
