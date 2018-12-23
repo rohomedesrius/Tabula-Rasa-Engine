@@ -76,11 +76,14 @@ public:
 	void PlayEvent(unsigned long id);
 	void StopEvent(const char* name);
 	void SetState(const char* state_group, const char* state);
+	
 	//Getter
 	AkGameObjectID GetID() { return e_id; }
+	const char* GetName() { return e_name; }
 	bool IsListener() { return listener; }
+	
+	//Setter
 	bool SetListener(bool set) { return listener = set; }
-
 	void SetPosition(float pos_x, float pos_y, float pos_z, float orient_front_x, float orient_front_y, float orient_front_z, float orient_top_x, float orient_top_y, float orient_top_z);
 	void SetSave(bool set);
 
