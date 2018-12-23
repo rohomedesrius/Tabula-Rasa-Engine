@@ -550,9 +550,9 @@ void trMainScene::CheckIntersectionReverb(AABB area_box, GameObject* intersector
 {
 	if (area_box.Intersects(intersector->bounding_box))
 	{
-		ComponentAudio* audio = (ComponentAudio*)intersector->FindComponentByType(Component::component_type::COMPONENT_AUDIO);
-		AKEmitter* temp = audio->GetEmitter();
-		App->audio->ApplyAuxBus(temp, true);
+		//ComponentAudio* audio = (ComponentAudio*)intersector->FindComponentByType(Component::component_type::COMPONENT_AUDIO);
+		//AKEmitter* temp = audio->GetEmitter();
+		//App->audio->ApplyAuxBus(temp, true);
 	}
 }
 
