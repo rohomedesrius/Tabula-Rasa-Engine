@@ -65,7 +65,7 @@ void PanelAudio::Draw()
 		
 		if (emitter)
 		{
-			ImGui::Combo("", &type_current, type_names, IM_ARRAYSIZE(type_names));
+			ImGui::Combo("##ComboType", &type_current, type_names, IM_ARRAYSIZE(type_names));
 			ImGui::SameLine();
 			ImGui::Text("Audio Type");
 
@@ -206,7 +206,7 @@ void PanelAudio::Draw()
 	
 	if (ImGui::CollapsingHeader("SoundBanks", ImGuiTreeNodeFlags_DefaultOpen))
 	{
-		ImGui::Combo("", &bank_current, banks_names, IM_ARRAYSIZE(banks_names));
+		ImGui::Combo("##ComboBnk", &bank_current, banks_names, IM_ARRAYSIZE(banks_names));
 		
 		if (ImGui::Button("Load"))
 		{
