@@ -85,9 +85,11 @@ public:
 	//Setter
 	bool SetListener(bool set) { return listener = set; }
 	void SetPosition(float pos_x, float pos_y, float pos_z, float orient_front_x, float orient_front_y, float orient_front_z, float orient_top_x, float orient_top_y, float orient_top_z);
-	void SetSave(bool set);
 
 	void ChangeVolume(const char* game_parameter, int volume);
+
+	void SetSave(bool set);
+	bool NeedsSave();
 
 private:
 	AkGameObjectID e_id;

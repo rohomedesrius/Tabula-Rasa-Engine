@@ -5,6 +5,7 @@
 #include "Component.h"
 #include "trPerfTimer.h"
 
+#include <list>
 #include <string>
 #include <vector>
 
@@ -46,6 +47,8 @@ public:
 	//Scene Management
 	bool Save(JSON_Object* component_obj)const;
 	bool Load(const JSON_Object* component_obj);
+	void SaveAudioEvent();
+	void LoadAudioEvent();
 
 	//Position/Rotation Management
 	void ManagePosRot();
@@ -54,9 +57,13 @@ private:
 	
 	DEMONSTRATION_TYPE demo_type = MUSIC;
 
-	std::vector<AudioEvent*> posted_events;
+	AudioEvent* audio_event;
 
 	AKEmitter* emitter = nullptr;
+
+	bool save = false;
+	std::vector<std::string> to_save_str;
+	float to_save_float = 0.0f;
 };
 
 #endif // __COMPONENT_AUDIO_H__
