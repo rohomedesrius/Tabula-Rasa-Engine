@@ -68,7 +68,7 @@ namespace FirulWwise
 //EMITTER ===========================================================================================================
 class AKEmitter {
 public:
-	AKEmitter(const char* _name, AkVector pos, unsigned int _id);
+	AKEmitter(const char* _name, AkVector pos, unsigned int _id, int type);
 	~AKEmitter();
 	 
 	//Events 
@@ -95,6 +95,7 @@ private:
 	AkVector e_pos;
 	bool listener = false;
 	bool needs_save = false;
+	int e_type = 2;
 };
 
 // MANAGER ===========================================================================================================
@@ -103,7 +104,7 @@ namespace FirulWManager
 	bool LoadSoundBank(const char* bank_path);
 	bool UnloadSoundBank(const char* bank_name);
 
-	AKEmitter* CreateEmitter(const char* name, AkVector pos, unsigned int id, bool is_listener);
+	AKEmitter* CreateEmitter(const char* name, AkVector pos, unsigned int id, bool is_listener, int type);
 
 	void ChangeVolume(const char* name, float value, AkGameObjectID id);
 }

@@ -171,7 +171,7 @@ void AK::VirtualFreeHook(void * in_pMemAddress, size_t in_size, DWORD in_dwFreeT
 #endif
 
 // EMITTER =======================================================================================================
-AKEmitter::AKEmitter(const char* _name, AkVector pos, unsigned int _id): e_name(_name), e_pos(pos), e_id(_id)
+AKEmitter::AKEmitter(const char* _name, AkVector pos, unsigned int _id, int type): e_name(_name), e_pos(pos), e_id(_id), e_type(type)
 {
 	AKRESULT success = AK::SoundEngine::RegisterGameObj(e_id, e_name);
 	if (success != AK_Success)
@@ -291,9 +291,9 @@ bool FirulWManager::UnloadSoundBank(const char* bank_name)
 	return true;
 }
 
-AKEmitter* FirulWManager::CreateEmitter(const char* name, AkVector pos, unsigned int id, bool is_listener)
+AKEmitter* FirulWManager::CreateEmitter(const char* name, AkVector pos, unsigned int id, bool is_listener, int type)
 {
-	AKEmitter* emitter = new AKEmitter(name, pos, id);
+	AKEmitter* emitter = new AKEmitter(name, pos, id, type);
 
 	if (id == 0 && is_listener)
 	{
