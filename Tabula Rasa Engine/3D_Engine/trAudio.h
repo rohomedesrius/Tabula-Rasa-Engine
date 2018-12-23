@@ -33,8 +33,6 @@ public:
 
 	AKEmitter* CreateEmitter(const char* name, GameObject* go, bool is_listener, int type);
 
-	void SaveEvents();
-
 private:
 	bool InitWwise();
 

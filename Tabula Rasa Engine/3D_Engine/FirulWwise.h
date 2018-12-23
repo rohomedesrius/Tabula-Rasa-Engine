@@ -88,15 +88,11 @@ public:
 
 	void ChangeVolume(const char* game_parameter, int volume);
 
-	void SetSave(bool set);
-	bool NeedsSave();
-
 private:
 	AkGameObjectID e_id;
 	const char* e_name = nullptr;
 	AkVector e_pos;
 	bool listener = false;
-	bool needs_save = false;
 	int e_type = 2;
 };
 

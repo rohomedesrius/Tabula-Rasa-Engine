@@ -11,7 +11,7 @@
 
 enum DEMONSTRATION_TYPE
 {
-	SFX,
+	SFX = 0,
 	MUSIC,
 	NONE
 };
@@ -47,8 +47,6 @@ public:
 	//Scene Management
 	bool Save(JSON_Object* component_obj)const;
 	bool Load(const JSON_Object* component_obj);
-	void SaveAudioEvent();
-	void LoadAudioEvent();
 
 	//Position/Rotation Management
 	void ManagePosRot();
@@ -60,10 +58,6 @@ private:
 	AudioEvent* audio_event;
 
 	AKEmitter* emitter = nullptr;
-
-	bool save = false;
-	std::vector<std::string> to_save_str;
-	float to_save_float = 0.0f;
 };
 
 #endif // __COMPONENT_AUDIO_H__
