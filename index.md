@@ -6,28 +6,60 @@ This project has been done by Roger Homedes and Samuel Navarro of Polytechnical 
 ## The Developers
 
 **Roger Homedes**: [github.com/rohomedesrius](https://github.com/rohomedesrius)   
-![]()
+![](https://66.media.tumblr.com/35eb54fa29cbcb6ef6c12bd866cbb614/tumblr_pk7gn1xheT1vonij4o1_250.jpg)
 
-* FirulWwise main structure
-* Main Audio Panel
-* Spatial Sound
-
+* Created FirulWwise main structure
+* Coded FirulWwise AKEmitters
+* Coded Main Audio Panel structure
+* Coded Spatial Sound with Emitters and demo
+* Features tester
 
 **Samuel Navarro**: [github.com/GottaCodeHarder](https://github.com/GottaCodeHarder)   
 
 ![](https://66.media.tumblr.com/9386a8fd875197d3a5f9655375f24d22/tumblr_pk5tjrlvUt1vonij4o1_400.png)
 
 * Integrated Wwise libraries into Tabula Rasa
-* FirulWwise base
-* Sound Events
-* Background blending music
+* Created FirulWwise base
+* Coded Sound Events
+* Coded Background blending music with Emitters and demo
+* Coded Audio Panel's Emitter Creation
+* Memory Leak hunter
 
 ## Main Sub-System: *FirulWwise*
 
 FirulWwise is our library with the main purpose of integrating [Wwise 2018.2.4](https://www.audiokinetic.com/library/edge/?source=Help&id=welcome_to_wwise) in a fast way.
 If you include FirulWwise into your visual studio project, you'll just need to add the following route: "$(ProjectDir)/AK/include" to your debugging directories inside your project properties.
+And that's it! You're ready to use Wwise!
 
+You need to call some functions in order to implement FirulWwise, those are:
 
+* **FirulWwise::InitFWw(wchar_t* banks_directory)** in order to initialize Wwise and the sub-system.
+* **FirulWwise::ProcessAudio()** in order to render the audio. Should be called every frame.
+* **FirulWwise::CleanUp()** in order to clean Wwise and FirulWwise.
+
+FirulWwise comes with the FirulWManager, which will help you to load and unload soundbanks, and create AKEmitters. AKEmitters are essential to build your scenes, they can be casted as Listeners or Emitters.
+
+## Author Demo scene with FirulWwise Walkthrough
+
+Once you run Tabula Rasa press **5** to open the Audio Panel if it's not open by default. A small window with 3 tabs will pop up. The Soundbanks tab (by default open) allows you to load different Soundbanks, for the demo we will Load both Soundbanks. 
+Next, let's move to the "Create Emitters" tab. We can choose from different in-game gameObjects to be set as Emitters or Listeners. Only one Listener is permitted while you can have as much Emitters as possible. If you select the Emitter checkbox you'll notice how several options appear. Audio Type lets you choose from Music (blending background music) and SFX (spatial sounds). The Event name must match the event defined in the Soundbank in order to properly function.
+Once you have finished to configure an Emitter o Listener press the "Set" button. Follow this steps for a complete Demo scene:
+
+First, on the Sounbanks tab:
+* Load **Music.bnk** and **Spatial_Sounds.bnk**.
+Then, on the Create Emitters tab:
+* Select **Main Camera** and set it as **Listener**. Then press the "Set" button.
+* Select **Music_emitter** and set it as **Emitter**, select **MUSIC** in Audio Type, set the Duration of each song before blending (we recommend 8 seconds) and press "Set".
+* Select **Car_emitter** and set is as Emitter, select **SFX** in Audio Type, and press "Set".
+* Select **City_emitter_1** and set it as Emitter, **uncheck** the Demo Spacial Sound Event and manually write **Play_Spatial_Sound_Animal** in the Event Name box, then press "Set".
+Additionally, you can select **City_emitter_2** and write **Play_Spatial_Sound_Thunder** for an extra gameobject emitting sounds.
+
+Now, press **Play** in the top of the window, you can toggle between **Pause/Continue** and **Stop**.
+Warning! Starting and Pausing our Game Engine several times in a short period of time might cause a crash!   
+
+In the Audio Panel, you can modify the different volume parameters to hear different sets of gameobjects, classified by Audio Type. 
+
+You have been shown most of the capabilities of FirulWwise.
 
 ## License  
 Copyright 2018 Roger Homedes & Samuel Navarro
