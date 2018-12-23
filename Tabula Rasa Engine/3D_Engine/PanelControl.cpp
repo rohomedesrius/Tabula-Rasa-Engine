@@ -44,6 +44,7 @@ void PanelControl::Draw()
 		else {
 			play_label = "PLAY";
 			App->time_manager->ReStartGameClock();
+			App->audio->StopAudio();
 		}
 	}
 

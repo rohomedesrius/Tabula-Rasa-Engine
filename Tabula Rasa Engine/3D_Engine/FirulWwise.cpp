@@ -131,12 +131,12 @@ void FirulWwise::ProcessAudio()
 
 void FirulWwise::PauseAllEvents()
 {
-	AK::SoundEngine::PostEvent("Pause_All", 1);
+	AK::SoundEngine::PostEvent("Pause_All", AK_INVALID_GAME_OBJECT);
 }
 
 void FirulWwise::ResumeAllEvents()
 {
-	AK::SoundEngine::PostEvent("Resume_All", 1);
+	AK::SoundEngine::PostEvent("Resume_All", AK_INVALID_GAME_OBJECT);
 }
 
 void FirulWwise::StopAllEvents()

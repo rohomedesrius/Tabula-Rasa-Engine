@@ -17,7 +17,6 @@ bool ComponentAudio::Update(float dt)
 {
 	if (App->IsRunTime())
 	{
-		was_playing = true;
 		static trPerfTimer timer;
 		static bool new_cicle = false;
 
@@ -64,17 +63,6 @@ bool ComponentAudio::Update(float dt)
 		{
 			timer.Start();
 			new_cicle = false;
-		}
-	}
-	else
-	{
-		if (was_playing)
-		{
-			for (std::vector<AudioEvent*>::iterator it = posted_events.begin(); it != posted_events.end(); it++)
-			{
-				emitter->StopEvent((*it)->name.c_str());
-			}
-			was_playing = false;
 		}
 	}
 

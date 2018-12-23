@@ -57,8 +57,6 @@ private:
 	std::vector<AudioEvent*> posted_events;
 
 	AKEmitter* emitter = nullptr;
-
-	bool was_playing = false;
 };
 
 #endif // __COMPONENT_AUDIO_H__
