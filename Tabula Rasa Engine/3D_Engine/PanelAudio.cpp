@@ -85,7 +85,7 @@ void PanelAudio::Draw()
 						}
 						if (demo_spacial_event)
 						{
-							sprintf_s(event_name, IM_ARRAYSIZE(event_name), "Play_Spatial_Sound");
+							sprintf_s(event_name, IM_ARRAYSIZE(event_name), "Play_Spatial_Sound_Car");
 						}
 
 						ImGui::InputText("Event Name", event_name, 40);
@@ -115,7 +115,7 @@ void PanelAudio::Draw()
 
 						ImGui::Separator();
 						ImGui::Text("Event Configuration");
-						ImGui::SliderFloat("Duration", &transition, 3.0, 15.0, "%.f");
+						ImGui::SliderFloat("Duration", &transition, 4.0, 15.0, "%.f");
 						ImGui::Spacing();
 						ImGui::InputText("State group", state_group, 40);
 						ImGui::InputText("State 1", state_a, 40);
