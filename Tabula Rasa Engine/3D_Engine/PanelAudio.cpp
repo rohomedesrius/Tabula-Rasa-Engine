@@ -63,37 +63,6 @@ void PanelAudio::Draw()
 
 		static float transition = 8.0f;
 		
-		if (ImGui::Button("Set"))
-		{
-			if (emitter)
-			{
-				AKEmitter* temp_emit = App->audio->CreateEmitter(go_names[current_emitter], temp, false, type_current);
-
-				if (temp_emit != nullptr)
-				{
-					ComponentAudio* temp_comp = AddComponentAudio(current_emitter);
-
-					temp_comp->SetType((DEMONSTRATION_TYPE)type_current);
-					temp_comp->CreateAudioEvent(event_name, transition, state_group, state_a, state_b);
-					
-					temp_comp->SetEmitter(temp_emit);
-				}
-			}
-			else if (listener)
-			{
-				AKEmitter* temp_emit = App->audio->CreateEmitter(go_names[current_emitter], temp, true, NONE);
-
-				if (temp_emit != nullptr)
-				{
-					ComponentAudio* temp_comp = AddComponentAudio(current_emitter);
-
-					temp_comp->SetEmitter(temp_emit);
-				}
-			}
-		}
-		ImGui::SameLine();
-		ImGui::Text("<= Press to set READY!");
-
 		if (emitter)
 		{
 			ImGui::Combo("", &type_current, type_names, IM_ARRAYSIZE(type_names));
@@ -156,6 +125,37 @@ void PanelAudio::Draw()
 		{
 
 		}
+
+		ImGui::Separator();;
+		if (ImGui::Button("Set"))
+		{
+			if (emitter)
+			{
+				AKEmitter* temp_emit = App->audio->CreateEmitter(go_names[current_emitter], temp, false, type_current);
+
+				if (temp_emit != nullptr)
+				{
+					ComponentAudio* temp_comp = AddComponentAudio(current_emitter);
+
+					temp_comp->SetType((DEMONSTRATION_TYPE)type_current);
+					temp_comp->CreateAudioEvent(event_name, transition, state_group, state_a, state_b);
+					temp_comp->SetEmitter(temp_emit);
+				}
+			}
+			else if (listener)
+			{
+				AKEmitter* temp_emit = App->audio->CreateEmitter(go_names[current_emitter], temp, true, NONE);
+
+				if (temp_emit != nullptr)
+				{
+					ComponentAudio* temp_comp = AddComponentAudio(current_emitter);
+
+					temp_comp->SetEmitter(temp_emit);
+				}				
+			}
+		}
+		ImGui::SameLine();
+		ImGui::Text("<= Press to set READY!");
 	}
 	
 	if (ImGui::CollapsingHeader("Volume"))
