@@ -87,7 +87,7 @@ public:
 	void SetPosition(float pos_x, float pos_y, float pos_z, float orient_front_x, float orient_front_y, float orient_front_z, float orient_top_x, float orient_top_y, float orient_top_z);
 
 	float GetVolume() const;
-	void ChangeVolume(const char* game_parameter, int volume);
+	void ChangeVolume(const char* game_parameter, int volume, bool master);
 
 	void ApplyAuxBus(const char* aux_bus_name, AkReal32 value, AkGameObjectID id);
 

@@ -173,7 +173,7 @@ void PanelAudio::Draw()
 			std::list<AKEmitter*>::const_iterator it = App->audio->firul_emitters.begin();
 			while (it != App->audio->firul_emitters.end())
 			{
-				(*it)->ChangeVolume("Game_Volume", game_volume);
+				(*it)->ChangeVolume("Game_Volume", game_volume, true);
 				it++;
 			}
 		}
@@ -187,7 +187,7 @@ void PanelAudio::Draw()
 			{
 				if ((*it)->GetType() == MUSIC)
 				{
-					(*it)->ChangeVolume("Music_Volume", music_volume);
+					(*it)->ChangeVolume("Music_Volume", music_volume, false);
 				}
 				it++;
 			}
@@ -202,7 +202,7 @@ void PanelAudio::Draw()
 			{
 				if ((*it)->GetType() == SFX)
 				{
-					(*it)->ChangeVolume("Spatial_Volume", spatial_volume);
+					(*it)->ChangeVolume("Spatial_Volume", spatial_volume, false);
 				}
 				it++;
 			}
