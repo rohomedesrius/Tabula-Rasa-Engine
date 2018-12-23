@@ -60,6 +60,7 @@ Audio Type lets you choose from Music (blending background music) and SFX (spati
 Once you have finished to configure an Emitter o Listener press the "Set" button.  
 Follow this steps for a complete Demo scene:  
   
+---------------------------------------------------------------------------------
   
 First, on the Sounbanks tab:  
 * Load **Music.bnk** and **Spatial_Sounds.bnk**.  
@@ -68,18 +69,20 @@ Then, on the Create Emitters tab, to create Listeners:
 * Select **Main Camera** and set it as **Listener**. Then press the "Set" button.  
   
 To create Emitters:  
-* Select **Music_emitter** and set it as **Emitter**, select **MUSIC** in Audio Type, set the Duration of each song before blending (we recommend 8 seconds) and press "Set".  
-* Select **Car_emitter** and set is as Emitter, select **SFX** in Audio Type, and press "Set".  
-* Select **City_emitter_1** and set it as Emitter, **uncheck** the Demo Spacial Sound Event and manually write **Play_Spatial_Sound_Animal** in the Event Name box, then press "Set".  
+* Select **"Music_emitter"** and set it as **Emitter**, select **MUSIC** in Audio Type, set the Duration of each song before blending (we recommend 8 seconds) and press "Set".  
+* Select **"Car_emitter"** and set is as Emitter, select **SFX** in Audio Type, and press "Set".  
+* Select **"City_emitter_1"** and set it as Emitter, **uncheck** the Demo Spacial Sound Event and manually write **"Play_Spatial_Sound_Animal"** in the Event Name box, then press "Set".  
   
-Additionally, you can select **City_emitter_2** and write **Play_Spatial_Sound_Thunder** for an extra gameobject emitting sounds.  
+Additionally, you can select **"City_emitter_2"** gameobject and write **"Play_Spatial_Sound_Thunder"** in the Event for an extra gameobject emitting sounds.  
   
-Now, press **Play** in the top of the window, you can toggle between **Pause/Continue** and **Stop**.
-Warning! Starting and Pausing our Game Engine several times in a short period of time might cause a crash!   
+---------------------------------------------------------------------------------
   
-In the Audio Panel, you can modify the different volume parameters to hear different sets of gameobjects, classified by Audio Type. 
+Now, press **Play** button in the top of the window, you can toggle between **Pause/Continue** and **Stop**.  
+Warning! Starting and Pausing our Game Engine several times in a short period of time might cause a crash!    
   
-You have been shown most of the capabilities of FirulWwise.
+* In the Audio Panel, you can modify the different volume parameters to hear different sets of gameobjects, classified by Audio Type. 
+  
+You have been shown most of the capabilities of FirulWwise!  
   
 ## License  
 Copyright 2018 Roger Homedes & Samuel Navarro
