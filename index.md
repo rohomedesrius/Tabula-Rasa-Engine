@@ -72,7 +72,7 @@ Follow this steps for a complete Demo scene:
 First, on the Sounbanks tab:  
 * Load **Music.bnk** and **Spatial_Sounds.bnk**.  
 
-![](https://i.gyazo.com/26908ff5ca5b07fa403ed5f9bcc3d2a5.mp4)  
+![](https://imgur.com/wNo37Rm)  
   
 Then, on the Create Emitters tab, to create Listeners:  
 * Select **Main Camera** and set it as **Listener**. Then press the "Set" button.  
