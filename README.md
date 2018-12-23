@@ -1,8 +1,7 @@
 ﻿# Tabula Rasa Engine (Forked)
-A 3d game engine developed with OpenGL in c ++. This project has been done by two students of CITM - UPC (Terrasa, Spain) for the subject Game Engines. This is a forked version of the engine, right below you can find the link to the original engine: 
-
-* [Github repository](https://github.com/Wilhelman/Tabula-Rasa-Engine)
-* [Website] NOT YET
+Tabula Rasa is a simple 3D Game Engine developed for educational purposes. Written in C++ and using OpenGL. This project has been done by two students of CITM - UPC (Terrasa, Spain) for the subject Game Engines.
+This is a forked version of the engine, right here you can find the link to the original engine: [Master Tabula Rasa Repository](https://github.com/Wilhelman/Tabula-Rasa-Engine).
+You might find more information in our [website](https://rohomedesrius.github.io/Tabula-Rasa-Engine/).
 
 ## Installation instructions
 
@@ -33,22 +32,18 @@ _IMPORTANT: do not modify, change or add any folder or file as you might not be 
 * **Focus camera on object**: F key
 
 ### UI 
-* **Open config window**: 4
-* **Open console**: 1 
+* **Open Audio Window**: 5
+* **Open Config Window**: 4
+* **Open Console**: 1 
 * **Open Inspector**: I key
 * **Show/Hide UI:** LALT + G key
-* **Quit application:** ESC / Alt+F4
+* **Quit Application:** ESC / Alt+F4
 
 _Click again on Window->(any option) to close that window_
 
-## Innovations / Redesign
-
-* Draw the z-buffer in grayscale option determined by the distance (Option in Config window -> Renderer3D options -> Switch Z- Buffer Visualization).
-
-**_Warning: If this option is activated the overall performance might decrease significantly._**
-
-Example for comparison:
-![image](https://user-images.githubusercontent.com/25589509/46920311-ccccb780-cfec-11e8-9afa-fcbf64616042.png)
+## Audio: FirulWwise
+FirulWwise is our library with the main purpose of integrating Wwise 2018.2.4 in a fast way.
+[Follow the Tutorial Walkthrough to see the Demo in execution](https://rohomedesrius.github.io/Tabula-Rasa-Engine/).
 
 ## New Team members
 _Homedes Rius, Roger's responsability and Github account_
@@ -75,6 +70,7 @@ _Masó Garcia, Victor's responsability and Github account_
 * Containers: STL
 * Input and audio: SDL 2.0.8
 * Graphics: OpenGL
+* **Audio: Wwise 2018.1.4.6807**
 * Math: MathGeoLib 1.5
 * Random Number Generator: PCG (C Implementantion) 0.94
 * GUI: Deat ImGui 1.65
