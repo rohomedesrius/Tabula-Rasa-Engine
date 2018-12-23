@@ -21,9 +21,12 @@
 			<ShortName>Spatial_Sounds</ShortName>
 			<Path>Spatial_Sounds.bnk</Path>
 			<IncludedEvents>
+				<Event Id="3864097025" Name="Pause_All" ObjectPath="\Events\Default Work Unit\Pause_All"/>
 				<Event Id="2503126601" Name="Play_Spatial_Sound_Animal" ObjectPath="\Events\Default Work Unit\Play_Spatial_Sound_Animal"/>
 				<Event Id="3581309277" Name="Play_Spatial_Sound_Car" ObjectPath="\Events\Default Work Unit\Play_Spatial_Sound_Car"/>
 				<Event Id="4199873781" Name="Play_Spatial_Sound_Thunder" ObjectPath="\Events\Default Work Unit\Play_Spatial_Sound_Thunder"/>
+				<Event Id="3679762312" Name="Resume_All" ObjectPath="\Events\Default Work Unit\Resume_All"/>
+				<Event Id="452547817" Name="Stop_All" ObjectPath="\Events\Default Work Unit\Stop_All"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="503208857" Language="SFX">

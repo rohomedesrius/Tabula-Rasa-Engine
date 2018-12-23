@@ -1,6 +1,9 @@
 Event	ID	Name			Wwise Object Path	Notes
+	452547817	Stop_All			\Default Work Unit\Stop_All	
 	2503126601	Play_Spatial_Sound_Animal			\Default Work Unit\Play_Spatial_Sound_Animal	
 	3581309277	Play_Spatial_Sound_Car			\Default Work Unit\Play_Spatial_Sound_Car	
+	3679762312	Resume_All			\Default Work Unit\Resume_All	
+	3864097025	Pause_All			\Default Work Unit\Pause_All	
 	4199873781	Play_Spatial_Sound_Thunder			\Default Work Unit\Play_Spatial_Sound_Thunder	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
