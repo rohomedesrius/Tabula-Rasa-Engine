@@ -102,11 +102,6 @@ void ComponentAudio::SetEmitter(AKEmitter* new_emitter)
 	emitter = new_emitter;
 }
 
-void ComponentAudio::SetType(DEMONSTRATION_TYPE type)
-{
-	demo_type = type;
-}
-
 void ComponentAudio::ManagePosRot()
 {
 	GameObject* temp_go = GetEmbeddedObject();

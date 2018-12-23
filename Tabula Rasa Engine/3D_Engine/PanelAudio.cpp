@@ -137,7 +137,6 @@ void PanelAudio::Draw()
 				{
 					ComponentAudio* temp_comp = AddComponentAudio(current_emitter);
 
-					temp_comp->SetType((DEMONSTRATION_TYPE)type_current);
 					temp_comp->CreateAudioEvent(event_name, transition, state_group, state_a, state_b);
 					temp_comp->SetEmitter(temp_emit);
 				}

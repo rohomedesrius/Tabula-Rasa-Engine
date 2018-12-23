@@ -42,8 +42,6 @@ public:
 	void CreateAudioEvent(const char* name, const float dura = 0.0f, const char * group = "", const char * a = "", const char * b = "");
 	void SetEmitter(AKEmitter* new_emitter);
 
-	void SetType(DEMONSTRATION_TYPE type);
-
 	//Scene Management
 	bool Save(JSON_Object* component_obj)const;
 	bool Load(const JSON_Object* component_obj);
@@ -52,8 +50,6 @@ public:
 	void ManagePosRot();
 
 private:
-	
-	DEMONSTRATION_TYPE demo_type = MUSIC;
 
 	AudioEvent* audio_event;
 
