@@ -257,6 +257,11 @@ void AKEmitter::SetSave(bool set)
 	needs_save = set;
 }
 
+bool AKEmitter::NeedsSave()
+{
+	return needs_save;
+}
+
 void AKEmitter::ChangeVolume(const char* game_parameter, int volume)
 {
 	AkRtpcValue vol_value = volume;

@@ -158,3 +158,12 @@ AKEmitter* trAudio::CreateEmitter(const char* name, GameObject* go, bool is_list
 
 	return emitter;
 }
+
+void trAudio::SaveEvents()
+{
+	std::list<AKEmitter*>::const_iterator it = firul_emitters.begin();
+	while (it != firul_emitters.end())
+	{
+		(*it)->SetSave(true);
+	}
+}
