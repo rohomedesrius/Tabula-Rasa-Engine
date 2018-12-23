@@ -1,6 +1,6 @@
 Event	ID	Name			Wwise Object Path	Notes
 	452547817	Stop_All			\Default Work Unit\Stop_All	
-	1256202815	Play			\Default Work Unit\Play	
+	2932040671	Play_Music			\Default Work Unit\Play_Music	
 	3679762312	Resume_All			\Default Work Unit\Resume_All	
 	3864097025	Pause_All			\Default Work Unit\Pause_All	
 
@@ -17,6 +17,6 @@ Custom State	ID	Name	State Group	Owner		Notes
 	666958720	SongA	Background	\Actor-Mixer Hierarchy\Default Work Unit\Darling		
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	287686358	Pixel	C:\Users\roger\Documents\WwiseProjects\BackgroundMusic\.cache\Windows\SFX\Pixel_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pixel		3759148
-	293252674	Darling	C:\Users\roger\Documents\WwiseProjects\BackgroundMusic\.cache\Windows\SFX\Darling_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\Darling		5632516
+	287686358	Pixel	C:\Users\User\Desktop\BackgroundMusic\.cache\Windows\SFX\Pixel_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pixel		3759148
+	293252674	Darling	C:\Users\User\Desktop\BackgroundMusic\.cache\Windows\SFX\Darling_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\Darling		5632516
 
