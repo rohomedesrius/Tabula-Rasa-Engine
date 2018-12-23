@@ -22,7 +22,7 @@ bool ComponentAudio::Update(float dt)
 
 		if (audio_event != nullptr)
 		{
-			if (demo_type == SFX)
+			if (emitter->GetType() == SFX)
 			{
 				if (audio_event->rendering == false)
 				{
@@ -30,7 +30,7 @@ bool ComponentAudio::Update(float dt)
 					emitter->PlayEvent(audio_event->name.c_str());
 				}
 			}
-			else if (demo_type == MUSIC)
+			else if (emitter->GetType() == MUSIC)
 			{
 				if (audio_event->rendering == false)
 				{
