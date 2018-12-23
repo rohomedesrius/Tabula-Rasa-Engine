@@ -96,7 +96,6 @@ void ComponentAudio::CreateEmitter(bool is_listener, int type)
 bool ComponentAudio::Save(JSON_Object* component_obj)const
 {
 	// Emitter
-	TR_LOG("%s", emitter->GetName());
 	json_object_set_number(component_obj, "Em_Type", emitter->GetType());
 	json_object_set_boolean(component_obj, "Em_Listener", emitter->IsListener());
 
@@ -114,7 +113,6 @@ bool ComponentAudio::Save(JSON_Object* component_obj)const
 
 bool ComponentAudio::Load(const JSON_Object* component_obj)
 {
-	int a = 0;
 	// Emitter
 	JSON_Value* value = json_object_get_value(component_obj, "Em_Listener");
 	JSON_Value* value_2 = json_object_get_value(component_obj, "Em_Type");
