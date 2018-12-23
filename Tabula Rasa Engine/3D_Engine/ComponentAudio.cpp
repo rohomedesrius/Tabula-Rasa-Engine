@@ -2,6 +2,7 @@
 #include "ComponentTransform.h"
 #include "GameObject.h"
 #include "trApp.h"
+#include "ImGui/imgui.h"
 
 ComponentAudio::ComponentAudio(GameObject* embedded_game_object) :
 	Component(embedded_game_object, Component::component_type::COMPONENT_AUDIO)
@@ -82,10 +83,14 @@ bool ComponentAudio::Update(float dt)
 	return true;
 }
 
-void ComponentAudio::CreateAudioEvent(const char * name)
+void ComponentAudio::CreateAudioEvent(const char * name, const float dura, const char* group, const char* a, const char* b)
 {
 	AudioEvent* new_event = new AudioEvent();
 	new_event->name = name;
+	new_event->transition = dura;
+	new_event->state_group = group;
+	new_event->state_a = a;
+	new_event->state_b = b;
 
 	posted_events.push_back(new_event);
 }
@@ -103,6 +108,11 @@ bool ComponentAudio::Load(const JSON_Object* component_obj)
 void ComponentAudio::SetEmitter(AKEmitter* new_emitter)
 {
 	emitter = new_emitter;
+}
+
+void ComponentAudio::SetType(DEMONSTRATION_TYPE type)
+{
+	demo_type = type;
 }
 
 void ComponentAudio::ManagePosRot()
