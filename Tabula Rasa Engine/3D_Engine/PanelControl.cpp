@@ -31,33 +31,44 @@ void PanelControl::Draw()
 
 	ImVec2 new_btn_pos(ImGui::GetWindowPos().x + (App->window->GetWidth() / 2.0f - 100.0f), ImGui::GetCursorScreenPos().y);
 	ImGui::SetCursorScreenPos(new_btn_pos);
-	static std::string play_btn = "PLAY";
+	static std::string play_label = "PLAY";
 
-	if (ImGui::Button(play_btn.c_str()))
+	if (ImGui::Button(play_label.c_str()))
 	{
 		App->SwitchRunTime();
 
 		if (App->IsRunTime())
 		{
-			play_btn = "STOP";
+			play_label = "STOP";
 		}
 		else {
-			play_btn = "PLAY";
+			play_label = "PLAY";
 			App->time_manager->ReStartGameClock();
-			App->audio->ResumeAudio();
 		}
 	}
 
 	ImGui::SameLine();
 
-	if (ImGui::Button("PAUSE"))
-	{
-		App->time_manager->PauseGameClock();
-		App->audio->PauseAudio();
+	static std::string button_label = "PAUSE";
 
-		if (App->IsRunTime())
-			play_btn = "PLAY";
+	if (ImGui::Button(button_label.c_str()))
+	{
+		App->SwitchPause();
+
+		if (App->IsPaused() && App->IsRunTime())
+		{
+			button_label = "CONTINUE";
+
+			App->time_manager->PauseGameClock();
+		}
+		else if (!App->IsPaused() && App->IsRunTime())
+		{
+			button_label = "PAUSE";
+			App->time_manager->ReStartGameClock();
+		}
 	}
+	if (!App->IsRunTime())
+		button_label = "PAUSE";
 
 	ImGui::SameLine();
 
