@@ -91,6 +91,11 @@ Warning! Starting and Pausing our Game Engine several times in a short period of
   
 * In the Audio Panel, you can modify the different volume parameters to hear different sets of gameobjects, classified by Audio Type. 
   
+Check this video if you have troubles following the tutorial!  
+
+[![](https://i.gyazo.com/fa0a8e8d60ad81d5618884d8b308520c.png)](
+https://www.youtube.com/watch?v=_SGpB1VT0L8&feature=youtu.be)
+
 You have been shown most of the capabilities of FirulWwise!  
   
 ---------------------------------------------------------------------------------
