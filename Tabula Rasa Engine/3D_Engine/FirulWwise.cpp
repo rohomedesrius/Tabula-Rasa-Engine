@@ -260,7 +260,7 @@ void AKEmitter::SetSave(bool set)
 void AKEmitter::ChangeVolume(const char* game_parameter, int volume)
 {
 	AkRtpcValue vol_value = volume;
-	AK::SoundEngine::ResetRTPCValue(game_parameter, vol_value, e_id);
+	AK::SoundEngine::SetRTPCValue(game_parameter, vol_value, e_id);
 }
 
 // MANAGER ======================================================================================================
