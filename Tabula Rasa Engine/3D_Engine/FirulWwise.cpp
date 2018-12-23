@@ -252,9 +252,15 @@ void AKEmitter::SetPosition(float pos_x, float pos_y, float pos_z, float orient_
 	}
 }
 
+float AKEmitter::GetVolume() const
+{
+	return 0.0f;
+}
+
 void AKEmitter::ChangeVolume(const char* game_parameter, int volume)
 {
 	AkRtpcValue vol_value = volume;
+	this->volume = volume;
 	AK::SoundEngine::SetRTPCValue(game_parameter, vol_value, e_id);
 }
 
