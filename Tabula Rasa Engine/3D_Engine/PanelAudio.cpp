@@ -131,7 +131,7 @@ void PanelAudio::Draw()
 		{
 			if (emitter)
 			{
-				AKEmitter* temp_emit = App->audio->CreateEmitter(go_names[current_emitter], temp, false);
+				AKEmitter* temp_emit = App->audio->CreateEmitter(go_names[current_emitter], temp, false, type_current);
 
 				if (temp_emit != nullptr)
 				{
@@ -144,7 +144,7 @@ void PanelAudio::Draw()
 			}
 			else if (listener)
 			{
-				AKEmitter* temp_emit = App->audio->CreateEmitter(go_names[current_emitter], temp, true);
+				AKEmitter* temp_emit = App->audio->CreateEmitter(go_names[current_emitter], temp, true, NONE);
 
 				if (temp_emit != nullptr)
 				{
@@ -174,14 +174,30 @@ void PanelAudio::Draw()
 
 		if (ImGui::SliderFloat("Music Volume", &music_volume, 0, 100))
 		{
-
+			std::list<AKEmitter*>::const_iterator it = App->audio->firul_emitters.begin();
+			while (it != App->audio->firul_emitters.end())
+			{
+				if ((*it)->GetType() == MUSIC)
+				{
+					(*it)->ChangeVolume("Music_Volume", music_volume);
+				}
+				it++;
+			}
 		}
 
 		ImGui::Separator();
 
 		if (ImGui::SliderFloat("Spatial Volume", &spatial_volume, 0, 100))
 		{
-
+			std::list<AKEmitter*>::const_iterator it = App->audio->firul_emitters.begin();
+			while (it != App->audio->firul_emitters.end())
+			{
+				if ((*it)->GetType() == SFX)
+				{
+					(*it)->ChangeVolume("Spatial_Volume", spatial_volume);
+				}
+				it++;
+			}
 		}
 	}
 	
