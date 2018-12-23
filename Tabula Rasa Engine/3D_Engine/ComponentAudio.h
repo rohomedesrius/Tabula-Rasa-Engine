@@ -55,7 +55,7 @@ private:
 	
 	DEMONSTRATION_TYPE demo_type = MUSIC;
 
-	std::vector<AudioEvent*> posted_events;
+	AudioEvent* audio_event;
 
 	AKEmitter* emitter = nullptr;
 };

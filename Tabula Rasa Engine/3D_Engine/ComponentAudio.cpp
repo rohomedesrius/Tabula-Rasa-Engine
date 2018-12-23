@@ -20,55 +20,52 @@ bool ComponentAudio::Update(float dt)
 		static trPerfTimer timer;
 		static bool new_cicle = false;
 
-		for (std::vector<AudioEvent*>::iterator it = posted_events.begin(); it != posted_events.end(); it++)
+		if (audio_event != nullptr)
 		{
-			if ((*it) != nullptr)
+			if (demo_type == SFX)
 			{
-				if (demo_type == SFX)
+				if (audio_event->rendering == false)
 				{
-					if ((*it)->rendering == false)
-					{
-						(*it)->rendering = true;
-						emitter->PlayEvent((*it)->name.c_str());
-					}
+					audio_event->rendering = true;
+					emitter->PlayEvent(audio_event->name.c_str());
 				}
-				else if (demo_type == MUSIC)
+			}
+			else if (demo_type == MUSIC)
+			{
+				if (audio_event->rendering == false)
 				{
-					if ((*it)->rendering == false)
-					{
-						timer.Start();
+					timer.Start();
 
-						(*it)->current_state = &(*it)->state_b;
-						(*it)->rendering = true;
+					audio_event->current_state = &audio_event->state_b;
+					audio_event->rendering = true;
 
-						emitter->PlayEvent((*it)->name.c_str());
-						emitter->SetState((*it)->state_group.c_str(), (*it)->current_state->c_str());
-					}
-					else
-					{
-						if (timer.ReadMs() / 1000 > (*it)->transition)
-						{
-							new_cicle = true;
-
-							if ((*it)->current_state == &(*it)->state_a)
-								(*it)->current_state = &(*it)->state_b;
-							else if ((*it)->current_state == &(*it)->state_b)
-								(*it)->current_state = &(*it)->state_a;
-
-							emitter->SetState((*it)->state_group.c_str(), (*it)->current_state->c_str());
-						}
-					}
+					emitter->PlayEvent(audio_event->name.c_str());
+					emitter->SetState(audio_event->state_group.c_str(), audio_event->current_state->c_str());
 				}
 				else
 				{
+					if (timer.ReadMs() / 1000 > audio_event->transition)
+					{
+						new_cicle = true;
 
-				}
+						if (audio_event->current_state == &audio_event->state_a)
+							audio_event->current_state = &audio_event->state_b;
+						else if (audio_event->current_state == &audio_event->state_b)
+							audio_event->current_state = &audio_event->state_a;
 
-				if (demo_type == MUSIC && new_cicle)
-				{
-					timer.Start();
-					new_cicle = false;
+						emitter->SetState(audio_event->state_group.c_str(), audio_event->current_state->c_str());
+					}
 				}
+			}
+			else
+			{
+
+			}
+
+			if (demo_type == MUSIC && new_cicle)
+			{
+				timer.Start();
+				new_cicle = false;
 			}
 		}
 	}
@@ -87,7 +84,7 @@ void ComponentAudio::CreateAudioEvent(const char * name, const float dura, const
 	new_event->state_a = a;
 	new_event->state_b = b;
 
-	posted_events.push_back(new_event);
+	audio_event = new_event;
 }
 
 bool ComponentAudio::Save(JSON_Object* component_obj)const
