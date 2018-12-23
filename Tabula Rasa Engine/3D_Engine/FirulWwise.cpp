@@ -141,7 +141,7 @@ void FirulWwise::ResumeAllEvents()
 
 void FirulWwise::StopAllEvents()
 {
-	AK::SoundEngine::StopAll();
+	AK::SoundEngine::PostEvent("Stop_All", AK_INVALID_GAME_OBJECT);
 }
 
 // Wwise Related ================================================================================================

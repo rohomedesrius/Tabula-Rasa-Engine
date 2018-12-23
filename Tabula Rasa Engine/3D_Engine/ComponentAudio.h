@@ -40,6 +40,7 @@ public:
 	bool Update(float dt);
 
 	void CreateAudioEvent(const char* name, const float dura = 0.0f, const char * group = "", const char * a = "", const char * b = "");
+	void CreateEmitter(bool is_listener, int type);
 	void SetEmitter(AKEmitter* new_emitter);
 
 	//Scene Management
@@ -51,7 +52,7 @@ public:
 
 private:
 
-	AudioEvent* audio_event;
+	AudioEvent* audio_event = nullptr;
 
 	AKEmitter* emitter = nullptr;
 };

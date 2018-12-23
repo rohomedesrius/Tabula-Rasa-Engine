@@ -2,6 +2,7 @@
 #include "ComponentTransform.h"
 #include "GameObject.h"
 #include "trApp.h"
+#include "trAudio.h"
 #include "ImGui/imgui.h"
 
 ComponentAudio::ComponentAudio(GameObject* embedded_game_object) :
@@ -87,13 +88,54 @@ void ComponentAudio::CreateAudioEvent(const char * name, const float dura, const
 	audio_event = new_event;
 }
 
+void ComponentAudio::CreateEmitter(bool is_listener, int type)
+{
+	emitter = App->audio->CreateEmitter(this->GetEmbeddedObject()->GetName(), this->GetEmbeddedObject(), is_listener, type);
+}
+
 bool ComponentAudio::Save(JSON_Object* component_obj)const
 {
+	// Emitter
+	TR_LOG("%s", emitter->GetName());
+	json_object_set_number(component_obj, "Em_Type", emitter->GetType());
+	json_object_set_boolean(component_obj, "Em_Listener", emitter->IsListener());
+
+	// Event
+	if (emitter->GetType() != NONE)
+	{
+		json_object_set_string(component_obj, "E_Name", audio_event->name.c_str());
+		json_object_set_string(component_obj, "E_Group", audio_event->state_group.c_str());
+		json_object_set_string(component_obj, "E_A", audio_event->state_a.c_str());
+		json_object_set_string(component_obj, "E_B", audio_event->state_b.c_str());
+		json_object_set_number(component_obj, "E_Transition", audio_event->transition);
+	}
 	return true;
 }
 
 bool ComponentAudio::Load(const JSON_Object* component_obj)
 {
+	int a = 0;
+	// Emitter
+	JSON_Value* value = json_object_get_value(component_obj, "Em_Listener");
+	JSON_Value* value_2 = json_object_get_value(component_obj, "Em_Type");
+	CreateEmitter(json_value_get_string(value), json_value_get_number(value_2));
+
+	// Event
+	if (json_value_get_number(value_2) != NONE)
+	{
+		value = json_object_get_value(component_obj, "E_Name");
+		CreateAudioEvent(json_value_get_string(value));
+
+		value = json_object_get_value(component_obj, "E_Group");
+		audio_event->state_group = json_value_get_string(value);
+		value = json_object_get_value(component_obj, "E_A");
+		audio_event->state_a = json_value_get_string(value);
+		value = json_object_get_value(component_obj, "E_B");
+		audio_event->state_b = json_value_get_string(value);
+		value = json_object_get_value(component_obj, "E_Transition");
+		audio_event->transition = json_value_get_number(value);
+	}
+
 	return true;
 }
 

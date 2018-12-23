@@ -70,7 +70,7 @@ void PanelControl::Draw()
 			App->audio->ResumeAudio();
 		}
 	}
-	if (!App->IsRunTime())
+	if (!App->IsRunTime() && App->IsPaused())
 	{
 		button_label = "PAUSE";
 		App->audio->PauseAudio();
