@@ -62,7 +62,7 @@ bool ComponentAudio::Update(float dt)
 
 			}
 
-			if (demo_type == MUSIC && new_cicle)
+			if (emitter->GetType() == MUSIC && new_cicle)
 			{
 				timer.Start();
 				new_cicle = false;
