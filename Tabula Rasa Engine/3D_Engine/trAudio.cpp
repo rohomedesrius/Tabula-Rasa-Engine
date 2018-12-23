@@ -51,6 +51,21 @@ bool trAudio::CleanUp()
 	return true;
 }
 
+void trAudio::PauseAudio() const
+{
+	FirulWwise::PauseAllEvents();
+}
+
+void trAudio::ResumeAudio() const
+{
+	FirulWwise::ResumeAllEvents();
+}
+
+void trAudio::StopAudio() const
+{
+	FirulWwise::StopAllEvents();
+}
+
 bool trAudio::InitWwise()
 {
 	return true;

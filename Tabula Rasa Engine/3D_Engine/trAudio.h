@@ -24,6 +24,10 @@ public:
 	bool PostUpdate(float dt);
 	bool CleanUp();
 
+	void PauseAudio() const;
+	void ResumeAudio() const;
+	void StopAudio() const;
+
 	bool LoadSoundBank(const char* bank_path);
 	bool UnloadSoundBank(const char* bank_path);
 

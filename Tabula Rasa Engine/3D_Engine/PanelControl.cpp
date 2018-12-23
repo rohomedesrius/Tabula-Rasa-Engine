@@ -2,6 +2,7 @@
 #include "trApp.h"
 #include "trWindow.h"
 #include "trTimeManager.h"
+#include "trAudio.h"
 
 PanelControl::PanelControl() : Panel("Control")
 {
@@ -43,6 +44,7 @@ void PanelControl::Draw()
 		else {
 			play_btn = "PLAY";
 			App->time_manager->ReStartGameClock();
+			App->audio->ResumeAudio();
 		}
 	}
 
@@ -51,7 +53,10 @@ void PanelControl::Draw()
 	if (ImGui::Button("PAUSE"))
 	{
 		App->time_manager->PauseGameClock();
-		App->SetPaused();
+		App->audio->PauseAudio();
+
+		if (App->IsRunTime())
+			play_btn = "PLAY";
 	}
 
 	ImGui::SameLine();

@@ -129,6 +129,21 @@ void FirulWwise::ProcessAudio()
 	AK::SoundEngine::RenderAudio();
 }
 
+void FirulWwise::PauseAllEvents()
+{
+	AK::SoundEngine::PostEvent("Pause_All", AK_INVALID_GAME_OBJECT);
+}
+
+void FirulWwise::ResumeAllEvents()
+{
+	AK::SoundEngine::PostEvent("Resume_All", AK_INVALID_GAME_OBJECT);
+}
+
+void FirulWwise::StopAllEvents()
+{
+	AK::SoundEngine::StopAll();
+}
+
 // Wwise Related ================================================================================================
 
 #ifdef WIN32
@@ -182,25 +197,10 @@ void AKEmitter::PlayEvent(unsigned long id)
 	AkPlayingID playing_id = AK::SoundEngine::PostEvent(id, e_id);
 }
 
-void AKEmitter::PauseAllEvent()
-{
-	AK::SoundEngine::PostEvent("Pause_All", AK_INVALID_GAME_OBJECT);
-}
-
-void AKEmitter::ResumeAllEvent()
-{
-	AK::SoundEngine::PostEvent("Resume_All", AK_INVALID_GAME_OBJECT);
-}
-
 
 void AKEmitter::StopEvent(const char* name)
 {
 	AK::SoundEngine::PostEvent(name, AK::SoundEngine::AkActionOnEventType_Stop);
-}
-
-void AKEmitter::StopAllEvents()
-{
-	AK::SoundEngine::StopAll();
 }
 
 void AKEmitter::SetState(const char * state_group, const char * state)

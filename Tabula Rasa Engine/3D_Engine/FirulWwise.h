@@ -59,6 +59,10 @@ namespace FirulWwise
 	bool InitFWw(const wchar_t* banks_directory);
 	void CleanUpFWw();
 	void ProcessAudio();
+
+	void PauseAllEvents();
+	void ResumeAllEvents();
+	void StopAllEvents();
 }
 
 //EMITTER ===========================================================================================================
@@ -70,10 +74,7 @@ public:
 	//Events 
 	void PlayEvent(const char* name);
 	void PlayEvent(unsigned long id);
-	void PauseAllEvent();
-	void ResumeAllEvent();
 	void StopEvent(const char* name);
-	void StopAllEvents();
 	void SetState(const char* state_group, const char* state);
 	//Getter
 	AkGameObjectID GetID() { return e_id; }

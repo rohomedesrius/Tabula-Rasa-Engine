@@ -420,11 +420,6 @@ void trApp::SetFpsCap(uint max_framerate)
 		capped_ms = 0;
 }
 
-void trApp::SetPaused()
-{
-	paused = !paused;
-}
-
 void trApp::SwitchRunTime()
 {
 	run_time = !run_time;
@@ -451,11 +446,6 @@ void trApp::SwitchRunTime()
 bool trApp::IsRunTime() const
 {
 	return run_time;
-}
-
-bool trApp::IsPaused() const
-{
-	return paused;
 }
 
 void trApp::Save()
