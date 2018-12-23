@@ -252,6 +252,11 @@ void AKEmitter::SetPosition(float pos_x, float pos_y, float pos_z, float orient_
 	}
 }
 
+void AKEmitter::SetSave(bool set)
+{
+	needs_save = set;
+}
+
 void AKEmitter::ChangeVolume(const char* game_parameter, int volume)
 {
 	AkRtpcValue vol_value = volume;
