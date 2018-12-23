@@ -38,10 +38,10 @@ private:
 
 public:
 	wchar_t* banks_directory = nullptr;
+	std::list<AKEmitter*> firul_emitters;
 
 private:
 	std::list<const char*> loaded_banks;
-	std::list<AKEmitter*> firul_emitters;
 };
 
 #endif //__AUDIO_H__

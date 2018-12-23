@@ -36,7 +36,7 @@
 			<Path>Music.bnk</Path>
 			<IncludedEvents>
 				<Event Id="3864097025" Name="Pause_All" ObjectPath="\Events\Default Work Unit\Pause_All"/>
-				<Event Id="1256202815" Name="Play" ObjectPath="\Events\Default Work Unit\Play"/>
+				<Event Id="2932040671" Name="Play_Music" ObjectPath="\Events\Default Work Unit\Play_Music"/>
 				<Event Id="3679762312" Name="Resume_All" ObjectPath="\Events\Default Work Unit\Resume_All"/>
 				<Event Id="452547817" Name="Stop_All" ObjectPath="\Events\Default Work Unit\Stop_All"/>
 			</IncludedEvents>

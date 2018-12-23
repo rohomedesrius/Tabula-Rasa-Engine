@@ -1,6 +1,10 @@
 Event	ID	Name			Wwise Object Path	Notes
 	313775518	Play_Spatial_Sound			\Default Work Unit\Play_Spatial_Sound	
 
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	51322976	Game_Volume			\Default Work Unit\Game_Volume	
+	668799960	Spatial_Volume			\Default Work Unit\Spatial_Volume	
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	139137932	SLS_Helico_PassBy_Overhead	C:\Users\roger\Documents\WwiseProjects\BackgroundMusic\.cache\Windows\SFX\SLS_Helico_PassBy_Overhead_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\SLS_Helico_PassBy_Overhead		1810496
 

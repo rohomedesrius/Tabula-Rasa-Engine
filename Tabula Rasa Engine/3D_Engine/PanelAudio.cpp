@@ -133,33 +133,56 @@ void PanelAudio::Draw()
 			{
 				AKEmitter* temp_emit = App->audio->CreateEmitter(go_names[current_emitter], temp, false);
 
-				ComponentAudio* temp_comp = AddComponentAudio(current_emitter);
-				
-				temp_comp->SetType((DEMONSTRATION_TYPE)type_current);
-				temp_comp->CreateAudioEvent(event_name, transition, state_group, state_a, state_b);
-				temp_comp->SetEmitter(temp_emit);
+				if (temp_emit != nullptr)
+				{
+					ComponentAudio* temp_comp = AddComponentAudio(current_emitter);
+
+					temp_comp->SetType((DEMONSTRATION_TYPE)type_current);
+					temp_comp->CreateAudioEvent(event_name, transition, state_group, state_a, state_b);
+					temp_comp->SetEmitter(temp_emit);
+				}
 			}
 			else if (listener)
 			{
 				AKEmitter* temp_emit = App->audio->CreateEmitter(go_names[current_emitter], temp, true);
 
-				ComponentAudio* temp_comp = AddComponentAudio(current_emitter);
+				if (temp_emit != nullptr)
+				{
+					ComponentAudio* temp_comp = AddComponentAudio(current_emitter);
 
-				temp_comp->SetEmitter(temp_emit);
+					temp_comp->SetEmitter(temp_emit);
+				}				
 			}
 		}
 		ImGui::SameLine();
-		ImGui::Text("<= Press at the end!");
+		ImGui::Text("<= Press to set READY!");
 	}
 	
 	if (ImGui::CollapsingHeader("Volume"))
 	{
-		
-	}
+		if (ImGui::SliderFloat("Game Volume", &game_volume, 0, 100))
+		{
+			std::list<AKEmitter*>::const_iterator it = App->audio->firul_emitters.begin();
+			while (it != App->audio->firul_emitters.end())
+			{
+				(*it)->ChangeVolume("Game_Volume", game_volume);
+				it++;
+			}
+		}
 
-	if (ImGui::CollapsingHeader("Background music"))
-	{
+		ImGui::Separator();
 
+		if (ImGui::SliderFloat("Music Volume", &music_volume, 0, 100))
+		{
+
+		}
+
+		ImGui::Separator();
+
+		if (ImGui::SliderFloat("Spatial Volume", &spatial_volume, 0, 100))
+		{
+
+		}
 	}
 	
 	////SoundBanks =======================================================

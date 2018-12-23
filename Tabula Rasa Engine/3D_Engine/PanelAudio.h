@@ -27,6 +27,10 @@ private:
 	bool listener = false;
 	int type_current = 0;
 
+	float game_volume = 50.0f;
+	float music_volume = 50.0f;
+	float spatial_volume = 50.0f;
+
 private:
 	ComponentAudio* AddComponentAudio(int current);
 };

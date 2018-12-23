@@ -134,6 +134,19 @@ AKEmitter* trAudio::CreateEmitter(const char* name, GameObject* go, bool is_list
 	}
 	else
 	{
+		std::list<AKEmitter*>::const_iterator it = firul_emitters.begin();
+		while (it != firul_emitters.end())
+		{
+			const char* temp_name = (*it)->GetName();
+
+			if (name == temp_name)
+			{
+				TR_LOG("This emitter is already created");
+				return nullptr;
+			}
+			it++;
+		}
+
 		unsigned int id = firul_emitters.back()->GetID();
 
 		emitter = FirulWManager::CreateEmitter(name, pos, id + 1, is_listener);
