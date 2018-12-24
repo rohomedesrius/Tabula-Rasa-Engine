@@ -43,7 +43,7 @@ This project has been done by Roger Homedes and Samuel Navarro of Polytechnical 
 ![](https://i.imgur.com/xp5FnXn.png)  
 
 FirulWwise is our library with the main purpose of integrating [Wwise 2018.2.4](https://www.audiokinetic.com/library/edge/?source=Help&id=welcome_to_wwise) in a fast way.  
-If you include FirulWwise into your visual studio project, you'll just need to add the following route: "$(ProjectDir)/AK/include" to your debugging directories inside your project properties.  
+If you include FirulWwise into your visual studio project, you'll just need to import the AK folder into your project's folder add the following route: "$(ProjectDir)/AK/include" to your debugging directories inside your project properties.  
 And that's it! You're ready to use Wwise!  
 
 You need to call some functions in order to implement FirulWwise, those are:  
