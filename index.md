@@ -61,7 +61,8 @@ FirulWwise comes with the FirulWManager, which will help you to load and unload 
 ## TUTORIAL: Author Demo scene with FirulWwise Walkthrough  
 ---------------------------------------------------------------------------------
 
-Once you run Tabula Rasa press **5** to open the Audio Panel if it's not open by default.  
+*  Once you run Tabula Rasa press **5** to open the Audio Panel if it's not open by default. This is the tool we've created to implement audio in out engine.  
+ 
 A small window with 3 tabs will pop up. The Soundbanks tab (by default open) allows you to load different Soundbanks, for the demo we will Load both Soundbanks.   
 Next, let's move to the "Create Emitters" tab. We can choose from different in-game gameObjects to be set as Emitters or Listeners. Only one Listener is permitted while you can have as much Emitters as possible. If you select the Emitter checkbox you'll notice how several options appear.  
 Audio Type lets you choose from Music (blending background music) and SFX (spatial sounds). The Event name must match the event defined in the Soundbank in order to properly function.  
